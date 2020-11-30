@@ -1,15 +1,4 @@
-# Headline
+# :blue_book:Java study notes
 
-> An awesome project.
+在线阅读：https://xiyun0.github.io/XiYun-Notes/
 
-
-
-npm i docsify-cli -g
-
-
-
-docsify init ./XiYun-Notes
-
-
-
-docsify serve XiYun-Notes
