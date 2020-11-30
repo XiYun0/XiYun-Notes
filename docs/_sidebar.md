@@ -1,23 +1,12 @@
 <!-- docs/_sidebar.md -->
 
-* [写在前面](/)
+[:snowflake:写在前面](/ "The greatest guide in the world")
 
-[JavaSE]()
+[:tea:Java](Java/README.md)
 
-[容器]()
+[:ship:数据库](数据库/README.md)
 
-- [JVM](JVM/垃圾回收.md)
+[:milky_way:算法](算法/README.md)
 
-[JUC](JUC/锁.md)
+[:computer:计算机基础](计算机基础/README.md)
 
-[MySQL]()
-
-[Redis]()
-
-[数据结构与算法]()
-
-[计算机网络]()
-
-[操作系统]()
-
-[Linux]()
