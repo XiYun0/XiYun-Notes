@@ -8,8 +8,8 @@ npm i docsify-cli -g
 
 
 
-docsify init ./docs
+docsify init ./XiYun-Notes
 
 
 
-docsify serve docs
+docsify serve XiYun-Notes
