@@ -1,12 +1,12 @@
 <!-- docs/_sidebar.md -->
 
-[首页](/)
+* [写在前面](/)
 
 [JavaSE]()
 
 [容器]()
 
-[JVM](JVM/垃圾回收.md)
+- [JVM](JVM/垃圾回收.md)
 
 [JUC](JUC/锁.md)
 
