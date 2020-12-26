@@ -1,28 +1,3 @@
-
-
-- [Java](#java)
-    - [基础](#基础)
-    - [容器](#容器)
-    - [并发](#并发)
-    - [JVM](#jvm)
-    - [I/O](#io)
-    - [Java 8](#java-8)
-    - [编程规范](#编程规范)
-- [网络](#网络)
-- [操作系统](#操作系统)
-    - [Linux相关](#linux相关)
-- [数据结构与算法](#数据结构与算法)
-    - [数据结构](#数据结构)
-    - [算法](#算法)
-- [数据库](#数据库)
-    - [MySQL](#mysql)
-    - [Redis](#redis)
-- [系统设计](#系统设计)
-    - [设计模式(工厂模式、单例模式 ... )](#设计模式)
-    - [常用框架(Spring、Zookeeper ... )](#常用框架)
-    - [数据通信(消息队列、Dubbo ... )](#数据通信)
-    - [网站架构](#网站架构)
-
 ## Java
 
 ### 基础
@@ -38,7 +13,7 @@
 * [LinkedList 源码学习](java/collection/LinkedList.md)   
 * [HashMap(JDK1.8)源码学习](java/collection/HashMap.md)  
 
-### 并发
+### JUC
 
 * [Java 并发基础常见面试题总结](java/Multithread/JavaConcurrencyBasicsCommonInterviewQuestionsSummary.md)
 * [Java 并发进阶常见面试题总结](java/Multithread/JavaConcurrencyAdvancedCommonInterviewQuestions.md)
@@ -94,28 +69,16 @@
 ### 算法
 
 - [算法学习资源推荐](dataStructures-algorithms/算法学习资源推荐.md)  
-- [几道常见的字符串算法题总结 ](dataStructures-algorithms/几道常见的子符串算法题.md)
-- [几道常见的链表算法题总结 ](dataStructures-algorithms/几道常见的链表算法题.md)   
-- [剑指offer部分编程题](dataStructures-algorithms/剑指offer部分编程题.md)
-- [公司真题](dataStructures-algorithms/公司真题.md)
-- [回溯算法经典案例之N皇后问题](dataStructures-algorithms/Backtracking-NQueens.md)
 
 ## 数据库
 
 ### MySQL
 
 * [MySQL 学习与面试](database/MySQL.md)
-* [一千行MySQL学习笔记](database/一千行MySQL命令.md)
-* [MySQL高性能优化规范建议](database/MySQL高性能优化规范建议.md)
-* [数据库索引总结](database/MySQL%20Index.md)
-* [事务隔离级别(图文详解)](database/事务隔离级别(图文详解).md)
-* [一条SQL语句在MySQL中如何执行的](database/一条sql语句在mysql中如何执行的.md)
 
 ### Redis
 
 * [Redis 总结](database/Redis/Redis.md)
-* [Redlock分布式锁](database/Redis/Redlock分布式锁.md)
-* [如何做可靠的分布式锁，Redlock真的可行么](database/Redis/如何做可靠的分布式锁，Redlock真的可行么.md)
 
 ## 系统设计
 
@@ -137,17 +100,3 @@
 
 - [ZooKeeper 相关概念总结](system-design/framework/ZooKeeper.md)
 - [ZooKeeper 数据模型和常见命令](system-design/framework/ZooKeeper数据模型和常见命令.md)
-
-### 数据通信
-
-- [数据通信(RESTful、RPC、消息队列)相关知识点总结](system-design/data-communication/summary.md)
-- [Dubbo 总结：关于 Dubbo 的重要知识点](system-design/data-communication/dubbo.md)
-- [消息队列总结](system-design/data-communication/message-queue.md)
-- [RabbitMQ 入门](system-design/data-communication/rabbitmq.md)
-- [RocketMQ的几个简单问题与答案](system-design/data-communication/RocketMQ-Questions.md)
-
-### 网站架构
-
-- [一文读懂分布式应该学什么](system-design/website-architecture/分布式.md)
-- [8 张图读懂大型网站技术架构](system-design/website-architecture/8%20张图读懂大型网站技术架构.md)
-- [【面试精选】关于大型网站系统架构你不得不懂的10个问题](system-design/website-architecture/[面试精选]关于大型网站系统架构你不得不懂的10个问题.md)
