@@ -1,3 +1,5 @@
+代码和绘图都放在了坚果云里面。
+
 ## Java
 
 ### 基础
@@ -83,10 +85,6 @@
 #### Spring
 
 - [Spring 学习与面试](system-design/framework/spring/Spring.md)
-- [Spring 常见问题总结](system-design/framework/spring/SpringInterviewQuestions.md)
-- [Spring中bean的作用域与生命周期](system-design/framework/spring/SpringBean.md)
-- [SpringMVC 工作原理详解](system-design/framework/spring/SpringMVC-Principle.md)
-- [Spring中都用到了那些设计模式?](system-design/framework/spring/Spring-Design-Patterns.md)
 
 #### ZooKeeper
 
