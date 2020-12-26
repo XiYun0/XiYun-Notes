@@ -2,9 +2,7 @@
 
 ### 基础
 
-* [Java 基础知识回顾](java/Java基础知识.md)
-* [Java 基础知识疑难点总结](java/Java疑难点.md)
-* [J2EE 基础知识回顾](java/J2EE基础知识.md)
+* [Java 基础](java/Java基础.md)
 
 ### 容器
 
@@ -16,11 +14,6 @@
 ### JUC
 
 * [Java 并发基础常见面试题总结](java/Multithread/JavaConcurrencyBasicsCommonInterviewQuestionsSummary.md)
-* [Java 并发进阶常见面试题总结](java/Multithread/JavaConcurrencyAdvancedCommonInterviewQuestions.md)
-* [并发容器总结](java/Multithread/并发容器总结.md)
-* [乐观锁与悲观锁](essential-content-for-interview/面试必备之乐观锁与悲观锁.md)
-* [JUC 中的 Atomic 原子类总结](java/Multithread/Atomic.md)
-* [AQS 原理以及 AQS 同步组件总结](java/Multithread/AQS.md)
 
 ### JVM
 * [一 Java内存区域](java/jvm/Java内存区域.md)
@@ -33,27 +26,26 @@
 ### I/O
 
 * [BIO,NIO,AIO 总结 ](java/BIO-NIO-AIO.md)
-* [Java IO 与 NIO系列文章](java/Java%20IO与NIO.md)
 
 ### Java 8 
 
 * [Java 8 新特性总结](java/What's%20New%20in%20JDK8/Java8Tutorial.md)
-* [Java 8 学习资源推荐](java/What's%20New%20in%20JDK8/Java8教程推荐.md)
 
 ### 编程规范
 
 - [Java 编程规范](java/Java编程规范.md)
 
-## 计算机网络
-
-* [计算机网络常见面试题](network/计算机网络.md)
-* [计算机网络基础知识总结](network/干货：计算机网络知识总结.md)
-* [HTTPS中的TLS](network/HTTPS中的TLS.md)
+## Golang
 
 ## 操作系统
 
 - [内存管理](operating-system/内存管理.md)
 - [死锁](operating-system/死锁.md)
+
+## 计算机网络
+
+* [何为网络？](network/何为网络.md)
+* [计算机网络面试题]()
 
 ### Linux相关
 
