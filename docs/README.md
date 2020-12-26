@@ -6,14 +6,13 @@
 
 ### 容器
 
-* [Java容器常见面试题/知识点总结](java/collection/Java集合框架常见面试题.md)
-* [ArrayList 源码学习](java/collection/ArrayList.md)  
-* [LinkedList 源码学习](java/collection/LinkedList.md)   
-* [HashMap(JDK1.8)源码学习](java/collection/HashMap.md)  
+* [collection](java/collection.md)
+* [map](java/map.md)
 
 ### JUC
 
-* [Java 并发基础常见面试题总结](java/Multithread/JavaConcurrencyBasicsCommonInterviewQuestionsSummary.md)
+* [JMM](juc/JMM.md)
+* [Java锁](juc/Java锁.md)
 
 ### JVM
 * [一 Java内存区域](java/jvm/Java内存区域.md)
