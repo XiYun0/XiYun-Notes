@@ -60,7 +60,8 @@
 
 ### 算法
 
-- [算法学习资源推荐](dataStructures-algorithms/算法学习资源推荐.md)  
+- [算法学习资源推荐](dataStructures-algorithms/算法学习资源推荐.md)
+- [刷爆力扣和剑指！](dataStructures-algorithms/刷爆力扣和剑指！.md)
 
 ## 数据库
 
