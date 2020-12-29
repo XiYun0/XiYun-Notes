@@ -13,3 +13,9 @@ Xmind+MindManager
 ## 编辑器和IDE
 
 vscode+Pycharm+IDEA+Goland
+
+
+
+## 虚拟机
+
+Vmware+Finallshell

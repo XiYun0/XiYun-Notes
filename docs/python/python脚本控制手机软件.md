@@ -248,6 +248,13 @@ for i in range(20):
     print(str(i+1) + 'clicks have been completed' )
 ```
 
+## 更高级点的
+
+```
+pip install pocoui
+pip install airtest
+```
+
 
 
 ## 参考

@@ -53,8 +53,8 @@
 ## Python
 
 - [功能齐全、强大的第三方库](python/第三方库.md)
-
 - [python脚本控制手机软件！尽搞些花里胡哨的](python/python脚本控制手机软件.md)
+- [解放双手的自动化](python/自动化.md)
 
 ## 操作系统
 
@@ -90,11 +90,11 @@
 
 ### MySQL
 
-- [MySQL 学习与面试](database/MySQL.md)
+- [MySQL](database/MySQL.md)
 
 ### Redis
 
-- [Redis 学习与面试](database/Redis/Redis.md)
+- [Redis ](database/Redis/Redis.md)
 
 ## 系统设计
 
@@ -104,9 +104,13 @@
 
 ### 常用框架
 
-#### Spring
+#### Spring家族及其相关
 
-- [Spring 学习与面试](system-design/framework/spring/Spring.md)
+- [Spring](system-design/framework/spring/Spring.md)
+- Mybatis
+- [SpringBoot基础](system-design/framework/spring/SpringBoot基础.md)
+- [SpringBoot核心——Web](system-design/framework/spring/SpringBoot核心——Web.md)
+- SpringBoot核心——数据库
 
 #### ZooKeeper
 
