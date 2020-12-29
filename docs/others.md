@@ -2,3 +2,4 @@
 
 [:lemon:markdown的表情](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
+[我使用的优秀工具](others/tools.md)
