@@ -4,7 +4,7 @@
 
 ## 延伸
 
-你也可以使用这些工具，抢东西
+你也可以使用这些工具，做一下其他事情，例如：抢东西
 
 ## 第三方工具
 
@@ -73,7 +73,7 @@ adb devices
 
 ##### Activity
 
-打开微信、淘宝
+打开`微信`、`淘宝`
 
 ```
 adb shell am start -n com.tencent.mm/.ui.LauncherUI
@@ -112,8 +112,6 @@ adb shell input keyevent keycode
 adb exec-out screencap -p > sc.png
 ```
 
-
-
 ## python
 
 ```python
@@ -122,12 +120,10 @@ import os
 
 adbShell = "adb shell  {cmdStr}"
 
-
 def execute(cmd):
     str = adbShell.format(cmdStr=cmd)
     print(str)
     os.system(str)
-
 
 if __name__ == '__main__':
     # 点击返回按键
@@ -145,7 +141,7 @@ if __name__ == '__main__':
 
 
 
-### 实例
+### 淘宝自动浏览
 
 ```python
 import os
@@ -232,6 +228,25 @@ if __name__=='__main__':
 ```
 
 
+
+### 自动刷抖音
+
+```python
+#coding:utf-8
+import time
+import subprocess
+i = 0
+#每次操作的间隔时间取决于手机配置，配置越高时间越短
+sleep_time = 5 
+# process = subprocess.Popen('adb shell input tap 14 1402',shell=True)
+for i in range(20):
+  #用popen设置shell=True不会弹出cmd框
+#   process = subprocess.Popen('adb shell input keyevent KEYCODE_BACK', shell=True)
+#   time.sleep(sleep_time)
+	process = subprocess.Popen('adb shell input swipe 300 600 300 100', shell=True)
+    time.sleep(sleep_time)
+    print(str(i+1) + 'clicks have been completed' )
+```
 
 
 
