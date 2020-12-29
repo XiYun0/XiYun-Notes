@@ -7,12 +7,12 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> -->
-  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
+  <!-- <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css"> -->
   <!-- <link rel="stylesheet" href="//unpkg.com/docsify/themes/buble.css"> -->
   <!-- <link rel="stylesheet" href="//unpkg.com/docsify/themes/dark.css"> -->
   <!-- <link rel="stylesheet" href="//unpkg.com/docsify/themes/pure.css"> -->
   <!-- <link rel="stylesheet" href="//unpkg.com/docsify/themes/dolphin.css"> -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css">
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css"> -->
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
 
@@ -37,12 +37,11 @@
       repo: 'https://github.com/XiYun0',
       maxLevel: 2,//最大支持渲染的标题层级
       //封面,_coverpage.md
-      //coverpage: true,
       auto2top: true,//切换页面后是否自动跳转到页面顶部
       //ga: 'UA-138586553-1',
       //logo: 'https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3logo-透明.png' ,
       
-      coverpage: false,
+      coverpage: true,
       loadSidebar: true,
       // loadSidebar: 'README.md',
       alias: {
@@ -51,14 +50,14 @@
       loadNavbar: false,//右上角栏
       subMaxLevel: 2,
 
-      search: {
-        //maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        paths: 'auto',
-        placeholder: '搜索',
-        noData: '找不到结果',
-        // 搜索标题的最大程级, 1 - 6
-        depth: 3,
-      },
+      // search: {
+      //   //maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+      //   paths: 'auto',
+      //   placeholder: '搜索',
+      //   noData: '找不到结果',
+      //   // 搜索标题的最大程级, 1 - 6
+      //   depth: 3,
+      // },
       // 字数统计
       count: {
         countable: true,

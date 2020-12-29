@@ -41,6 +41,14 @@
 
 ## Golang
 
+
+
+## Python
+
+
+
+
+
 ## 操作系统
 
 - [内存管理](operating-system/内存管理.md)
