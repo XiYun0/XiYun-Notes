@@ -66,18 +66,19 @@ adb devices
 ```
 查看所有应用列表：adb shell pm list packages
 查看系统应用列表：adb shell pm list packages -s
-查看第三方应用列表：adb shell pm list packages -3：
+查看第三方应用列表：adb shell pm list packages -3
 ```
 
 #### 启动应用
 
 ##### Activity
 
-打开`微信`、`淘宝`
+打开`微信`、`淘宝`、快手极速版
 
 ```
 adb shell am start -n com.tencent.mm/.ui.LauncherUI
 adb shell am start -n com.taobao.taobao/com.taobao.tao.welcome.Welcome
+adb shell am start -n com.kuaishou.nebula/com.yxcorp.gifshow.HomeActivity
 ```
 
 ##### Service
@@ -229,23 +230,29 @@ if __name__=='__main__':
 
 
 
-### 自动刷抖音
+### 快速极速版
 
 ```python
-#coding:utf-8
 import time
 import subprocess
-i = 0
-#每次操作的间隔时间取决于手机配置，配置越高时间越短
-sleep_time = 5 
-# process = subprocess.Popen('adb shell input tap 14 1402',shell=True)
-for i in range(20):
-  #用popen设置shell=True不会弹出cmd框
-#   process = subprocess.Popen('adb shell input keyevent KEYCODE_BACK', shell=True)
-#   time.sleep(sleep_time)
-	process = subprocess.Popen('adb shell input swipe 300 600 300 100', shell=True)
-    time.sleep(sleep_time)
-    print(str(i+1) + 'clicks have been completed' )
+import random
+
+command_kuaishou = 'adb shell am start -n com.kuaishou.nebula/com.yxcorp.gifshow.HomeActivity'  # 打开快速应用
+command_swipe = 'adb shell input swipe 300 600 300 100'   # 滑动视频,四个参数：起始点x坐标 起始点y坐标 结束点x坐标 结束点y坐标。
+# command_swipe = 'adb shell input swipe 500 100 500 1400'   # 滑动视频
+count = 0
+process = subprocess.Popen(command_kuaishou, shell=True)
+time.sleep(5)
+
+while(True):
+  count = count + 1
+  sleep_time = random.randint(10,15)
+    # process = subprocess.Popen('adb shell input keyevent KEYCODE_BACK', shell=True)
+
+  process1 = subprocess.Popen(command_swipe, shell=True)
+  time.sleep(sleep_time)
+  print("第" + str(count) + "次" + "睡眠时间为：" + str(sleep_time) + 'clicks have been completed' )
+
 ```
 
 ## 更高级点的
