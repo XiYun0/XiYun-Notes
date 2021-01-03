@@ -10,9 +10,18 @@
 
 [CheatEngine内存游戏辅助](others/CheatEngine.md)
 
+[抖音怎么赚钱的？](others/抖音怎么赚钱的.md)
+
+
+
 ### 协作工具
 
 [使用Git/GitHub/Markdown进行项目协作](https://xiedaimala.com/tasks/bd34186b-63f2-4e2d-9145-0c61e2cc0f63)
 
 [Git命令](others/Git命令.md)
 
+
+
+### 一些有用的视频
+
+[【收藏向】6分钟让你学会构图，拍照萌新变摄影大师！（手机摄影和相机摄影构图技巧）](https://www.bilibili.com/video/BV1Q64y1T7ox?from=search&seid=10358645162993562226)

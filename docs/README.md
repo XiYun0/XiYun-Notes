@@ -57,6 +57,7 @@
 - [OpenCV](python/OpenCV.md)
 - [python脚本控制手机软件！尽搞些花里胡哨的](python/python脚本控制手机软件.md)
 - [解放双手的自动化](python/自动化.md)
+- [自动抢货](python/自动抢货.md)
 - [游戏脚本](python/游戏脚本.md)
 - [数据可视化](python/数据可视化.md)
 
