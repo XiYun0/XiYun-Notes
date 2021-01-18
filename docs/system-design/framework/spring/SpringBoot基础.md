@@ -6,6 +6,8 @@
 
 # 基础入门
 
+
+
 ### 新建Maven项目
 
 初学者建议从Maven开始创建，而不是直接Spring
@@ -32,6 +34,14 @@ boot01-helloworld
 ```
 
 ### 创建主程序
+
+运行流程
+
+```
+resources/xml文件 -> dao层 -> 自动注入controller等 -> 启动类（包括MapperScan自动扫描dao） 
+```
+
+
 
 创建`com.xiyun.boot.MainApplication`类
 
