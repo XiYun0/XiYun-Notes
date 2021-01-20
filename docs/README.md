@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="https://github.com/XiYun0/MultiAgentLearning "><img src="https://img.shields.io/badge/阅读-read-brightgreen.svg" alt="阅读"></a>
+  <a href="#联系我"><img src="https://img.shields.io/badge/chat-微信群-blue.svg" alt="微信群"></a>
+</p>
+
+
+
+
+
 代码和绘图都放在了坚果云里面。
 
 ## Java
@@ -5,6 +14,7 @@
 ### 基础
 
 - [Java 基础](java/base/Java基础.md)
+- [Java 反射](java/base/Java反射.md)
 - [String源码](java/base/String源码.md)
 
 ### 容器
@@ -46,6 +56,10 @@
 ### 编程规范
 
 - [Java 编程规范](java/Java编程规范.md)
+
+### Java-GUI
+
+- [JavaFx](java/gui/JavaFx.md)
 
 ## Golang
 
@@ -100,7 +114,8 @@
 
 ### Redis
 
-- [Redis ](database/Redis/Redis.md)
+- [Redis ](database/Redis.md)
+- [安装](database/redis/Redis安装.md)
 
 ## 系统设计
 
@@ -122,6 +137,7 @@
 - [SpringBoot核心——数据访问](system-design/framework/spring/SpringBoot核心——数据访问.md)
 - [SpringBoot——Mybatis](system-design/framework/spring/SpringBoot——Mybatis.md)
 - [文件上传](system-design/framework/spring/SpringBoot文件上传.md)
+- 若依单模块前后端分离版
 
 #### ZooKeeper
 
