@@ -17,6 +17,7 @@ gitee阅读：
 - [x] Java编程的逻辑
 - [x] 深入理解Java虚拟机
 - [ ] 自己动手写Java虚拟机
+- [ ] Java性能权威指南
 - [x] Java并发编程的艺术
 - [ ] Java并发编程之美
 - [x] Go语言编程
@@ -68,12 +69,15 @@ gitee阅读：
 
 >Java与C++之间有一堵由内存动态分配和垃圾收集技术所围成的“高墙”，墙外面的人想进去，墙里面的人却想出来。
 
+书籍推荐：《深入理解Java虚拟机》、《自己动手写Java虚拟机》、《Java性能权威指南》
+
 ![img](图片/170ec7cd31581d15)
 
 1. [Class Files 结构](java/jvm/类文件结构.md)
+   1. 字符串常量池StringTable
 2. 类加载器子系统
-   1. [类加载过程](java/jvm/类加载过程.md)
-   2. [类加载器](java/jvm/类加载器.md)
+   1. [类加载过程](java/jvm/类加载过程.md)（广义的加载）
+   2. [类加载器](java/jvm/类加载器.md)（狭义的加载）
 3. [Java内存区域](java/jvm/Java内存区域.md)
 4. 执行引擎
    1. 解释器
@@ -85,6 +89,7 @@ gitee阅读：
 
 1. [JMM](java/juc/JMM.md)
 2. [Java锁](java/juc/Java锁.md)
+   1. Lock
 
 ## 编程规范
 
