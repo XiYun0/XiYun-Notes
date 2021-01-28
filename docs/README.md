@@ -8,9 +8,33 @@
 
 github阅读：https://xiyun0.github.io/XiYun-Notes/#/
 
+gitee阅读：
+
+# 资源
+
+## 书籍
+
+- [x] Java编程的逻辑
+- [x] 深入理解Java虚拟机
+- [ ] 自己动手写Java虚拟机
+- [x] Java并发编程的艺术
+- [ ] Java并发编程之美
+- [x] Go语言编程
+- [x] Hadoop权威指南
+- [ ] 高性能MySQL
+- [ ] 深入理解计算机系统
+- [x] 操作系统导论
+- [x] 算法图解
+- [ ] 剑指offer
+- [ ] 图解HTTP
 
 
 
+## 视频
+
+
+
+# 注：
 
 > 代码和绘图都放在了坚果云里面。
 
@@ -44,12 +68,18 @@ github阅读：https://xiyun0.github.io/XiYun-Notes/#/
 
 >Java与C++之间有一堵由内存动态分配和垃圾收集技术所围成的“高墙”，墙外面的人想进去，墙里面的人却想出来。
 
-1. [Java内存区域](java/jvm/Java内存区域.md)
-2. [JVM垃圾回收机制](java/jvm/JVM垃圾回收机制.md)
-3. [JDK 监控和故障处理工具](java/jvm/JDK监控和故障处理工具总结.md)
-4. [类文件结构](java/jvm/类文件结构.md)
-5. [类加载过程](java/jvm/类加载过程.md)
-6. [类加载器](java/jvm/类加载器.md)
+![img](图片/170ec7cd31581d15)
+
+1. [Class Files 结构](java/jvm/类文件结构.md)
+2. 类加载器子系统
+   1. [类加载过程](java/jvm/类加载过程.md)
+   2. [类加载器](java/jvm/类加载器.md)
+3. [Java内存区域](java/jvm/Java内存区域.md)
+4. 执行引擎
+   1. 解释器
+   2. 即时编译器
+5. [JVM垃圾回收机制](java/jvm/JVM垃圾回收机制.md)
+6. [JDK 监控和故障处理工具](java/jvm/JDK监控和故障处理工具总结.md)
 
 ## JUC
 
@@ -163,13 +193,16 @@ github阅读：https://xiyun0.github.io/XiYun-Notes/#/
 
 ### Pytorch
 
-1. [张量Tensor](ai/deeplearning/pytorch/张量Tensor.md)
+1. [pytorch笔记](ai/deeplearning/pytorch/pytorch笔记.md)
+2. [张量Tensor](ai/deeplearning/pytorch/张量Tensor.md)
 
 ## 强化学习
 
 
 
 ### 多智能体强化学习
+
+> 这部分笔记在下面这个仓库
 
 1. [多智能体系统学习指南](https://xiyun0.github.io/MultiAgentLearning/#/)
 
