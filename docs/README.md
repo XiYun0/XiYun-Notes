@@ -12,7 +12,47 @@ gitee阅读：
 
 # 资源
 
+## 开源项目
+
+[JavaGuide](https://snailclimb.gitee.io/javaguide/#/?id=java)
+
+[CS-Notes](http://www.cyc2018.xyz/)
+
+[互联网 Java 工程师进阶知识完全扫盲](https://doocs.gitee.io/advanced-java/#/?id=互联网-java-工程师进阶知识完全扫盲)
+
+[Java 思维导图](https://github.com/huangliangyun/MindManager)
+
+[Java知识体系总结（2021版）](https://blog.csdn.net/guorui_java/article/details/112391105)
+
+[深入浅出Java多线程](https://redspider.gitbook.io/concurrent/)
+
+[spring-analysis](https://github.com/seaswalker/spring-analysis)  Spring**源码层面**
+
+[JDK](https://github.com/seaswalker/JDK)   **源码层面**
+
+[互联网公司常用框架源码赏析](https://doocs.gitee.io/source-code-hunter/#/?id=互联网公司常用框架源码赏析) **源码层面**
+
+[Java 虚拟机底层原理知识总结](https://doocs.gitee.io/jvm/#/?id=java-虚拟机底层原理知识总结)
+
+[DesignPattern   设计模式](https://github.com/youlookwhat/DesignPattern)
+
+[美团技术团队](https://tech.meituan.com)
+
+[淘宝数据库内核月报](http://mysql.taobao.org/monthly/)
+
+[动画Leecode ](https://github.com/MisterBooo/LeetCodeAnimation)
+
+**[小浩算法](https://www.geekxh.com/)**
+
+[cookbook](https://books.halfrost.com/leetcode/) Go语言的算法刷题
+
+[To Be Top Javaer - Java工程师成神之路 ](http://hollischuang.gitee.io/tobetopJavaer/#/)
+
+[《Java 编程思想》第5版](https://lingcoder.gitee.io/onJava8/#/)
+
 ## 书籍
+
+> 看过的和待看书籍
 
 - [x] Java编程的逻辑
 - [x] 深入理解Java虚拟机
@@ -21,17 +61,69 @@ gitee阅读：
 - [x] Java并发编程的艺术
 - [ ] Java并发编程之美
 - [x] Go语言编程
+- [ ] Golang101
+- [ ] JavaScript高级程序设计
+- [ ] 你不知道的 JavaScript
 - [x] Hadoop权威指南
 - [ ] 高性能MySQL
+- [ ] Redis设计与实现
+- [ ] Redis深度历险
 - [ ] 深入理解计算机系统
 - [x] 操作系统导论
 - [x] 算法图解
 - [ ] 剑指offer
 - [ ] 图解HTTP
+- [x] Hadoop权威指南
+- [ ] Hbase原理与实践
+- [x] 强化学习导论
 
 
 
 ## 视频
+
+哈工大李志军：[操作系统](https://www.bilibili.com/video/BV1d4411v7u7)
+
+河北师大韩立刚：[计算机网络](https://www.bilibili.com/video/BV1Qb41117mq?from=search&seid=9573054373780663094)
+
+方方方：[计算机网络](https://www.bilibili.com/video/BV1yE411G7Ma?from=search&seid=18265418774097654717) 
+
+王道考研：计算机网络
+
+青岛大学王卓：[数据结构与算法](https://www.bilibili.com/video/BV1L54y1271w)
+
+小象学院：[LeetCode刷题](https://www.bilibili.com/video/BV1GW411Q77S)
+
+尚硅谷周阳：JUC（尤其是AQS）、JVM、MySQL高级、Redis、[SpringCloud](https://www.bilibili.com/video/BV18E411x7eT?from=search&seid=7671757036737902743)
+
+尚硅谷宋红康：Java、JVM
+
+传智播客毕向东：Java基础
+
+阿里、美团黄俊：Java
+
+黑马满一航：[JUC](https://www.bilibili.com/video/BV16J411h7Rd?from=search&seid=9274118365320332992)、[JVM](https://www.bilibili.com/video/BV1yE411Z7AP?from=search&seid=4169341413289868120)
+
+黑马水哥：[JavaIO](https://www.bilibili.com/video/BV1kT4y1M7vt?)
+
+动力节点老杜：MySQL入门
+
+马士兵：[MySQL索引](https://www.bilibili.com/video/BV1Pp4y1k7W4?from=search&seid=15149069187344634097)、JVM、Spring、设计模式
+
+尚硅谷王泽：[Spring5](https://www.bilibili.com/video/BV1Vf4y127N5)  
+
+尚硅谷雷丰阳：[SSM](https://www.bilibili.com/video/BV1uE411C7CW)、[SpringBoot2](https://www.bilibili.com/video/BV19K4y1L7MT)、[Dubbo](https://www.bilibili.com/video/BV1ns411c7jV?from=search&seid=41594708415770750)
+
+狂神：注解、Redis、Spring、Springboot
+
+黑马：[Redis](https://www.bilibili.com/video/BV1XV411o7xP?from=search&seid=10498547370795702692)  推荐
+
+极客班：[设计模式](https://www.bilibili.com/video/BV1kW411P7KS?from=search&seid=17464004731703575725)
+
+尚硅谷武晟然：Flink
+
+尚硅谷大海哥：[离线电商数仓](https://www.bilibili.com/video/BV1dD4y1d7wL?)
+
+
 
 
 
@@ -90,6 +182,13 @@ gitee阅读：
 1. [JMM](java/juc/JMM.md)
 2. [Java锁](java/juc/Java锁.md)
    1. Lock
+   2. AQS
+   3. ReentranLock
+   4. 读写锁
+3. 并发容器
+4. 工具类
+5. 阻塞队列
+6. 线程池
 
 ## 编程规范
 
@@ -98,6 +197,7 @@ gitee阅读：
 ## Java-GUI
 
 1. [JavaFx](java/gui/JavaFx.md)
+2. Swing
 
 ## 源码阅读
 
@@ -108,6 +208,7 @@ gitee阅读：
 ## SSM
 
 - [Spring](system-design/framework/spring/Spring.md)
+- SpringMVC
 - Mybatis
 
 ## SpringBoot
@@ -123,9 +224,11 @@ gitee阅读：
 
 ## 操作系统
 
-- [内存管理](operating-system/内存管理.md)
-
+- 虚拟化
+  - 虚拟化CPU
+  - [内存管理](operating-system/内存管理.md)
 - [死锁](operating-system/死锁.md)
+- 持久化
 
 ## 计算机网络
 
