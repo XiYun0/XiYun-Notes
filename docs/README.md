@@ -18,7 +18,9 @@ gitee阅读：
 
 [CS-Notes](http://www.cyc2018.xyz/)
 
-[互联网 Java 工程师进阶知识完全扫盲](https://doocs.gitee.io/advanced-java/#/?id=互联网-java-工程师进阶知识完全扫盲)
+[互联网 Java 工程师进阶知识完全扫盲](https://doocs.gitee.io/advanced-java/#/?id=互联网-java-工程师进阶知识完全扫盲)——中华石杉第1、2季
+
+[MRCODE-BOOK](https://zq99299.github.io/note-book/)——中华石杉亿级流量
 
 [Java 思维导图](https://github.com/huangliangyun/MindManager)
 
@@ -26,11 +28,11 @@ gitee阅读：
 
 [深入浅出Java多线程](https://redspider.gitbook.io/concurrent/)
 
-[spring-analysis](https://github.com/seaswalker/spring-analysis)  Spring**源码层面**
+[spring-analysis](https://github.com/seaswalker/spring-analysis)  Spring源码
 
-[JDK](https://github.com/seaswalker/JDK)   **源码层面**
+[JDK](https://github.com/seaswalker/JDK)   源码层面
 
-[互联网公司常用框架源码赏析](https://doocs.gitee.io/source-code-hunter/#/?id=互联网公司常用框架源码赏析) **源码层面**
+[互联网公司常用框架源码赏析](https://doocs.gitee.io/source-code-hunter/#/?id=互联网公司常用框架源码赏析) 源码层面
 
 [Java 虚拟机底层原理知识总结](https://doocs.gitee.io/jvm/#/?id=java-虚拟机底层原理知识总结)
 
@@ -53,6 +55,8 @@ gitee阅读：
 ## 书籍
 
 > 看过的和待看书籍
+
+1. 技术
 
 - [x] Java编程的逻辑
 - [x] 深入理解Java虚拟机
@@ -77,9 +81,13 @@ gitee阅读：
 - [ ] Hbase原理与实践
 - [x] 强化学习导论
 
+2. 思维
 
+- [ ] 程序员修炼之道：从小工到专家
 
 ## 视频
+
+> 推荐视频
 
 哈工大李志军：[操作系统](https://www.bilibili.com/video/BV1d4411v7u7)
 
@@ -107,11 +115,13 @@ gitee阅读：
 
 动力节点老杜：MySQL入门
 
+中华石杉
+
 马士兵：[MySQL索引](https://www.bilibili.com/video/BV1Pp4y1k7W4?from=search&seid=15149069187344634097)、JVM、Spring、设计模式
 
 尚硅谷王泽：[Spring5](https://www.bilibili.com/video/BV1Vf4y127N5)  
 
-尚硅谷雷丰阳：[SSM](https://www.bilibili.com/video/BV1uE411C7CW)、[SpringBoot2](https://www.bilibili.com/video/BV19K4y1L7MT)、[Dubbo](https://www.bilibili.com/video/BV1ns411c7jV?from=search&seid=41594708415770750)
+尚硅谷雷丰阳：[SSM](https://www.bilibili.com/video/BV1uE411C7CW)、[SpringBoot2](https://www.bilibili.com/video/BV19K4y1L7MT)、[Dubbo](https://www.bilibili.com/video/BV1ns411c7jV?from=search&seid=41594708415770750)、谷粒商城
 
 狂神：注解、Redis、Spring、Springboot
 
@@ -238,8 +248,8 @@ gitee阅读：
 
 ## Linux
 
+- 虚拟机Linux安装
 - [后端程序员必备的 Linux 基础知识](operating-system/后端程序员必备的Linux基础知识.md)  
-
 - [Shell 编程入门](operating-system/Shell.md) 
 
 ## 数据结构与算法
@@ -265,19 +275,69 @@ gitee阅读：
 - [Redis ](database/Redis.md)
 - [安装](database/redis/Redis安装.md)
 
+## ElasticSearch
+
+## Hbase
+
+
+
+# 开发工具
+
+
+
+1. lombok
+2. jerbel——热部署
+
+
+
 # 系统设计
 
 ## 设计模式
 
 - [设计模式系列文章](system-design/设计模式.md)
 
-## ZooKeeper
+## 高并发
+
+1. 缓存架构——支撑高并发
+2. 异步队列架构
+3. 分库分表
+
+## 高可用
+
+
+
+## 分布式
+
+1. 集群
+
+## 微服务
+
+> 微服务：每个项目都是独立自治的
+
+### 分布式组件
+
+1. [SpringCloud](system-design/micro-service/SpringCloud.md)
+2. [Nacos](system-design/micro-service/Nacos.md)-服务注册中心、配置中心
+3. Sentinel
+4. [Gateway](system-design/micro-service/Gateway.md)-网关
+
+#### ZooKeeper
 
 - [ZooKeeper 相关概念总结](system-design/framework/ZooKeeper.md)
 
 - [ZooKeeper 数据模型和常见命令](system-design/framework/ZooKeeper数据模型和常见命令.md)
 
+## Docker
 
+1. [Docker](system-design/docker/Docker.md)
+
+# 大数据
+
+## Hadoop
+
+## Flink
+
+## Spark
 
 # Golang
 
