@@ -2,9 +2,15 @@
   <a href="https://github.com/XiYun0/MultiAgentLearning "><img src="https://img.shields.io/badge/阅读-read-brightgreen.svg" alt="阅读"></a>
   <a href="#联系我"><img src="https://img.shields.io/badge/chat-微信群-blue.svg" alt="微信群"></a>
 </p>
+
+
+>是故易有太极，是生两仪，两仪生四象，四象生八卦，八卦定吉凶，吉凶生大业。——《系辞》
+
+>伏羲演八卦而可知万物，万物皆对象！
+
 > 写下一个小心愿，成为一名架构师。
 
-国内源阅读
+
 
 > github阅读：https://xiyun0.github.io/XiYun-Notes/#/
 >
@@ -173,7 +179,7 @@
 
 书籍推荐：《深入理解Java虚拟机》、《自己动手写Java虚拟机》、《Java性能权威指南》
 
-![img](图片/170ec7cd31581d15)
+<img src="图片/170ec7cd31581d15" alt="img" style="zoom: 80%;" />
 
 1. [Class Files 结构](java/jvm/类文件结构.md)
    1. 字符串常量池StringTable
@@ -349,9 +355,13 @@
 
 ## Hadoop
 
+> 大数据存储引擎
+
 ## Flink
 
 ## Spark
+
+## Flume
 
 # Golang
 
@@ -367,8 +377,6 @@
 - [游戏脚本](python/游戏脚本.md)
 - [数据可视化](python/数据可视化.md)
 
-
-
 # 人工智能
 
 ## 深度学习
@@ -380,7 +388,7 @@
 
 ## 强化学习
 
-
+1. 什么是强化学习
 
 ### 多智能体强化学习
 
