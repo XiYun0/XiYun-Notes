@@ -4,144 +4,25 @@
 </p>
 
 
->是故易有太极，是生两仪，两仪生四象，四象生八卦，八卦定吉凶，吉凶生大业。——《系辞》
+>github阅读：https://xiyun0.github.io/XiYun-Notes/#/
+>
+>gitee阅读：
 
+>是故易有太极，是生两仪，两仪生四象，四象生八卦，八卦定吉凶，吉凶生大业。——《系辞》
+>
 >伏羲演八卦而可知万物，万物皆对象！
+
+
 
 > 写下一个小心愿，成为一名架构师。
 
-
-
-> github阅读：https://xiyun0.github.io/XiYun-Notes/#/
->
-> gitee阅读：
-
 # 资源
 
-## 开源项目
+## [开源项目](others/开源项目.md)
 
-[JavaGuide](https://snailclimb.gitee.io/javaguide/#/?id=java)
+## [视频](others/视频.md)
 
-[CS-Notes](http://www.cyc2018.xyz/)
-
-[互联网 Java 工程师进阶知识完全扫盲](https://doocs.gitee.io/advanced-java/#/?id=互联网-java-工程师进阶知识完全扫盲)——中华石杉第1、2季
-
-[MRCODE-BOOK](https://zq99299.github.io/note-book/)——中华石杉亿级流量
-
-[Java 思维导图](https://github.com/huangliangyun/MindManager)
-
-[Java知识体系总结（2021版）](https://blog.csdn.net/guorui_java/article/details/112391105)
-
-[深入浅出Java多线程](https://redspider.gitbook.io/concurrent/)
-
-[spring-analysis](https://github.com/seaswalker/spring-analysis)  Spring源码
-
-[JDK](https://github.com/seaswalker/JDK)   源码层面
-
-[互联网公司常用框架源码赏析](https://doocs.gitee.io/source-code-hunter/#/?id=互联网公司常用框架源码赏析) 源码层面
-
-[Java 虚拟机底层原理知识总结](https://doocs.gitee.io/jvm/#/?id=java-虚拟机底层原理知识总结)
-
-[DesignPattern   设计模式](https://github.com/youlookwhat/DesignPattern)
-
-[美团技术团队](https://tech.meituan.com)
-
-[淘宝数据库内核月报](http://mysql.taobao.org/monthly/)
-
-[动画Leecode ](https://github.com/MisterBooo/LeetCodeAnimation)
-
-**[小浩算法](https://www.geekxh.com/)**
-
-[cookbook](https://books.halfrost.com/leetcode/) Go语言的算法刷题
-
-[To Be Top Javaer - Java工程师成神之路 ](http://hollischuang.gitee.io/tobetopJavaer/#/)
-
-[《Java 编程思想》第5版](https://lingcoder.gitee.io/onJava8/#/)
-
-## 书籍
-
-> 看过的和待看书籍
-
-1. 技术
-
-- [x] Java编程的逻辑
-- [x] 深入理解Java虚拟机
-- [ ] 自己动手写Java虚拟机
-- [ ] Java性能权威指南
-- [x] Java并发编程的艺术
-- [ ] Java并发编程之美
-- [x] Go语言编程
-- [ ] Golang101
-- [ ] JavaScript高级程序设计
-- [ ] 你不知道的 JavaScript
-- [x] Hadoop权威指南
-- [ ] 高性能MySQL
-- [ ] Redis设计与实现
-- [ ] Redis深度历险
-- [ ] 深入理解计算机系统
-- [x] 操作系统导论
-- [x] 算法图解
-- [ ] 剑指offer
-- [ ] 图解HTTP
-- [x] Hadoop权威指南
-- [ ] Hbase原理与实践
-- [x] 强化学习导论
-
-2. 思维
-
-- [ ] 程序员修炼之道：从小工到专家
-
-## 视频
-
-> 推荐视频
-
-哈工大李志军：[操作系统](https://www.bilibili.com/video/BV1d4411v7u7)
-
-河北师大韩立刚：[计算机网络](https://www.bilibili.com/video/BV1Qb41117mq?from=search&seid=9573054373780663094)
-
-方方方：[计算机网络](https://www.bilibili.com/video/BV1yE411G7Ma?from=search&seid=18265418774097654717) 
-
-王道考研：计算机网络
-
-青岛大学王卓：[数据结构与算法](https://www.bilibili.com/video/BV1L54y1271w)
-
-小象学院：[LeetCode刷题](https://www.bilibili.com/video/BV1GW411Q77S)
-
-尚硅谷周阳：JUC（尤其是AQS）、JVM、MySQL高级、Redis、[SpringCloud](https://www.bilibili.com/video/BV18E411x7eT?from=search&seid=7671757036737902743)
-
-尚硅谷宋红康：Java、JVM
-
-传智播客毕向东：Java基础
-
-阿里、美团黄俊：Java
-
-黑马满一航：[JUC](https://www.bilibili.com/video/BV16J411h7Rd?from=search&seid=9274118365320332992)、[JVM](https://www.bilibili.com/video/BV1yE411Z7AP?from=search&seid=4169341413289868120)
-
-黑马水哥：[JavaIO](https://www.bilibili.com/video/BV1kT4y1M7vt?)
-
-动力节点老杜：MySQL入门
-
-中华石杉
-
-马士兵：[MySQL索引](https://www.bilibili.com/video/BV1Pp4y1k7W4?from=search&seid=15149069187344634097)、JVM、Spring、设计模式
-
-尚硅谷王泽：[Spring5](https://www.bilibili.com/video/BV1Vf4y127N5)  
-
-尚硅谷雷丰阳：[SSM](https://www.bilibili.com/video/BV1uE411C7CW)、[SpringBoot2](https://www.bilibili.com/video/BV19K4y1L7MT)、[Dubbo](https://www.bilibili.com/video/BV1ns411c7jV?from=search&seid=41594708415770750)、谷粒商城
-
-狂神：注解、Redis、Spring、Springboot
-
-黑马：[Redis](https://www.bilibili.com/video/BV1XV411o7xP?from=search&seid=10498547370795702692)  推荐
-
-极客班：[设计模式](https://www.bilibili.com/video/BV1kW411P7KS?from=search&seid=17464004731703575725)
-
-尚硅谷武晟然：Flink
-
-尚硅谷大海哥：[离线电商数仓](https://www.bilibili.com/video/BV1dD4y1d7wL?)
-
-
-
-
+## [书单](others/书单.md)
 
 # 注：
 
@@ -179,6 +60,8 @@
 
 书籍推荐：《深入理解Java虚拟机》、《自己动手写Java虚拟机》、《Java性能权威指南》
 
+视频推荐：尚硅谷宋红康、黑马满一航
+
 <img src="图片/170ec7cd31581d15" alt="img" style="zoom: 80%;" />
 
 1. [Class Files 结构](java/jvm/类文件结构.md)
@@ -194,6 +77,8 @@
 6. [JDK 监控和故障处理工具](java/jvm/JDK监控和故障处理工具总结.md)
 
 ## JUC
+
+视频推荐：尚硅谷周阳、黑马满一航
 
 1. [JMM](java/juc/JMM.md)
 2. [Java锁](java/juc/Java锁.md)
@@ -274,14 +159,18 @@
 
 ## MySQL
 
-- [MySQL](database/MySQL.md)
+1. [MySQL概述](database/MySQL.md)
+2. 索引
+3. 存储引擎
 
 ## Redis
 
-1. [Redis ](database/Redis.md)
+1. [Redis概述 ](database/Redis.md)
 2. [Redis安装](database/redis/Redis安装.md)
 3. [Redis持久化及其意义](database/redis/Redis持久化.md)
-4. [缓存雪崩、缓存穿透](database/redis/缓存雪崩、缓存穿透.md)
+4. [LRU缓存清除算法](database/redis/LRU缓存清除算法.md)
+5. [缓存雪崩、缓存穿透](database/redis/缓存雪崩、缓存穿透.md)
+6. [Redis的实战](database/redis/Redis实战.md)
 
 ## ElasticSearch
 
@@ -393,8 +282,8 @@
 ### 多智能体强化学习
 
 > 这部分笔记在下面这个仓库
-
-1. [多智能体系统学习指南](https://xiyun0.github.io/MultiAgentLearning/#/)
+>
+> - [多智能体系统学习指南](https://xiyun0.github.io/MultiAgentLearning/#/)
 
 # 其他
 
