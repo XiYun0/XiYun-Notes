@@ -2,13 +2,13 @@
   <a href="https://github.com/XiYun0/MultiAgentLearning "><img src="https://img.shields.io/badge/阅读-read-brightgreen.svg" alt="阅读"></a>
   <a href="#联系我"><img src="https://img.shields.io/badge/chat-微信群-blue.svg" alt="微信群"></a>
 </p>
-
+> 写下一个小心愿，成为一名架构师。
 
 国内源阅读
 
-github阅读：https://xiyun0.github.io/XiYun-Notes/#/
-
-gitee阅读：
+> github阅读：https://xiyun0.github.io/XiYun-Notes/#/
+>
+> gitee阅读：
 
 # 资源
 
@@ -275,6 +275,7 @@ gitee阅读：
 1. [Redis ](database/Redis.md)
 2. [Redis安装](database/redis/Redis安装.md)
 3. [Redis持久化及其意义](database/redis/Redis持久化.md)
+4. [缓存雪崩、缓存穿透](database/redis/缓存雪崩、缓存穿透.md)
 
 ## ElasticSearch
 
@@ -311,7 +312,13 @@ gitee阅读：
 
 ## 高可用
 
+1. [什么是高可用架构](system-design/high-available/什么是高可用架构.md)
 
+### hystrix
+
+限流、熔断、降级
+
+### Sentinel
 
 ## 分布式
 
@@ -325,7 +332,7 @@ gitee阅读：
 
 1. [SpringCloud](system-design/micro-service/SpringCloud.md)
 2. [Nacos](system-design/micro-service/Nacos.md)-服务注册中心、配置中心
-3. Sentinel
+3. Sentinel-取代hystrix
 4. [Gateway](system-design/micro-service/Gateway.md)-网关
 
 #### ZooKeeper
