@@ -272,8 +272,9 @@ gitee阅读：
 
 ## Redis
 
-- [Redis ](database/Redis.md)
-- [安装](database/redis/Redis安装.md)
+1. [Redis ](database/Redis.md)
+2. [Redis安装](database/redis/Redis安装.md)
+3. [Redis持久化及其意义](database/redis/Redis持久化.md)
 
 ## ElasticSearch
 
@@ -298,9 +299,15 @@ gitee阅读：
 
 ## 高并发
 
-1. 缓存架构——支撑高并发
-2. 异步队列架构
-3. 分库分表
+### 缓存架构
+
+>Redis——支撑高并发 
+
+
+
+### 异步队列架构
+
+### 分库分表
 
 ## 高可用
 
