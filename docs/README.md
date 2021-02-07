@@ -18,11 +18,9 @@
 
 # 资源
 
-## [开源项目](others/开源项目.md)
-
-## [视频](others/视频.md)
-
-## [书单](others/书单.md)
+1. [开源项目](others/开源项目.md)
+2. [视频](others/视频.md)
+3. [书单](others/书单.md)
 
 # 注：
 
