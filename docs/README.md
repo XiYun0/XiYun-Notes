@@ -22,7 +22,11 @@
 
 1. [开源项目](others/开源项目.md)
 2. [视频](others/视频.md)
+   1. Java：毕向东Java基础、宋红康JVM、满一航JVM和JUC、周阳JUC
+   2. 系统架构设计的视频：雷丰阳谷粒商城、周阳SpringCloud、石杉亿级流量项目
 3. [书单](others/书单.md)
+
+
 
 # 注：
 
@@ -92,6 +96,9 @@
 ## 编程规范
 
 1. [Java 编程规范](java/Java编程规范.md)
+2. [Java命名](java/Java命名.md)
+3. [在IDEA中编写优雅简洁的Java代码](java/编写优雅简洁的Java代码.md)
+4. [RestFul API 简明教程](https://snailclimb.gitee.io/javaguide/#/docs/system-design/coding-way/RESTfulAPI%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B)
 
 ## Java-GUI
 
@@ -155,6 +162,8 @@
 
 # 数据库
 
+1. [ORM框架](database/ORM框架.md)
+
 ## MySQL
 
 1. [MySQL概述](database/MySQL.md)
@@ -165,10 +174,14 @@
 
 1. [Redis概述 ](database/Redis.md)
 2. [Redis安装](database/redis/Redis安装.md)
-3. [Redis持久化及其意义](database/redis/Redis持久化.md)
-4. [LRU缓存清除算法](database/redis/LRU缓存清除算法.md)
-5. [缓存雪崩、缓存穿透](database/redis/缓存雪崩、缓存穿透.md)
-6. [Redis的实战](database/redis/Redis实战.md)
+3. [Redis缓存](database/redis/Redis缓存.md)——分布式缓存中间件
+4. [Redis分布式锁](database/redis/Redis分布式锁.md)
+   1. Redisson
+   2. [缓存数据一致性](database/redis/缓存数据一致性.md)
+5. [Redis持久化及其意义](database/redis/Redis持久化.md)
+6. [LRU缓存清除算法](database/redis/LRU缓存清除算法.md)
+7. [缓存雪崩、缓存穿透](database/redis/缓存雪崩、缓存穿透.md)
+8. [Redis的实战](database/redis/Redis实战.md)
 
 ## ElasticSearch
 
@@ -176,12 +189,7 @@
 
 
 
-# 开发工具
 
-
-
-1. lombok
-2. jerbel——热部署
 
 
 
@@ -197,9 +205,17 @@
 
 ### 缓存架构
 
->Redis——支撑高并发 
+> 推荐视频：中华石杉亿级流量项目、雷丰阳谷粒商城
 
+- 何时需要缓存
 
+1. 缓存
+
+   1. 本地缓存及其在分布式系统下的问题——Map
+   2. 分布式缓存、缓存中间件
+      1. [Redis](#Redis)
+   2. SpringCache
+2. 分布式锁，与之对应的就是synchronized、Lock那一套的本地锁
 
 ### 异步队列架构
 
