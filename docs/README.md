@@ -132,20 +132,32 @@
 - 虚拟化
   - 虚拟化CPU
   - [内存管理](operating-system/内存管理.md)
+- 进程管理
 - [死锁](operating-system/死锁.md)
 - 持久化
 
-## 计算机网络
-
-- [何为网络？](network/何为网络.md)
-
-- [计算机网络面试题]()
-
-## Linux
+### Linux
 
 - 虚拟机Linux安装
 - [后端程序员必备的 Linux 基础知识](operating-system/后端程序员必备的Linux基础知识.md)  
 - [Shell 编程入门](operating-system/Shell.md) 
+
+## 计算机网络
+
+> 快递收发
+
+- [何为网络？](network/何为网络.md)
+
+- 计算机网络面试题
+
+  ↓自顶向下↓
+
+1. [应用层](network/应用层.md)
+2. [传输层](network/传输层.md)
+3. [网络层](network/网络层.md)
+4. [数据链路层](network/网络层.md)
+
+
 
 ## 数据结构与算法
 
@@ -298,6 +310,8 @@
 
 ## 深度学习
 
+1. 深度学习论文
+
 ### Pytorch
 
 1. [pytorch笔记](ai/deeplearning/pytorch/pytorch笔记.md)
@@ -317,4 +331,4 @@
 
 # 其他
 
-1. [其他](others.md)
+- [其他](others.md)
