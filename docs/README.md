@@ -24,7 +24,7 @@
    1. Java：毕向东Java基础、宋红康JVM、满一航JVM和JUC、周阳JUC
    2. 系统架构设计的视频：雷丰阳谷粒商城、周阳SpringCloud、石杉亿级流量项目
 3. [我的书单](others/书单.md)
-4. [UP主、技术大神、培训机构](others/UP主、技术大神)
+4. [UP主、技术大神、大厂、培训机构](others/UP主、技术大神)
 
 # 注：
 

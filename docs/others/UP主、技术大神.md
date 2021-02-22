@@ -8,6 +8,15 @@
 6. [Ele实验室](https://space.bilibili.com/481434238)——科普
 7. [偶尔有点小迷糊](https://space.bilibili.com/39665558)——科普
 
+## 大厂
+
+- [阿里技术沙龙](http://club.alibabatech.org/)
+- [美团点评技术团队](http://tech.meituan.com/)
+- [IBM中国java技术社区](http://www.ibm.com/developerworks/cn/java/)
+- [OneAPM团队技术博客](http://blog.oneapm.com/)
+- [淘宝测试团队技术博客](http://test.taobao.com/index.htm)
+- [阿里云栖团队技术博客](https://yq.aliyun.com/articles/)
+
 ## 培训机构
 
 1. 尚硅谷

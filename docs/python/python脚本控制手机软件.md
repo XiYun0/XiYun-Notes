@@ -257,6 +257,45 @@ while(True):
 
 ```
 
+## 双开，多开，赚钱之道！
+
+坐标自己调试，我的手机型号为荣耀V20，上面应用占比较小，下面占比大
+
+```python
+import time
+import subprocess
+import random
+
+# command_kuaishou = 'adb shell am start -n com.kuaishou.nebula/com.yxcorp.gifshow.HomeActivity'  # 打开快速应用
+
+# command_swipe = 'adb shell input swipe 300 600 300 100'   # 滑动视频,四个参数：起始点x坐标 起始点y坐标 结束点x坐标 结束点y坐标。
+command_swipe = 'adb shell input swipe 300 1200 300 700'   # 滑动视频,四个参数：起始点x坐标 起始点y坐标 结束点x坐标 结束点y坐标。
+command_swipe1 = 'adb shell input swipe 300 450 300 0'   # 滑动视频,四个参数：起始点x坐标 起始点y坐标 结束点x坐标 结束点y坐标。
+# command_swipe = 'adb shell input tap 500 500'
+
+# command_swipe = 'adb shell input swipe 500 100 500 1400'   # 滑动视频
+count = 0
+# process = subprocess.Popen(command_kuaishou, shell=True)
+time.sleep(2)
+
+for i in range(7000):
+  count = count + 1
+  sleep_time = random.randint(3,6)
+    # process = subprocess.Popen('adb shell input keyevent KEYCODE_BACK', shell=True)
+
+
+  process1 = subprocess.Popen(command_swipe, shell=True)
+  time.sleep(sleep_time)
+
+  subprocess.Popen(command_swipe1, shell=True)
+
+  time.sleep(sleep_time)
+  print("第" + str(count) + "次" + "睡眠时间为：" + str(sleep_time) + 'clicks have been completed' )
+
+```
+
+
+
 ## 更高级点的
 
 ```
