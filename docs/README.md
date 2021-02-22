@@ -23,7 +23,7 @@
 2. [视频](others/视频.md)
    1. Java：毕向东Java基础、宋红康JVM、满一航JVM和JUC、周阳JUC
    2. 系统架构设计的视频：雷丰阳谷粒商城、周阳SpringCloud、石杉亿级流量项目
-3. [书单](others/书单.md)
+3. [我的书单](others/书单.md)
 4. [UP主、技术大神](others/UP主、技术大神)
 
 # 注：
@@ -51,7 +51,7 @@
 
 ## 集合（容器）
 
-> `集合`就是把一组拥有相同类型的变量保存起来的`容器`。
+> 容器类就是容纳并管理多项数据的类
 
 1. [Java集合面试总结](java/base/Java集合.md)
 
@@ -163,13 +163,16 @@
 
 ### 数据结构
 
-- [数据结构知识学习与面试](dataStructures-algorithms/数据结构.md)
+> 工具
+
+1. [数据结构知识学习与面试](dataStructures-algorithms/数据结构.md)
 
 ### 算法
 
-- [算法学习资源推荐](dataStructures-algorithms/算法学习资源推荐.md)
+> 实现的方法
 
-- [刷爆力扣和剑指！](dataStructures-algorithms/刷爆力扣和剑指！.md)
+1. [算法学习资源推荐](dataStructures-algorithms/算法学习资源推荐.md)
+2. [刷爆力扣和剑指！](dataStructures-algorithms/刷爆力扣和剑指！.md)
 
 # 数据库
 
@@ -259,7 +262,7 @@
 
 ### 分布式组件
 
-1. [SpringCloud](system-design/micro-service/SpringCloud.md)
+1. [SpringCloud项目创建步骤](system-design/micro-service/SpringCloud.md)
 2. [Nacos](system-design/micro-service/Nacos.md)-服务注册中心、配置中心
 3. Sentinel-取代hystrix
 4. [Gateway](system-design/micro-service/Gateway.md)-网关
@@ -272,7 +275,8 @@
 
 ## Docker
 
-1. [Docker](system-design/docker/Docker.md)
+1. [Docker介绍](system-design/docker/Docker.md)
+2. [Linux安装Docker](system-design/docker/Linux安装Docker.md)
 
 # 大数据
 
@@ -319,9 +323,9 @@
 
 ## 强化学习
 
-1. 什么是强化学习
-2. 强化学习环境与Gym
-3. 强化学习论文
+> 我的研究方向，这部分笔记在下面这个仓库
+>
+> - [多智能体系统学习指南](https://xiyun0.github.io/MultiAgentLearning/#/)
 
 ### 多智能体强化学习
 
