@@ -7,3 +7,11 @@
 5. [哈士奇-柏羲](https://space.bilibili.com/232459430/video?tid=0&page=1&keyword=&order=pubdate)——阿里、美团Java架构师黄俊
 6. [Ele实验室](https://space.bilibili.com/481434238)——科普
 7. [偶尔有点小迷糊](https://space.bilibili.com/39665558)——科普
+
+## 培训机构
+
+1. 尚硅谷
+2. 黑马
+3. 动力节点
+4. 千锋
+
