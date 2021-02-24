@@ -10,7 +10,9 @@ public class HelloWorld {
 
 
 
+## 引用
 
+引用就像气球和绳子，对象就像人。
 
 
 

@@ -16,6 +16,7 @@
 
 > 写下一个小心愿，成为一名架构师。
 >
+> 正在完成的项目：手写RPC框架，https://github.com/he2121/MyRPCFromZero
 
 # 资源
 
@@ -30,6 +31,11 @@
 
 > 代码和绘图都放在了坚果云里面。
 
+# 简历
+
+1. [我的简历](others/resume/我的简历.md)
+2. https://github.com/resumejob/awesome-resume
+
 # Java
 
 > 学好Java，走遍天下都不怕
@@ -37,12 +43,11 @@
 ## 基础
 
 1. [Java 基础面试总结](java/base/Java基础.md)
-
 2. [Java 反射](java/base/Java反射.md)
-
 3. 注解
-
 4. [Java 8 新特性总结](java/What's%20New%20in%20JDK8/Java8Tutorial.md)
+
+
 
 ## IO
 
@@ -142,7 +147,7 @@
 
 ### Linux
 
-- 虚拟机Linux安装
+- [虚拟机Linux安装和宝塔](https://www.yuque.com/docs/share/dde3805e-0e52-4de6-b5b1-f7a88b4035e6?# )
 - [后端程序员必备的 Linux 基础知识](operating-system/后端程序员必备的Linux基础知识.md)  
 - [Shell 编程入门](operating-system/Shell.md) 
 
@@ -264,6 +269,8 @@
 
 > 微服务：每个项目都是独立自治的
 
+1. [手写RPC](system-design/micro-service/手写RPC.md)
+
 ### 分布式组件
 
 1. [SpringCloud项目创建步骤](system-design/micro-service/SpringCloud.md)
@@ -344,3 +351,6 @@
 # 其他
 
 - [其他](others.md)
+
+
+
