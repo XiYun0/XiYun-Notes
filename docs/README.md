@@ -16,7 +16,11 @@
 
 > 写下一个小心愿，成为一名架构师。
 >
-> 正在完成的项目：手写RPC框架，https://github.com/he2121/MyRPCFromZero
+> 正在阅读的面试博客：JAVA基础+JAVA集合+JVM+JUC
+>
+> 正在完成的项目：手写RPC框架，https://github.com/he2121/MyRPCFromZero，框架图：https://www.jianguoyun.com/p/Df1i-mAQ-Nv1CBjht-ID 
+
+
 
 # 资源
 
@@ -26,6 +30,7 @@
    2. 系统架构设计的视频：雷丰阳谷粒商城、周阳SpringCloud、石杉亿级流量项目
 3. [我的书单](others/书单.md)
 4. [UP主、技术大神、大厂、培训机构](others/UP主、技术大神)
+5. [Technology-Stack](https://github.com/XiYun0/Technology-Stack)
 
 # 注：
 
@@ -43,6 +48,7 @@
 ## 基础
 
 1. [Java 基础面试总结](java/base/Java基础.md)
+   1. [接口和抽象类](java/base/接口和抽象类.md)
 2. [Java 反射](java/base/Java反射.md)
 3. 注解
 4. [Java 8 新特性总结](java/What's%20New%20in%20JDK8/Java8Tutorial.md)
@@ -269,7 +275,9 @@
 
 > 微服务：每个项目都是独立自治的
 
-1. [手写RPC](system-design/micro-service/手写RPC.md)
+1. Netty
+2. [手写RPC](system-design/micro-service/手写RPC.md)
+3. Dubbo
 
 ### 分布式组件
 
