@@ -5,8 +5,8 @@
 
 
 >github阅读：https://xiyun0.github.io/XiYun-Notes/#/
->
->gitee阅读：
+
+
 
 >是故易有太极，是生两仪，两仪生四象，四象生八卦，八卦定吉凶，吉凶生大业。——《系辞》
 >
@@ -30,7 +30,8 @@
    2. 系统架构设计的视频：雷丰阳谷粒商城、周阳SpringCloud、石杉亿级流量项目
 3. [我的书单](others/书单.md)
 4. [UP主、技术大神、大厂、培训机构](others/UP主、技术大神)
-5. [Technology-Stack](https://github.com/XiYun0/Technology-Stack)
+5. [博客、文章](others/blog.md)
+6. [Technology-Stack](https://github.com/XiYun0/Technology-Stack)
 
 # 注：
 
@@ -48,10 +49,14 @@
 ## 基础
 
 1. [Java 基础面试总结](java/base/Java基础.md)
-   1. [接口和抽象类](java/base/接口和抽象类.md)
-2. [Java 反射](java/base/Java反射.md)
-3. 注解
-4. [Java 8 新特性总结](java/What's%20New%20in%20JDK8/Java8Tutorial.md)
+   1. [接口和抽象类：宇宙起源于何处？](java/base/接口和抽象类.md)
+   2. 包装类：自动装箱与拆箱
+   3. 泛型：为容器而生
+   4. 异常：生病，生死无常
+   5. 注解
+   6. [Java 反射](java/base/Java反射.md)
+2. 新特性
+   1. [Java 8 新特性总结](java/What's%20New%20in%20JDK8/Java8Tutorial.md)
 
 
 
@@ -74,7 +79,7 @@
 
 视频推荐：尚硅谷宋红康、黑马满一航
 
-<img src="图片/170ec7cd31581d15" alt="img" style="zoom: 80%;" />
+<img src="图片/170ec7cd31581d15" alt="img" style="zoom: 50%;" />
 
 1. [Class Files 结构](java/jvm/类文件结构.md)
    1. 字符串常量池StringTable
@@ -231,6 +236,10 @@
 
 - [设计模式系列文章](system-design/设计模式.md)
 
+## Netty
+
+- [深入理解Netty](system-design/netty/深入理解Netty.md)
+
 ## 高并发
 
 瞬间的高并发、大流量访问可能导致服务器宕机。
@@ -271,13 +280,16 @@
 
 1. 集群
 
+
+
+
+
 ## 微服务
 
 > 微服务：每个项目都是独立自治的
 
-1. Netty
-2. [手写RPC](system-design/micro-service/手写RPC.md)
-3. Dubbo
+1. [手写RPC](system-design/micro-service/手写RPC.md)
+2. Dubbo
 
 ### 分布式组件
 
@@ -296,6 +308,10 @@
 
 1. [Docker介绍](system-design/docker/Docker.md)
 2. [Linux安装Docker](system-design/docker/Linux安装Docker.md)
+
+## 架构之力——我的道路
+
+- [架构之力](system-design/架构之力.md)
 
 # 大数据
 
