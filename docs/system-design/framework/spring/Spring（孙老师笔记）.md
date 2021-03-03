@@ -4,19 +4,19 @@
 
 ## 引言
 
-##### EJB（Enterprise Java Bean）
+### EJB（Enterprise Java Bean）
 
 缺点：运行环境苛刻，代码 移植性差
 
 总结：重量级框架
 
-##### spring
+### spring
 
 spring是一个轻量级javaEE解决方案，整合了多种优秀的设计模式
 
 轻量级：运行环境没有额外的要求，代码移植性高
 
-##### 设计模式
+### 设计模式
 
 在面向对象设计 中，解决特定问题的经典代码
 
@@ -33,7 +33,7 @@ spring是一个轻量级javaEE解决方案，整合了多种优秀的设计模�
            UserService userService = (UserService)clazz.newInstance();
 ```
 
-##### 注册组件	
+### 注册组件	
 
 通用工厂模式
 
@@ -52,7 +52,7 @@ public static Object getBean(String key){
 
 spring本质：工厂 ApplicationContext
 
-##### spring核心api
+### spring核心api
 
 ApplicationContext:
 
@@ -147,7 +147,7 @@ XML的id属性的值，命名要求：必须以字母开头 name属性的值，�
 
 反射的底层调用了对象自己的无参构造方法，即使构造方法是私有的，Spring工厂依然可以调用其构造方法。
 
-##### 思考？
+### 思考？
 
 问题：在未来的开发过程中，是不是所有的对象都交给Spring工厂来创建那
 
@@ -221,7 +221,7 @@ person.setId(10);
 
 注入好处：`解耦合`
 
-#### 注入原理分析
+### 注入原理分析
 
 Spring通过底层调用对象属性对应的set方法，完成成员变量的赋值，这种方式我们也称之为set注入。
 
@@ -768,13 +768,33 @@ Service层中 = 核心功能（几十行 上百行代码）+ 额外功能（附�
 - Service层的调用者角度（Controller）：需要在Service层书写额外功能（需要）
 - 软件设计者：Service不需要额外功能
 
-##### 代理设计模式
+### 代理设计模式
 
-概念：通过代理类，为原始类（目标）增加额外的功能
+#### 概念
 
+```markdown
+通过代理类，为原始类（目标）增加额外的功能
 好处：利于原始类（目标）的维护
+```
 
-代理开发的核心要素：代理类 = 目标类 + 额外功能  + 原始类实现相同的接口
+#### 名词解释
+
+```markdown
+1. 目标类原始类
+	指的是业务类(核心功能--> 业务运算DAO调用)
+2. 目标方法，原始方法
+	目标类(原始类)中的方法就是目标方法(原始方法)
+3. 额外功能(附加功能)
+	日志，事务，性能
+```
+
+#### 代理开发的核心要素
+
+```markdown
+代理类 = 目标类 + 额外功能  + 原始类实现相同的接口(为了2者的方法保持一致)
+```
+
+#### 编码
 
 ```java
 //实现相同的接口
@@ -783,27 +803,81 @@ public class UserServiceProxy implements UserService {
     private UserServiceImpl userService = new UserServiceImpl();
     public void register(User user) {
         //实现额外功能
-        System.out.println("-------------------");
+        System.out.println("---------log--------");
         userService.register(user);
 
     }
 
     public boolean login(String name, String password) {
-        System.out.println("____________________");
+        System.out.println("---------log--------");
         return userService.login(name,password);
     }
 }
 ```
 
-静态代理：每一个原始类都会手工编写一个代理类
+测试类
 
-##### 静态代理存在的问题
+```java
+public class TestProxy {
+    @Test
+    public void test1(){
+        UserServiceProxy userServiceProxy = new UserServiceProxy();
 
-- 静态类文件数目过多，不利于项目管理
+        userServiceProxy.register(new User());
+        userServiceProxy.login("xiyun", "123456");
 
-- 代码可维护性差
+        System.out.println("------------------");
 
-##### 动态代理模式
+        OrderServiceProxy orderServiceProxy = new OrderServiceProxy();
+        orderServiceProxy.showOrder();
+    }
+}
+```
+
+结果
+
+```markdown
+-----log------
+核心功能，UserServiceImpl.register
+-----log------
+核心功能，UserServiceImpl.login
+-----------------------------
+-----log------
+核心功能，OrderServiceImpl.showOrder
+```
+
+
+
+### 静态代理
+
+每一个`原始类`都会手工编写一个`代理类`。
+
+#### 静态代理存在的问题
+
+```markdown
+1. 静态类文件数目过多，如果有100个原始类，那么就需要100个代理类，不利于项目管理。
+	UserServiceImpl userServiceProxy
+	OrderServiceImpl OrderServiceProxy
+	......			......
+	......			......
+	......			......
+	
+2. 额外功能的维护性非常非常差
+	代理类中 额外功能修改复杂（麻烦）
+```
+
+
+
+### 动态代理模式
+
+#### Spring动态代理的概念
+
+```markdown
+概念:通过代理类为原始类(目标类)增加额外功能
+好处:利于原始类(目标类)的维护
+```
+
+#### 搭建开发环境
 
 动态代理相关jar包
 
@@ -831,51 +905,90 @@ public class UserServiceProxy implements UserService {
 
 1、创建原始对象（并在配置文件中设置）
 
-2、额外功能
-
-​		MethodBeforeAdvance接口
-
-​		额外的功能写在该接口的实现中，在方式方法执行前执行接口中的方法
-
 ```java
-//把运行原始方法执行前的运行的额外功能，书写在before方法中
-public class Before implements MethodBeforeAdvice {
-    public void before(Method method, Object[] objects, Object o) throws Throwable {
-        System.out.println("hhhhh");
+public class UserServiceImpl implements UserService{
+    @Override
+    public void register(User user) {
+        System.out.println("核心功能，UserServiceImpl.register");
+    }
+    @Override
+    public boolean login(String name, String password) {
+        System.out.println("核心功能，UserServiceImpl.login");
+        return false;
     }
 }
 ```
 
-3、定义切入点
+```xml
+<bean id="userService" class="com.xiyun.OrderServiceImpl"></bean>
+```
 
-切入点：额外功能加入的位置
+2、额外功能
 
-目的：程序员根据自己的需求，决定额外功能加入给哪个原始方法
+​		MethodBeforeAdvice接口
+
+```markdown
+额外的功能写在该接口的实现中，在方式方法执行前执行接口中的方法
+```
 
 ```java
-<aop:config>
-    //execution(* *(..))表示所有方法都作为切入点，加入额外的功能
-    <aop:pointcut id="pc" expression="execution(* *(..))"/>
-</aop:config>
+public class Before implements MethodBeforeAdvice {
+    /*
+    作用：需要把运行在原始方法执行之前运行的额外功能，书写在before方法中
+     */
+    @Override
+    public void before(Method method, Object[] objects, Object o) throws Throwable {
+        System.out.println("------method before advice log------");
+    }
+}
+```
+
+```xml
+<bean id="before" class="com.xiyun.dynamic.Before"></bean>
+```
+
+3、定义切入点
+
+```markdown
+切入点:额外功能加入的位置
+
+目的:由程序员根据自己的需要，决定额外功能加入给那个原始方法
+register
+login
+
+简单的测试:所有方法都做为切入点，都加入额外的功能。
+```
+
+```xml
+    <aop:config>
+    <!-- 所有的方法，都作为切入点，加入额外功能login register-->
+        <aop:pointcut id="pc" expression="execution(* *(..))"/>
+    </aop:config>
 ```
 
 4、组装（2，3整合）
 
 ```xml
-表达的含义：所有的方法都加入proxy的额外功能
-<aop:advisor advice-ref="proxy" pointcut-ref="pc"/>
+	<!-- 表达的含义：所有的方法都加入before的额外功能-->
+	<aop:advisor advice-ref="before" pointcut-ref="pc"/>
 ```
 
 5、调用
 
-目的：获得Spring工厂创建的动态代理对象，并进行调用
+```java
+目的:获得Spring工厂创建的动态代理对象，并进行调用
+ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml");
+注意:
+    1. Spring的工厂通过原始对象的id值获取的对象为代理对象
+	2. 获得代理对象后，可以通过声明接口类型，进行对象的存储
+UserService userService = (UserService)ctx.getBean("userService");
+userService.register();
+userService.login("", "");
+```
 
-注意：
 
-		-  Spring的工厂通过原石对象的Id值获取的对象为原石对象
-		-  获得代理对象后，可以通过声明接口类型，进行对象的存储
 
-##### 动态代理细节分析
+### 动态代理细节分析
 
 Spring创建的代理类在哪那？
 
@@ -893,7 +1006,7 @@ Spring框架在运行时，通过`动态字节码`技术，在JVM中创建的，
 
 **打开扩展，关闭修改**
 
-##### Spring动态代理详解
+### Spring动态代理详解
 
 ###### 额外功能详解
 
@@ -946,7 +1059,7 @@ public Object invoke(MethodInvocation invocation) throws Throwable {
 }
 ```
 
-##### 切入点详解
+### 切入点详解
 
 ```xml
 切入点决定额外功能的加入位置（方法）
@@ -1024,7 +1137,7 @@ execution(* login(..))
 
 在实战中更为应用广泛的是包切入点
 
-##### 切入点函数
+### 切入点函数
 
 作用：用于执行切入点表达式
 
@@ -1099,7 +1212,7 @@ execution(* login(..)) and args(String, String)
 execution(* login(..)) or execution(* register(..))
 ```
 
-##### AOP编程的概念
+### AOP编程的概念
 
 AOP(Aspect Oriented Programing)面向切面编程  = spring动态代理开发
 
@@ -1144,11 +1257,11 @@ AOP如何创建字节代理类（动态字节码技术）
 
 2 Spring是如何通过原石对象的ID值获取的代理对象那？
 
-##### 动态代理的创建
+### 动态代理的创建
 
-###### JDK的动态代理
 
-代理创建三要素：1 原始对象 2 额外功能 3 代理对象实现相同的接口
+
+代理对象实现相同的接口
 
 ```java
 public static void main(String[] args) {
@@ -1274,7 +1387,7 @@ public class TestCglib {
   - JDK动态代理    Proxy.newProxyInstance() 	通过接口创建代理类
   - Cglib动态代理   Enhancer                                通过继承父类创建的代理类 
 
-##### Spring工厂加工代理对象
+### Spring工厂加工代理对象
 
 ```java
 public class ProxyBeanPostProcessor implements BeanPostProcessor {
@@ -1383,7 +1496,7 @@ AOP编程概念（Spring动态代理开发），通过代理类为原始类增�
 
 ## 持久层整合
 
-Spring为什么要与持久层进行整合
+Spring为什么要与持久层进行整合？
 
 - JavaEE开发中需要持久层对数据库进行访问
 - JDBC Hibernate Mybatis进行持久开发过程存在大量的代码冗余
@@ -1404,13 +1517,13 @@ Spring可以和哪些持久层进行整合
 
 Mybatis开发步骤
 
-- 实体
-- 实体别名
-- 表
-- 创建DAO接口
-- 实现Mapper文件
-- 注册Mapper文件
-- Mybatis API调用
+1. 实体
+2. 实体别名
+3. 表
+4. 创建DAO接口
+5. 实现Mapper文件
+6. 注册Mapper文件
+7. Mybatis API调用
 
 Mybatis在开发中存在的问题：配置繁琐，代码冗余
 

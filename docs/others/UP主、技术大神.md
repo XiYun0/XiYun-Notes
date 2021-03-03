@@ -24,3 +24,7 @@
 3. 动力节点
 4. 千锋
 
+## 经济
+
+1. [发牌手杰克](https://space.bilibili.com/2142101977)
+2. [陈译辉财经](https://space.bilibili.com/168037083?from=search&seid=14203238339591535694)
