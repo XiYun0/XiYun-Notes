@@ -197,7 +197,7 @@ log4j.appender.console.layout=org.apache.log4j.PatternLayout
 log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
 ```
 
-## 注入（injection）
+## 注入（赋值）（injection）
 
 通过Spring工厂及配置文件，为成员变量赋值。
 
@@ -381,19 +381,31 @@ Set注入：Spring调用Set方法，通过配置文件，为成员变量赋值
 
 ##### 依赖注入（Dependency Injection DI)
 
+> 当我需要她，就是依赖她，依赖她，就可以注入（赋值）
+
 注入：通过Spring的工厂及配置文件，对对象（bean，组件）的成员变量进行赋值
 
-依赖注入：当一个类需要另一个类时，就意味着依赖，一旦出现依赖，就可以把另一个类作为本类的成员变量，最终通过Spring配置文件进行注入（赋值）
+依赖注入：当一个类需要另一个类时，就意味着依赖，一旦出现依赖，就可以把另一个类作为本类的成员变量，最终通过Spring配置文件进行注入（赋值） 。
+
+好处：解耦合
+
+![image-20210303163653551](图片/image-20210303163653551.png)
 
 ## Spring工厂创建复杂对象
 
+![image-20210303164811960](图片/image-20210303164811960.png)
+
 ##### 复杂对象
 
-简单对象：指的是可以直接通过new（构造方法）创建对象
+> 简单对象：指的是可以直接通过new（构造方法）创建对象
 
-复杂对象：指的是不可以直接通过new构造方法创建的对象（Connection SqlSessionFactory）
+> 复杂对象：指的是不可以直接通过new构造方法创建的对象
+>
+> ​					Connection 
+>
+> ​					SqlSessionFactory
 
-##### Spring工厂创建复杂对象的三种方式
+##### Spring工厂创建复杂对象的3种方式
 
 ##### FactoryBean接口
 
@@ -469,7 +481,7 @@ FactoryBean是Spring用于创建复杂类型对象的一种方式，也是Spring
 - 避免Spring框架的侵入
 - 整合遗留系统
 
-```
+```java
 public class FactoryBean {
     public Connection getConnection(){
         Connection connection = null;
