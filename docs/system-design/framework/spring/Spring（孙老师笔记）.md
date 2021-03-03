@@ -1,8 +1,8 @@
 视频：https://www.bilibili.com/video/BV185411477k
 
-### Spring注解驱动及源码分析
+# Spring注解驱动及源码分析
 
-#### 引言
+## 引言
 
 ##### EJB（Enterprise Java Bean）
 
@@ -153,7 +153,7 @@ XML的id属性的值，命名要求：必须以字母开头 name属性的值，�
 
 回答：理论上是的。但是有特例：`实体对象（entity）`是不会交给spring创建的，它是由持久层框架（如Mybatis）进行创建的。
 
-#### spring框架和日志框架整合
+## spring框架和日志框架整合
 
 Spring与日志框架整合，日志框架就可以输出在控制台中，输出Spring框架运行过程中的一些重要信息
 
@@ -197,9 +197,20 @@ log4j.appender.console.layout=org.apache.log4j.PatternLayout
 log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
 ```
 
-#### 注入（injection）
+## 注入（injection）
 
 通过Spring工厂及配置文件，为成员变量赋值。
+
+原来
+
+```java
+person.setName("xiyun");
+person.setId(10);
+```
+
+这种方式不好，会有耦合。
+
+现在
 
 ```java
 <bean id="person" class="com.gewei.factory.Person">
@@ -210,7 +221,7 @@ log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{
 
 注入好处：解耦合	
 
-#### set注入详解
+## set注入详解
 
 针对不同类型的成员变量，在<property>标签中，需要嵌套其他标签
 
@@ -350,7 +361,7 @@ Set注入：Spring调用Set方法，通过配置文件，为成员变量赋值
 1. 构造注入麻烦 (重载)
 2. Spring框架底层 大量应用了set注入
 
-#### 控制反转 和 依赖注入
+## 控制反转 和 依赖注入
 
 ##### 反转（转移）控制（IOC Inverse Of Control）
 
@@ -368,7 +379,7 @@ Set注入：Spring调用Set方法，通过配置文件，为成员变量赋值
 
 依赖注入：当一个类需要另一个类时，就意味着依赖，一旦出现依赖，就可以把另一个类作为本类的成员变量，最终通过Spring配置文件进行注入（赋值）
 
-#### Spring工厂创建复杂对象
+## Spring工厂创建复杂对象
 
 ##### 复杂对象
 
@@ -480,7 +491,7 @@ public class FactoryBean {
 <bean id="conn2" class="com.gewei.factorybean.StaticFactoryBean" factory-method="getConnection"></bean>
 ```
 
-#### Spring工厂创建对象的次数
+## Spring工厂创建对象的次数
 
 ##### spring工厂控制简单对象创建次数
 
@@ -498,7 +509,7 @@ public class FactoryBean {
 
 什么样的对象需要多次创建：Connection SqlSession | Session
 
-#### 对象的生命周期
+## 对象的生命周期
 
 什么是声明周期：一个对象创建、存活、消亡的一个完整过程
 
@@ -572,7 +583,7 @@ Spring销毁对象前，会调用对象的销毁方法，完成销毁操作
 
 什么叫销毁操作：主要指的是资源的释放操作 io.close()  connetion.close()
 
-#### 配置文件参数化
+## 配置文件参数化
 
 什么是配置文件参数化：把Spring配置文件中需要经常修改的字符串信息，转移到一个更小的配置文件中，有利于Spring配置 文件的维护
 
@@ -602,7 +613,7 @@ java.sql.SQLException: Access denied for user 'Administrator'@'localhost'
 将username改成user就好了 可能是username这个变量和系统的某个变量冲突了
 ```
 
-#### 自定义类型转换器
+## 自定义类型转换器
 
 作用：Spring通过类型转换器把配置文件中字符串类型的数据，转换成对象成员变量对应的数据类型，进而完成了注入
 
@@ -663,7 +674,7 @@ public Date convert(String s) {
 
 - spring提供的默认日期转换器转换的格式为2020/05/23
 
-#### 后置处理Bean
+## 后置处理Bean
 
 BeanPostProcessor作用：对Spring工厂所创建的对象再加工。
 
@@ -709,7 +720,7 @@ public class MyPostProcessor implements BeanPostProcessor {
 
 BeanPostProcessor会对Spring工厂中创建的所有对象进行加工
 
-#### AOP编程
+## AOP编程
 
 AOP使用了23种设计模式中的静态代理设计模式
 
@@ -1352,7 +1363,7 @@ AOP知识总结
 
 AOP编程概念（Spring动态代理开发），通过代理类为原始类增加额外的功能，好处：利于原始累的维护
 
-#### 持久层整合
+## 持久层整合
 
 Spring为什么要与持久层进行整合
 
@@ -1492,7 +1503,7 @@ Connection.setAutoCommit(true) 默认自动提交事务，每执行一条sql，�
 
 注意：在未来的实战中，还会手工控制事务（多条sql一起成功，一起失败），后续通过Spring通过事务控制解决这个问题
 
-#### Spring的事务处理
+## Spring的事务处理
 
 什么是事务：保证业务操作完整性的一种数据库机制
 
@@ -1583,7 +1594,7 @@ public Object invoke(MethodInvocation invocation){
 <tx:annotation-driven transaction-manager="dateSourceTransactionManger"/>
 ```
 
-#### Spring事务属性
+## Spring事务属性
 
 属性：描述物体特征的一系列值
 
@@ -1721,7 +1732,7 @@ noRollbackFor = java.lang.RuntimeEexception 关闭回滚
 
 ```
 
-#### Spring整合MVC框架
+## Spring整合MVC框架
 
 为什么要整合MVC
 
