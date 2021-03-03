@@ -199,7 +199,7 @@ log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{
 
 #### 注入（injection）
 
-通过Spring工厂及配置文件，为成员变量赋值
+通过Spring工厂及配置文件，为成员变量赋值。
 
 ```java
 <bean id="person" class="com.gewei.factory.Person">
