@@ -79,7 +79,7 @@
 
 视频推荐：尚硅谷宋红康、黑马满一航
 
-<img src="图片/170ec7cd31581d15" alt="img" style="zoom: 50%;" />
+<img src="图片/170ec7cd31581d15" alt="img" style="zoom: 67%;" />
 
 1. [Class Files 结构](java/jvm/类文件结构.md)
    1. 字符串常量池StringTable
@@ -128,12 +128,12 @@
 
 1. [快捷键设置](java/IDEA/快捷键设置.md)
 
-# Spring框架
+# Spring
 
-## SSM
+
 
 - [Spring](system-design/framework/spring/Spring.md)
-- [Spring（孙老师笔记）](system-design/framework/spring/Spring（孙老师笔记）.md)
+- [Spring（孙帅）](system-design/framework/spring/Spring（孙老师笔记）.md)
 - SpringMVC
 - Mybatis
 
@@ -147,6 +147,8 @@
 - 若依单模块前后端分离版
 
 [Springboot医院药品管理系统](system-design/framework/spring/Springboot医院药品管理系统.md)
+
+[基于SpringbBoot的多智能体系统开发](system-design/framework/spring/基于SpringbBoot的多智能体系统开发.md)
 
 # 计算机基础
 

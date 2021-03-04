@@ -919,37 +919,59 @@ BeanPostProcessor会对Spring工厂中创建的所有对象进行加工
 
 ## AOP编程
 
-AOP使用了23种设计模式中的静态代理设计模式
+AOP使用了23种设计模式中的静态代理设计模式。
 
-为什么要使用代理设计模式？
+### 为什么要使用代理设计模式？
 
-在JavaEE分层开发中，哪个层次对我们最重要
+#### 问题
 
-DAO-Service-Controller  答案是Service 因为里面封装了我们想要实现的业务，用于 满足用户需求
+- 在JavaEE分层开发中，哪个层次对我们最重要？
 
-Service包含了哪些代码：
+```
+DAO ---> Service ---> Controller  
+答案是Service 因为里面封装了我们想要实现的业务，用于 满足用户需求
+
+Dao辅助Service，访问操作数据库
+Controller对Service进行调用
+```
+
+- Service包含了哪些代码：
 
 ```markdown
-Service层中 = 核心功能（几十行 上百行代码）+ 额外功能（附加功能）
+Service层中 = `核心功能`（几十行 上百行代码）+ `额外功能`（附加功能）
 
 1. 核心功能
-	业务运算 
+	业务运算
 	Dao调用
 2. 额外功能
-	1. 不属于业务
+	1. 不属于核心业务
 	2. 可有可无
 	3. 代码量很小
 	比如（事务，日志，性能）
+		日志:记录 谁 + 时间 + 什么事 + 结果
+		性能:计算核心业务开始的时间 -> 核心业务结束的时间
 ```
 
-问题：额外功能写在Service层好不好
+问题：额外功能写在`Service层`好不好？
 
-- Service层的调用者角度（Controller）：需要在Service层书写额外功能（需要）
-- 软件设计者：Service不需要额外功能
+​	从不同角度有不同的看法。
+
+- Service层的`调用者`角度（Controller）：需要在Service层书写额外功能（比如事务）
+- 软件`设计者`角度：Service不需要额外功能。
+
+#### 现实世界的解决方案
+
+现实世界如何解决上面的矛盾呢？
+
+##### 租房场景
+
+![image-20210304143906160](图片/image-20210304143906160.png)
+
+
 
 ### 代理设计模式
 
-#### 概念
+#### 代理的概念
 
 ```markdown
 通过代理类，为原始类（目标）增加额外的功能
@@ -1815,19 +1837,23 @@ Connection.setAutoCommit(true) 默认自动提交事务，每执行一条sql，�
 
 ## Spring的事务处理
 
-什么是事务：保证业务操作完整性的一种数据库机制
+### 什么是事务
 
-事务的四个特点：A C I D
+```markdown
+保证业务操作完整性的一种数据库机制
+
+事务的四个特点:A C I D
 
 - A ：原子性
 - C ：一致性
-- I  ：隔离性
+- I ：隔离性
 - D ：持久性
+```
 
-##### 如歌控制事务
+### 如何控制事务
 
 ```markdown
-JDBC：
+JDBC:
 	Connection.setAutoCommit(false)
 	Connection.commit();
 	Connection.rollback();
@@ -1838,7 +1864,7 @@ Mybatis:
 # 结论：控制事务的底层，都是通过Connection对象完成的
 ```
 
-##### Spring控制事务的开发
+### Spring控制事务的开发
 
 **Spring是通过AOP的方式进行事务开发**
 
@@ -1848,14 +1874,14 @@ Mybatis:
 public class UserServiceImpl(){
 	private UserDAO userDAO;
 	set, get
-	1. 原始对象-->原始方法-->核心功能(业务处理+核心功能调用)
+	1. 原始对象 --> 原始方法 --> 核心功能(业务处理 + Dao调用)
 	2. Dao作为Service的成员变量，通过依赖注入的方式进行赋值
 }
 ```
 
 2. 额外功能
 
-```markdown
+```java
 1. MethodInterceptor
 public Object invoke(MethodInvocation invocation){
 	Object ret = null;
@@ -1924,31 +1950,38 @@ public Object invoke(MethodInvocation invocation){
 @Transactional(isolation = ,propagation = , readOnly = ,timeout = , rollbackFor = ,noRollbackFor = )
 ```
 
-隔离属性：他表示了事务解决并发问题的特征
+### 隔离属性
 
-什么是并发？
+隔离属性的概念
 
-​		多个事务，或者用户，在同一时间访问操作了统一数据（同一时间：并不是说必须分毫不差，可能差0.00几秒）
+```markdown
+他表示了事务解决并发问题的特征
 
-并发会产生哪些问题？
+1. 什么是并发？
+	多个事务，或者用户，在同一时间访问操作了同一数据
+	
+	同一时间：并不是说必须分毫不差，可能差0.00几秒。只是人无法察觉到这种细微差异。
 
-- 脏读
-- 不可重复读
-- 幻影读
+2. 并发会产生哪些问题？
+    - 脏读
+    - 不可重复读
+    - 幻影读
 
-并发问题如何解决？
+3. 并发问题如何解决？
+	通过隔离属性解决，隔离属性中设置不同的值，解决并发处理过程中的问题
+```
 
-​	通过隔离属性解决，隔离属性中设置不同的值，解决并发 处理过程中的问题
+#### 脏读
 
-##### 隔离属性
+```markdown
+一个事务，读取了另一个事务没有提交的数据，会产生数据不一致的问题。
+```
 
-###### 脏读
+![image-20210304145821324](图片/image-20210304145821324.png)
 
-​	一个事务，读取了另一个事务没有提交的数据，会产生数据不一致的问题
+解决办法：读已提交  `@Transactional(isolation = Isolation.READ_COMMITTED)`。
 
-解决办法：读已提交  `@Transactional(isolation = Isolation.READ_COMMITTED)`
-
-###### 不可重复读
+#### 不可重复读
 
 ​	 一个事务，多次读取相同的数据，但是读取结果不一致，会在本事务中产生数据不一致的问题
 
@@ -1958,7 +1991,7 @@ public Object invoke(MethodInvocation invocation){
 
 本质：一把行锁
 
-###### 幻影读
+#### 幻影读
 
 一个事务中，多次对整表进行查询统计，但是结果不一样，会在	本事务中产生数据不一致的问题。
 
@@ -1966,7 +1999,7 @@ public Object invoke(MethodInvocation invocation){
 
 本质：表锁
 
-###### 总结
+#### 总结
 
 ```java
 并发安全：SERIALIZABLE>REPEATABLE_READ>READ_COMMITTED
@@ -2001,7 +2034,7 @@ Oracle：读已提交
 
 Hibernate(JPA) Version                  Mybatis：通过拦截器自定义开发
 
-##### 传播属性(propagation)
+### 传播属性(propagation)
 
 传播属性：描述了事务解决嵌套问题的特征
 
@@ -2018,19 +2051,19 @@ Required是查询属性的默认值
 
 查询：显示的指定传播属性为Supports
 
-##### 只读属性
+### 只读属性
 
 针对于进行查询操作的方法，可以加入只读属性，提高运行效率
 
 默认值为false
 
-##### 超时属性
+### 超时属性
 
 当前事务访问数据时，有可能访问的数据被其他数据获取锁后加锁了，当前事务就必须要等待释放锁。
 
 超时属性默认值为-1，最终由数据库指定（在开发中很少使用）
 
-##### 异常属性
+### 异常属性
 
 ```
 Spring事务处理过程中
