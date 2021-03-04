@@ -18,43 +18,212 @@ spring是一个轻量级javaEE解决方案，整合了多种优秀的设计模�
 
 ### 设计模式
 
-在面向对象设计 中，解决特定问题的经典代码
+在面向对象设计中，解决特定问题的经典代码
 
-工厂模式：
+#### 工厂设计模式
 
-解耦合：
+过去
 
 ```java
-
-    //对象的创建方式：
-      // 1. 直接调用构造方法 创建对象  UserService userService = new UserServiceImpl();
-      // 2. 通过反射的形式 创建对象 解耦合
-           Class clazz = Class.forName("com.baizhiedu.basic.UserServiceImpl");
-           UserService userService = (UserService)clazz.newInstance();
+// 每次有新的实现类都要修改其他的代码，耦合性高！
+UserService userService = new UserServiceImpl();
+UserService userService = new UserServiceImplNew();
 ```
 
-### 注册组件	
+##### 什么是工厂设计模式
 
-通用工厂模式
+```markdown
+1.概念:通过工厂类，创建对象
+	User user = new User();
+	UserDAO userDAO = new UserDAOImpl();
+2.好处:解耦合
+	耦合:指定是代码间的强关联关系，-方的改变会影响到另一方
+	问题:不利于代码维护
+	简单:把接口的实现类，硬编码在程序中
+		UserService userService = new UserServiceImp1();
+```
+
+##### 简单工厂模式
+
+BeanFactory
+
+第一次创建
 
 ```java
-public static Object getBean(String key){
-    Object ret = null;
-    try {
-        Class clazz = Class.forName(env.getProperty(key));
-        ret = clazz.newInstance();
-    } catch (Exception e) {
-       e.printStackTrace();
+public class BeanFactory {
+    /**
+     * 专门用于生产对象的工厂类
+     */
+    public static UserService getUserService(){
+        UserService userService = new UserServiceImpl();
+        return userService;
     }
-    return ret;
 }
 ```
 
-spring本质：工厂 ApplicationContext
+测试类
+
+```java
+// UserService userService = new UserServiceImpl();
+UserService userService = BeanFactory.getUserService();	// 第一次解耦合
+```
+
+
+
+##### 反射工厂
+
+现在BeanFactory工厂类中，仍然存在耦合，因为UserService userService = new UserServiceImpl();硬编码在了工厂类。需要修改。
+
+回顾对象的创建方式：
+
+```java
+对象的创建方式：
+    1.直接调用构造方法 创建对象 UserService userService = new UserServiceImpl();
+    2.通过反射的形式 创建对象 解耦合
+        Class clazz = Class.forName("com.xiyun.basic.UserServiceImpl");
+		UserService userService = (UserService)clazz.newInstance();
+```
+
+反射工厂的实现
+
+```java
+public class BeanFactory {
+    public static UserService getUserService() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Class clazz = Class.forName("com.xiyun.basic.UserServiceImpl");
+        UserService userService = (UserService)clazz.newInstance();
+        return userService;
+    }
+}
+```
+
+反射可以解耦合，但是真的就解耦合了吗？
+
+```java
+我们还是传入了UserService实现类的全限定类名，"com.xiyun.basic.UserServiceImpl"
+如果有朝一日对这个类名不满意了，想替换为新的类，那么这个全限定名也应该换成新的，如"com.xiyun.basic.UserServiceImplNew"
+```
+
+配置文件`application.properties`
+
+![image-20210304122602224](图片/image-20210304122602224.png)
+
+```properties
+# Properties 集合 存储 Properties文件的内容
+# 特殊的Map key=String value=String
+# Properties [userService = com.xiyun.xxx.UserServiceImpl]
+# Properties.getProperty("userService")
+
+userService = com.xiyun.basic.UserServiceImpl
+```
+
+![image-20210304123726742](图片/image-20210304123726742.png)
+
+~~~java
+public class BeanFactory {
+    private static Properties env = new Properties();
+    // IO是系统级资源，避免重复性打开IO，最好程序启动的时候一次性读取，所以用静态代码块
+    static{
+        try {
+            // 第一步 获取IO流
+            InputStream inputStream = BeanFactory.class.getResourceAsStream("/application.properties");
+            // 第二部 文件内容 封装 Properties集合中，key = userService value = com.xiyun.basic.UserServiceImpl
+            env.load(inputStream);
+            
+            inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static UserService getUserService() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Class clazz = Class.forName(env.getProperty("userService"));	// 根据key得到value
+        UserService userService = (UserService)clazz.newInstance();
+        return userService;
+    }
+}
+~~~
+
+此时，BeanFactory工厂类还有耦合吗，还有类的影子吗？没有了，有的只是一个标识、一个名字而已。 
+
+```java
+Class clazz = Class.forName(env.getProperty("userService"));	// 根据key得到value
+```
+
+工厂类没有耦合了，那么其他地方呢？
+
+```java
+public class UserServiceImpl implements UserService{
+    private UserDao userDao = new UserDaoImpl();
+    @Override
+    public void register(User user) {
+        userDao.save(user);
+    }
+
+    @Override
+    public void login(String name, String password) {
+        userDao.queryUserByNameAndPassword(name, password);
+    }
+}
+```
+
+可以发现上面的UserServiceImpl出现了耦合，将UserDao的实现类硬编码在了程序中。
+
+```java
+private UserDao userDao = new UserDaoImpl();
+```
+
+此时在BeanFactory工厂类中，可以提供创建dao对象的方法
+
+```java
+    public static UserDao getUserDao() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Class clazz = Class.forName(env.getProperty("userDao"));	// 修改application.properties的key value
+        UserDao userDao = (UserDao)clazz.newInstance();
+        return userDao;
+    }
+```
+
+##### 通用工厂模式
+
+![image-20210304125522078](图片/image-20210304125522078.png)
+
+```markdown
+未来，如果我们每有一个对象要解耦合，就要在工厂中对应一个创建对象的方法，这可能会是成百上千的。
+通过上图，我们可以观察到，这些方法其实是重复的、冗余的。
+```
+
+```java
+public static Object getBean(String key) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+    Class clazz = Class.forName(env.getProperty(key));
+    Object o = clazz.newInstance();
+    return o;
+}
+```
+
+###### 通用工厂的使用方式
+
+```markdown
+1. 定义类型(类)
+2. 通过配置文件的配置告知工厂(application.properties)
+	key = value
+3. 通过工厂获得类的对象
+	Object o = BeanFactory.getBean("key")
+```
+
+##### 总结
+
+```markdown
+spring本质:
+	工厂 ApplicationContext
+	配置文件 applicationContext.xml
+我们上面用的是:
+    工厂 BeanFactory
+    配置文件 application.properties
+```
+
+
 
 ### spring核心api
 
-ApplicationContext:
+ApplicationContext
 
 作用：Spring提供的ApplicationContext这个工厂，用于对象的创建
 
@@ -62,7 +231,11 @@ ApplicationContext:
 
 ApplicationContext接口类型：
 
-接口：屏蔽实现的差异 非web环境：ClassPathXmlApplicationContext(main,junit) web环境：XmlWebApplicationContext
+接口：屏蔽实现的差异 
+
+非web环境：`ClassPathXmlApplicationContext(main,junit) `
+
+web环境：`XmlWebApplicationContext`
 
 **ApplicationContext是一个重量级资源**
 
@@ -72,7 +245,11 @@ ApplicationContext接口类型：
 
 名词解释
 
-Spring工厂创建的对象，叫做bean或者Component
+```markdown
+Spring工厂创建的对象，叫做 bean 或者 Component
+```
+
+
 
 ```java
 @Test
@@ -149,7 +326,7 @@ XML的id属性的值，命名要求：必须以字母开头 name属性的值，�
 
 ### 思考？
 
-问题：在未来的开发过程中，是不是所有的对象都交给Spring工厂来创建那
+问题：在未来的开发过程中，是不是所有的对象都交给Spring工厂来创建？
 
 回答：理论上是的。但是有特例：`实体对象（entity）`是不会交给spring创建的，它是由持久层框架（如Mybatis）进行创建的。
 
@@ -213,13 +390,13 @@ person.setId(10);
 现在
 
 ```java
-<bean id="person" class="com.gewei.factory.Person">
+<bean id="person" class="com.xiyun.factory.Person">
     <property name="id" value="10"></property>
-    <property name="name" value="葛威"></property>
+    <property name="name" value="xiyun"></property>
 </bean>
 ```
 
-注入好处：`解耦合`
+注入好处：`解耦合`。
 
 ### 注入原理分析
 
@@ -229,7 +406,9 @@ Spring通过底层调用对象属性对应的set方法，完成成员变量的�
 
 ## set方法注入详解
 
+```markdown
 针对不同类型的成员变量，在<property>标签中，需要嵌套其他标签
+```
 
 ###### 1、String和8种基本数据类型
 
@@ -367,7 +546,7 @@ Set注入：Spring调用Set方法，通过配置文件，为成员变量赋值
 1. 构造注入麻烦 (重载)
 2. Spring框架底层 大量应用了set注入
 
-## 控制反转 和 依赖注入
+## 控制反转IOC 和 依赖注入DI
 
 ##### 反转（转移）控制（IOC Inverse Of Control）
 
