@@ -1,3 +1,24 @@
+## SQL语句
+
+查询
+
+```sql
+select * from user where username=#{username} and password=#{password}
+```
+
+增
+
+```sql
+insert into user (username,password)
+	values(#{username},#{password})
+```
+
+
+
+
+
+
+
 ## 事务
 
 ### 什么是事务

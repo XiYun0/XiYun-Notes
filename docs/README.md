@@ -97,16 +97,17 @@
 
 视频推荐：尚硅谷周阳、黑马满一航
 
-1. [JMM](java/juc/JMM.md)
-2. [Java锁](java/juc/Java锁.md)
+1. [多线程基础](java/juc/多线程基础.md)
+2. [JMM](java/juc/JMM.md)
+3. [Java锁](java/juc/Java锁.md)
    1. Lock
    2. AQS
    3. ReentranLock
    4. 读写锁
-3. 并发容器
-4. 工具类
-5. 阻塞队列
-6. 线程池
+4. 并发容器
+5. 工具类
+6. 阻塞队列
+7. 线程池
 
 ## 编程规范
 
@@ -133,7 +134,7 @@
 
 
 - [Spring](system-design/framework/spring/Spring.md)
-- [Spring（孙帅）](system-design/framework/spring/Spring（孙老师笔记）.md)
+- [Spring——孙帅老师的视频，强烈推荐，事务讲得也棒](system-design/framework/spring/Spring（孙老师笔记）.md)
 - SpringMVC
 - Mybatis
 
@@ -203,10 +204,11 @@
 
 1. [ORM框架](database/ORM框架.md)
 2. 数据库服务器的主从热备功能
+3. SQL
 
 ## MySQL
 
-1. [MySQL概述](database/MySQL.md)
+1. [MySQL概述](database//mysql/MySQL.md)
 2. 索引
 3. 存储引擎
 

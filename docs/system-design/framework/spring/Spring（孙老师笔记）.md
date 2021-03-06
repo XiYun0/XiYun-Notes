@@ -1,6 +1,6 @@
 视频：https://www.bilibili.com/video/BV185411477k
 
-# Spring注解驱动及源码分析
+# Spring
 
 ## 引言
 
@@ -1930,7 +1930,7 @@ public Object invoke(MethodInvocation invocation){
 <tx:annotation-driven transaction-manager="dateSourceTransactionManger"/>
 ```
 
-## Spring事务属性
+## Spring事务属性:star_of_david:
 
 属性：描述物体特征的一系列值
 
@@ -1975,29 +1975,39 @@ public Object invoke(MethodInvocation invocation){
 
 ```markdown
 一个事务，读取了另一个事务没有提交的数据，会产生数据不一致的问题。
+
+解决办法: 读已提交  `@Transactional(isolation = Isolation.READ_COMMITTED)`
+
+READ_COMMITTED没有对表有额外限制，运行其他事务查询已经提交的数据
 ```
 
 ![image-20210304145821324](图片/image-20210304145821324.png)
 
-解决办法：读已提交  `@Transactional(isolation = Isolation.READ_COMMITTED)`。
-
 #### 不可重复读
 
-​	 一个事务，多次读取相同的数据，但是读取结果不一致，会在本事务中产生数据不一致的问题
+```markdown
+一个事务，多次读取相同的数据，但是读取结果不一致，会在本事务中产生数据不一致的问题
 
-注意：1 不是脏读  2 在一个事务中
+注意:  1 不是脏读  2 在一个事务中
 
 解决方法：`@Transactional(isolation = Isolation.REPEATABLE_READ)`
 
-本质：一把行锁
+REPEATABLE_READ本质: 一把行锁
+```
+
+![image-20210305095350234](图片/image-20210305095350234.png)
 
 #### 幻影读
 
-一个事务中，多次对整表进行查询统计，但是结果不一样，会在	本事务中产生数据不一致的问题。
+```markdown
+一个事务中，多次对整表进行查询统计，但是结果不一样，会在本事务中产生数据不一致的问题。
 
-解决方法：`@Transactional(isolation = Isolation.SERIALIZABLE)`
+解决方法:`@Transactional(isolation = Isolation.SERIALIZABLE)`
 
-本质：表锁
+本质:表锁
+```
+
+![image-20210305100653243](图片/image-20210305100653243.png)
 
 #### 总结
 
@@ -2020,27 +2030,39 @@ Oracle不支持REPEATABLE_READ值，如何解决不可重复读
 
 ###### 默认隔离属性
 
+```markdown
 ISOLATION_DEAFULT ：会调用不同数据库设置的隔离属性
 
-Mysql：不可重复读 SELECT                       @@tx_isolation
-
+Mysql：可重复读 
+	SELECT @@tx_isolation	查询默认隔离属性的命令
 Oracle：读已提交
+```
 
-隔离属性在实战中的建议：直接使用默认就好
 
+
+- 隔离属性在实战中的建议：直接使用默认就好
+
+```markdown
 在未来的实战中，并发访问的几率很低
 
 如果真的遇到并发问题，推荐使用乐观锁。
-
-Hibernate(JPA) Version                  Mybatis：通过拦截器自定义开发
+	Hibernate(JPA) Version                  
+	Mybatis：	通过拦截器自定义开发
+```
 
 ### 传播属性(propagation)
 
-传播属性：描述了事务解决嵌套问题的特征
+
+
+```markdown
+传播属性的概念：描述了事务解决嵌套问题的特征
 
 什么是事务的嵌套：它指的是一个大的事务中，包含若干个小的事务
 
 问题：大事务中融入了很多小的事务，他们彼此影响，最终会导致外部大的事务，丧失了事务的原子性
+```
+
+
 
 | 传播属性的值 | 外部不存在事务 | 外部存在事务 |                      | 备注       |
 | ------------ | -------------- | ------------ | -------------------- | ---------- |
@@ -2129,7 +2151,13 @@ web.xml
  依赖注入： 把Service对象注入整个控制器
 ```
 
-###### Bean
+
+
+
+
+
+
+#### Bean
 
 出现个小问题：Person对象必须要有无参构造
 
@@ -2148,7 +2176,7 @@ Person person = applicationContext.getBean(Person.class);
 System.out.println(person);
 ```
 
-###### Configuration
+#### Configuration
 
 ```java
 @Configuration
@@ -2167,7 +2195,7 @@ Person person = applicationContext.getBean(Person.class);
 System.out.println(person);
 ```
 
-###### 包扫描
+#### 包扫描
 
 ```java
 <!--只要标注了@Controller @Service @Repository @Component都会被自动扫描加入容器中-->
@@ -2241,7 +2269,7 @@ ComponentScan.Filter[] excludeFilters() default {};
 //FilterType.CUSTOM：使用自定义规则
 ```
 
-###### Scope
+#### Scope
 
 ```java
 Person per = applicationContext1.getBean(Person.class);
@@ -2264,7 +2292,7 @@ System.out.println(per == per2);
 	 */
 ```
 
-###### 懒加载
+#### 懒加载
 
 ```java
 //创建容器的时候不加载对象，只有获取对象的时候再加载
@@ -2276,7 +2304,7 @@ public Person person(){
 }
 ```
 
-###### Conditional
+#### Conditional
 
 按照一定的条件进行判断，满足条件向容器内注册Bean，源码中大量使用了这个注解
 
@@ -2337,7 +2365,7 @@ public class WindowsCondition implements Condition {
 
 Conditional可以放在方法上也可以放在类上，放在类上表明，只有在满足情况下，类中的注册的Bean才能够生效
 
-###### 给容器注册组
+#### 给容器注册组
 
 ```java
 /**
@@ -2421,7 +2449,7 @@ public class ColorFactoryBean implements FactoryBean<Color> {
 }
 ```
 
-##### 生命周期
+### 生命周期
 
 ```
 /**
@@ -2543,7 +2571,7 @@ public class Dog {
 }
 ```
 
-##### 属性赋值
+### 属性赋值
 ###### @Value
 
 - 基本数值
@@ -2575,7 +2603,7 @@ public class MainConfigOfPropertyValues {
 }
 ```
 
-##### 自动装配
+### 自动装配
 
 ```java
 /**
@@ -2623,7 +2651,7 @@ public class MainConfigOfPropertyValues {
  */
 ```
 
-##### AOP
+### AOP
 
 AOP：指在程序运行期间动态的将某段代码切入到指定位置进行运行的编程方式【动态代理】
 
@@ -2721,4 +2749,197 @@ AOP原理：【看给容器中注册了什么组件，这个组件什么时候�
                     implements SmartInstantiationAwareBeanPostProcessor, BeanFactoryAware
                  关注后置处理器（在bean初始化完成前后做事情）、自动装配BeanFactory
 ```
+
+
+
+
+
+# 注解编程
+
+### 什么是注解编程？
+
+```markdown
+在 类 或者 方法 上加入特定的注解（@xxx），完成特定功能的开发。
+@Component
+public class XXX{}
+```
+
+### 为什么要学习注解编程？
+
+```markdown
+注解开发方便，代码简单， 开发速度大大提高。
+注解开发是 Spring 开发潮流
+Spring 2.x 引入注解，Spring 3.x 完善注解，SpringBoot 普及、推广 注解编程。
+```
+
+### 注解的作用
+
+- 替换 XML 这种配置形式，简化配置。
+  ![在这里插入图片描述](图片/20200605223737923.png)
+- 替换接口，实现调用双方的契约性。
+
+- 通过注解的方式，在功能调用者和功能提供者之间达成契约，进而进行功能的调用。因为注解的应用的更为方便灵活，所以在现在的开发中，更推荐通过注解的方式完成。
+  ![在这里插入图片描述](图片/20200605224657958.png)
+
+### Spring 注解的发展历程
+
+```markdown
+Spring 2.x： 开始支持注解编程 @Component、@Service、@Scope…
+	目的：提供的这些注解只是为了某些 XML 的配置，作为 XML 开发的有益补充。
+Spring 3.x： @Configuration、@Bean…
+	目的：彻底替换 XML，基于纯注解
+Spring 4.x： SpringBoot 提倡使用注解进行开发
+
+Spring 基于注解进行配置后，还能否解耦合呢？
+
+在 Spring 框架应用注解时，如果对注解配置的内容不满意，可以通过 Spring 配置文件覆盖。
+```
+
+### Spring 基础注解（Spring 2.x）
+
+这个阶段的注解，仅仅是简化 XML 的配置，并不能完全替代 XML。
+
+### 对象创建相关注解
+
+#### @Component
+
+作用：替换原有 Spring 配置文件中的 `<bean>` 标签
+
+- `id` 属性：在 `@Component` 中提供了默认的设置方式，首字母小写（UserDAO --> userDAO）
+- `class` 属性：通过反射获得的 `class` 的内容
+  <img src="图片/20200605232850938.png" alt="在这里插入图片描述" style="zoom:67%;" />
+
+`@Component` 细节：
+
+如何显式指定工厂创建对象的 id 值
+
+```java
+@Component("u")
+```
+
+Spring 配置文件覆盖注解配置内容
+
+```java
+applicationContext.xml
+<bean id="user" class="com.yusael.bean.User">
+	<property name="id" value="10"/>
+</bean>
+id值、class值 要和 注解 中配置的一样才会覆盖, 
+否则 Spring 会创建新的对象。
+```
+
+#### @Repository、@Service、@Contoller
+
+`@Repository`、`@Service`、`@Controller `都是 `@Component` 的 衍生注解。
+
+本质上这些衍生注解就是 @Component，通过源码可以看见他们都使用了 @Component；
+
+它们的存在是为了：更加准确的表达一个类型的作用。
+
+```java
+@Repository
+public class UserDAO {}
+
+@Service
+public class UserService {}
+
+@Controller
+public class UserController {}
+```
+
+注意：Spring 整合 Mybatis 开发过程中，不使用 `@Repository`、`@Component`
+
+#### @Scope
+
+作用：控制简单对象创建次数
+注意：不添加 `@Scope`，Spring 提供默认值 `singleton`
+
+XML 配置：
+
+```xml
+<bean id="customer" class="com.yusael.Customer" scope="singleton | prototype"/>
+```
+
+注解：
+
+```java
+创建单例对象
+@Component
+@Scope("singleton")
+public class Customer {}
+
+创建多例对象
+@Component
+@Scope("prototype")
+public class Customer {}
+```
+
+#### @Lazy
+
+作用：延迟创建单实例对象
+注意：一旦使用 `@Lazy` 注解后，Spring 会在使用这个对象的时候，再创建这个对象。
+
+XML 配置：
+
+```xml
+<bean id="account" class="com.yusael.Account" lazy="true"/>
+```
+
+注解：
+
+```java
+@Component
+@Lazy
+public class Account {
+    public Account() {
+        System.out.println("Account.Account");
+    }
+}
+```
+
+### 注入（赋值）相关注解
+
+#### 用户自定义类型 @Autowired
+
+![在这里插入图片描述](图片/20200606002106453.png)
+
+#### @Autowired 细节
+
+`@Autowired` 注解 基于类型进行注入 [推荐]
+注入对象的类型，必须与目标成员变量类型相同或者是其子类（实现类）
+
+```java
+@Autowired
+private UserDAO userDAO;
+```
+
+`@Autowired`、`@Qualifier` 注解联合实现 基于名字进行注入 [了解]
+注入对象的 id 值，必须与 @Qualifier 注解中设置的名字相同
+
+```java
+@Autowired
+@Qualifier("userDAOImpl")
+private UserDAO userDAO;
+```
+
+`@Autowired `注解放置位置
+
+```markdown
+- 放置在对应成员变量的 setter 方法上，调用 setter 方法赋值
+
+- 直接放置在成员变量上，Spring 通过反射直接对成员变量进行赋值 [推荐]
+```
+
+JavaEE 规范中类似功能的注解
+
+```markdown
+- JSR250 提供的 `@Resource(name="userDAOImpl") `基于名字进行注入，
+  	等价于` @Autowired` 与 `@Qualifier `联合实现的效果。
+  	注意：`@Resource` 注解如果名字没有配对成功，会继续 按照 类型 进行注入。
+  	
+- JSR330 提供的` @Injection `作用与 `@Autowired `完全一样，一般用在 EJB3.0 中	
+	EJB3.0已经黄了，所以这个注解用不到。
+```
+
+
 
