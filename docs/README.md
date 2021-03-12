@@ -27,11 +27,12 @@
 1. [开源项目](others/开源项目.md)
 2. [视频](others/视频.md)
    1. Java：毕向东Java基础、宋红康JVM、满一航JVM和JUC、周阳JUC
-   2. 系统架构设计的视频：雷丰阳谷粒商城、周阳SpringCloud、石杉亿级流量项目
+   2. 系统架构设计的视频：雷丰阳谷粒商城、周阳SpringCloud、石杉亿级流量项目、念安CRM项目
 3. [我的书单](others/书单.md)
 4. [UP主、技术大神、大厂、培训机构](others/UP主、技术大神)
 5. [博客、文章](others/blog.md)
 6. [Technology-Stack](https://github.com/XiYun0/Technology-Stack)
+7. [好用的网站](others/好用的网站.md)
 
 # 注：
 
@@ -145,7 +146,14 @@
 - [SpringBoot核心——数据访问](system-design/framework/spring/SpringBoot核心——数据访问.md)
 - [SpringBoot——Mybatis](system-design/framework/spring/SpringBoot——Mybatis.md)
 - [文件上传](system-design/framework/spring/SpringBoot文件上传.md)
-- 若依单模块前后端分离版
+
+### 开发流程
+
+1. [开发流程](system-design/framework/spring/开发流程.md)
+
+### 项目
+
+若依单模块前后端分离版
 
 [Springboot医院药品管理系统](system-design/framework/spring/Springboot医院药品管理系统.md)
 
