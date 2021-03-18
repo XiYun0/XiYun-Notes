@@ -38,10 +38,14 @@
 
 > 代码和绘图都放在了坚果云里面。
 
-# 简历
+# 面试、简历关
 
 1. [我的简历](others/resume/我的简历.md)
 2. https://github.com/resumejob/awesome-resume
+
+
+
+
 
 # Java
 
@@ -300,6 +304,14 @@
 
 ## 微服务
 
+若依微服务：https://gitee.com/y_project/RuoYi-Cloud?_from=gitee_search
+
+```
+若依微服务版手把手教你本地搭建环境并运行前后端项目：https://www.cnblogs.com/badaoliumangqizhi/p/13897643.html
+```
+
+
+
 > 微服务：每个项目都是独立自治的
 
 ### 分布式组件
@@ -339,6 +351,7 @@
 # Golang
 
 - [Golang基础](golang/Golang基础.md)
+- [Golang并发](golang/Golang并发.md)
 
 # Python
 

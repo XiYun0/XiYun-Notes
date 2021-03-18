@@ -8,6 +8,7 @@
 6. [哈士奇-柏羲](https://space.bilibili.com/232459430/video?tid=0&page=1&keyword=&order=pubdate)——阿里、美团Java架构师黄俊
 7. [Ele实验室](https://space.bilibili.com/481434238)——科普
 8. [偶尔有点小迷糊](https://space.bilibili.com/39665558)——科普
+9. [七米qimi](https://space.bilibili.com/4638193)
 
 ## 大厂
 
@@ -23,7 +24,7 @@
 1. 尚硅谷
 2. 黑马
 3. 动力节点
-4. 千锋
+4. 千锋教育
 5. 乐字节
 
 ## 经济

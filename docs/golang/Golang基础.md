@@ -73,3 +73,76 @@ func main() {
 }
 ```
 
+
+
+
+
+
+
+## 指针
+
+```go
+var ip *int		// 声明一个指针，这个指针用于指向int类型
+var fp *float32
+```
+
+```go
+var num int	= 10		// 声明一个int类型的变量并赋值为10
+var intpoint *int	// 声明一个int类型的指针，用于存储内存地址
+intpoint = &num		// num的内存地址放到指针中
+
+fmt.Println(*intpoint)	// *intpoint 用于访问内存地址的内容
+```
+
+
+
+## 包的使用
+
+### 结构体
+
+```go
+type Person struct{
+    name string	// 如果开头首字母是小写，外部不能访问
+    Age int
+    Sex int 
+}
+```
+
+
+
+### init()函数
+
+先执行init函数
+
+```go	
+func init(){
+    fmt.Println("this is init() function")
+}
+```
+
+
+
+
+
+### time包
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	now := time.Now()
+	fmt.Println(now)
+}
+```
+
+
+
+
+
+
+
