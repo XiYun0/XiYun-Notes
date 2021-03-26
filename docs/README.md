@@ -34,6 +34,10 @@
 6. [Technology-Stack](https://github.com/XiYun0/Technology-Stack)
 7. [好用的网站](others/好用的网站.md)
 
+# 读书笔记
+
+- 2021.3.19 [码农翻身](读书笔记/码农翻身.md)
+
 # 注：
 
 > 代码和绘图都放在了坚果云里面。
@@ -297,12 +301,20 @@
 
 
 
-## RPC
+## 微服务
+
+### 分布式
+
+1. [幂等性](system-design/micro-service/幂等性.md)
+
+
+
+### RPC
 
 1. [手写RPC框架](system-design/micro-service/手写RPC.md)
 2. [Dubbo](system-design/micro-service/Dubbo.md)
 
-## 微服务
+### 微服务
 
 若依微服务：https://gitee.com/y_project/RuoYi-Cloud?_from=gitee_search
 
@@ -315,6 +327,8 @@
 > 微服务：每个项目都是独立自治的
 
 ### 分布式组件
+
+
 
 1. [SpringCloud项目创建步骤](system-design/micro-service/SpringCloud.md)
 2. [Nacos](system-design/micro-service/Nacos.md)-服务注册中心、配置中心
@@ -347,6 +361,12 @@
 ## Spark
 
 ## Flume
+
+# 前端
+
+### TypeScript
+
+https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 # Golang
 
