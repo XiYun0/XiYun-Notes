@@ -107,6 +107,11 @@
 
 视频推荐：尚硅谷周阳、黑马满一航
 
+- [Monitor和Synchronized](java/juc/Monitor.md)
+- 线程的6大状态
+
+
+
 1. [多线程基础](java/juc/多线程基础.md)
 2. [JMM](java/juc/JMM.md)
 3. [ThreadLocal](java/juc/ThreadLocal.md)
