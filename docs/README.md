@@ -29,10 +29,11 @@
    1. Java：毕向东Java基础、宋红康JVM、满一航JVM和JUC、周阳JUC
    2. 系统架构设计的视频：雷丰阳谷粒商城、周阳SpringCloud、石杉亿级流量项目、念安CRM项目
 3. [我的书单](others/书单.md)
-4. [UP主、技术大神、大厂、培训机构](others/UP主、技术大神)
-5. [博客、文章](others/blog.md)
-6. [Technology-Stack](https://github.com/XiYun0/Technology-Stack)
-7. [好用的网站](others/好用的网站.md)
+4. [我的常用工具](others/工具.md)
+5. [UP主、技术大神、大厂、培训机构](others/UP主、技术大神)
+6. [博客、文章](others/blog.md)
+7. [Technology-Stack](https://github.com/XiYun0/Technology-Stack)
+8. [好用的网站](others/好用的网站.md)
 
 # 读书笔记
 
@@ -108,15 +109,20 @@
 
 1. [多线程基础](java/juc/多线程基础.md)
 2. [JMM](java/juc/JMM.md)
-3. [Java锁](java/juc/Java锁.md)
+3. [ThreadLocal](java/juc/ThreadLocal.md)
+4. [Java锁](java/juc/Java锁.md)
    1. Lock
    2. AQS
    3. ReentranLock
    4. 读写锁
-4. 并发容器
-5. 工具类
-6. 阻塞队列
-7. 线程池
+5. [并发容器](java/juc/)
+6. [工具类](java/juc/)
+7. [阻塞队列](java/juc/)
+8. [线程池](java/juc/线程池.md)
+
+
+
+
 
 ## 编程规范
 
@@ -148,6 +154,8 @@
 - Mybatis
 
 ## SpringBoot
+
+[Springboot源码阅读](system-design/framework/spring/SpringBoot源码阅读.md)
 
 - [SpringBoot基础](system-design/framework/spring/SpringBoot基础.md)
 - [SpringBoot核心——Web](system-design/framework/spring/SpringBoot核心——Web.md)
@@ -299,13 +307,35 @@
 
 ### Sentinel
 
+## 分布式
 
+1. [幂等性](system-design/micro-service/幂等性.md)
+
+### CAP
+
+CAP概念
+
+```markdown
+
+```
+
+Raft
+
+```markdown
+可视化：http://thesecretlivesofdata.com/raft/
+```
+
+BASE
+
+
+
+### 分布式事务
+
+seata
 
 ## 微服务
 
-### 分布式
 
-1. [幂等性](system-design/micro-service/幂等性.md)
 
 
 
@@ -326,20 +356,22 @@
 
 > 微服务：每个项目都是独立自治的
 
-### 分布式组件
-
-
+### 服务组件
 
 1. [SpringCloud项目创建步骤](system-design/micro-service/SpringCloud.md)
 2. [Nacos](system-design/micro-service/Nacos.md)-服务注册中心、配置中心
 3. Sentinel-取代hystrix
-4. [Gateway](system-design/micro-service/Gateway.md)-网关
+4. [Gateway](system-design/micro-service/Gateway.md)-API网关
 
 #### ZooKeeper
 
 - [ZooKeeper 相关概念总结](system-design/framework/ZooKeeper.md)
 
 - [ZooKeeper 数据模型和常见命令](system-design/framework/ZooKeeper数据模型和常见命令.md)
+
+## 秒杀系统
+
+1. 定时任务，cron表达式：https://cron.qqe2.com/
 
 ## Docker
 
@@ -367,6 +399,10 @@
 ### TypeScript
 
 https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
+
+### Vue3
+
+- [vue3](前端/vue3.md)
 
 # Golang
 
