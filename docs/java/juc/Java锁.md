@@ -149,7 +149,9 @@ t2.start();
 
 ### 定位死锁
 
-检测死锁可以使用` jconsole`工具，或者使用 `jps` 定位进程 id，再用` jstack` 定位死锁：
+检测死锁可以使用` jconsole`工具
+
+或者使用 `jps` 定位进程 id，再用` jstack` 定位死锁
 
 ```ruby
 cmd > jps
@@ -221,13 +223,197 @@ CPU 占用高的 Java 进程，再利用 top -Hp 进程id 来定位是哪个线�
 
 ### 哲学家就餐问题
 
+![image-20210330143540892](images/image-20210330143540892.png)
+
+有五位哲学家，围坐在圆桌旁。一定要两双筷子（两个锁）才能吃饭。
+
+```r
+他们只做两件事，思考和吃饭，思考一会吃口饭，吃完饭后接着思考。
+吃饭时要用两根筷子吃，桌上共有 5 根筷子，每位哲学家左右手边各有 1 根筷子。
+如果筷子被身边的人拿着，自己就得等待
+```
+
+筷子类
+
+```java
+class Chopstick {
+    String name;
+    public Chopstick(String name) {
+        this.name = name;
+    }
+    @Override
+    public String toString() {
+        return "筷子{" + name + '}';
+    }
+}
+```
+
+哲学家类
+
+```java
+class Philosopher extends Thread {
+    Chopstick left;
+    Chopstick right;
+    public Philosopher(String name, Chopstick left, Chopstick right) {
+        super(name);
+        this.left = left;
+        this.right = right;
+    }
+    private void eat() {
+        log.debug("eating...");
+        Sleeper.sleep(1);
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            // 获得左手筷子
+            synchronized (left) {
+                // 获得右手筷子
+                synchronized (right) {
+                    // 吃饭
+                    eat();
+                }
+                // 放下右手筷子
+            }
+            // 放下左手筷子
+        }
+    }
+}
+```
+
+就餐
+
+```java
+Chopstick c1 = new Chopstick("1");
+Chopstick c2 = new Chopstick("2");
+Chopstick c3 = new Chopstick("3");
+Chopstick c4 = new Chopstick("4");
+Chopstick c5 = new Chopstick("5");
+new Philosopher("苏格拉底", c1, c2).start();
+new Philosopher("柏拉图", c2, c3).start();
+new Philosopher("亚里士多德", c3, c4).start();
+new Philosopher("赫拉克利特", c4, c5).start();
+new Philosopher("阿基米德", c5, c1).start();
+```
+
+执行不多会，就执行不下去了
+
+```java
+12:33:15.575 [苏格拉底] c.Philosopher - eating... 
+12:33:15.575 [亚里士多德] c.Philosopher - eating... 
+12:33:16.580 [阿基米德] c.Philosopher - eating... 
+12:33:17.580 [阿基米德] c.Philosopher - eating... 
+// 卡在这里, 不向下运行
+```
+
+使用 `jconsole` 检测死锁，发现
+
+![image-20210330145348313](images/image-20210330145348313.png)
+
+```r
+-------------------------------------------------------------------------
+名称: 阿基米德
+状态: cn.itcast.Chopstick@1540e19d (筷子1) 上的BLOCKED, 拥有者: 苏格拉底
+总阻止数: 2, 总等待数: 1
+
+堆栈跟踪:
+cn.itcast.Philosopher.run(TestDinner.java:48)
+     - 已锁定 cn.itcast.Chopstick@6d6f6e28 (筷子5)
+-------------------------------------------------------------------------
+名称: 苏格拉底
+状态: cn.itcast.Chopstick@677327b6 (筷子2) 上的BLOCKED, 拥有者: 柏拉图
+总阻止数: 2, 总等待数: 1
+
+堆栈跟踪:
+cn.itcast.Philosopher.run(TestDinner.java:48)
+	 - 已锁定 cn.itcast.Chopstick@1540e19d (筷子1)
+-------------------------------------------------------------------------
+名称: 柏拉图
+状态: cn.itcast.Chopstick@14ae5a5 (筷子3) 上的BLOCKED, 拥有者: 亚里士多德
+总阻止数: 2, 总等待数: 0
+
+堆栈跟踪:
+cn.itcast.Philosopher.run(TestDinner.java:48)
+ 	- 已锁定 cn.itcast.Chopstick@677327b6 (筷子2)
+-------------------------------------------------------------------------
+名称: 亚里士多德
+状态: cn.itcast.Chopstick@7f31245a (筷子4) 上的BLOCKED, 拥有者: 赫拉克利特
+总阻止数: 1, 总等待数: 1
+
+堆栈跟踪:
+cn.itcast.Philosopher.run(TestDinner.java:48)
+	 - 已锁定 cn.itcast.Chopstick@14ae5a5 (筷子3)
+-------------------------------------------------------------------------
+名称: 赫拉克利特
+状态: cn.itcast.Chopstick@6d6f6e28 (筷子5) 上的BLOCKED, 拥有者: 阿基米德
+总阻止数: 2, 总等待数: 0
+
+堆栈跟踪:
+cn.itcast.Philosopher.run(TestDinner.java:48)
+	 - 已锁定 cn.itcast.Chopstick@7f31245a (筷子4)
+```
+
+这种线程没有按预期结束，执行不下去的情况，归类为【活跃性】问题，除了死锁以外，还有活锁和饥饿者两种情况。
+
 ### 活锁
+
+> “永动机”
+
+活锁出现在`两个线程互相改变对方的结束条件`，最后谁也无法结束，例如
+
+```java
+public class LiveLock {
+    static volatile int count = 10;
+    public static void main(String[] args) {
+        new Thread(() -> {
+            // 期望减到 0 退出循环
+            while (count > 0) {
+                try {
+                    Thread.sleep(200);
+                    count--;
+                    System.out.println(Thread.currentThread().getName()+"\t"+count);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, "t1").start();
+        new Thread(() -> {
+            // 期望超过 20 退出循环
+            while (count < 20) {
+                try {
+                    Thread.sleep(200);
+                    count++;
+                    System.out.println(Thread.currentThread().getName()+"\t"+count);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, "t2").start();
+    }
+}
+```
+
+```
+t1	8
+t2	8
+t2	9
+t1	9
+t2	10
+t1	10
+t2	10
+t1	10
+t2	9
+t1	9
+t1	10
+t2	10
+......
+```
 
 ### 饥饿
 
 ```r
-很多教程中把饥饿定义为，一个线程由于优先级太低，始终得不到 CPU 调度执行，也不能够结束，饥饿的情况不
-易演示，讲读写锁时会涉及饥饿问题
+很多教程中把饥饿定义为，一个线程由于优先级太低，始终得不到 CPU 调度执行，也不能够结束，饥饿的情况不易演示，讲读写锁时会涉及饥饿问题
 下面我讲一下我遇到的一个线程饥饿的例子，先来看看使用顺序加锁的方式解决之前的死锁问题
 ```
 

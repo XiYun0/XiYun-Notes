@@ -50,7 +50,7 @@
 ## 基础
 
 1. [Java 基础面试总结](java/base/Java基础.md)
-   1. [接口和抽象类：宇宙起源于何处？](java/base/接口和抽象类.md)
+   1. [接口和抽象类](java/base/接口和抽象类.md)
    2. 包装类：自动装箱与拆箱
    3. 泛型：为容器而生
    4. 异常：生病，生死无常
@@ -99,21 +99,22 @@
 
 ## JUC
 
-
+书籍推荐：《Java并发编程的艺术》、《Java并发编程之美》
 
 视频推荐：尚硅谷周阳、黑马满一航
 
-1. [多线程基础](java/juc/多线程基础.md)
-2. [线程运行原理代码图解](java/juc/线程运行原理代码图解.md)
-3. [JMM](java/juc/JMM.md)
-4. [ThreadLocal](java/juc/ThreadLocal.md)
-5. [锁](java/juc/Java锁.md)
-6. [Monitor和Synchronized](java/juc/Monitor.md)
-7. [线程的状态及状态转换](java/juc/线程的6大状态及状态转换.md)
-8. [线程安全集合类](java/juc/线程安全集合类.md)
-9. [JUC工具类](java/juc/JUC工具类.md)
-10. [阻塞队列](java/juc/BlockingQueue.md)
-11. [线程池](java/juc/线程池.md)
+1. [多线程的一些基础知识](java/juc/多线程基础.md)
+2. [创建多线程的方式](java/juc/创建多线程的方式.md)
+3. [线程运行原理代码图解](java/juc/线程运行原理代码图解.md)
+4. [线程的状态及状态转换](java/juc/线程的6大状态及状态转换.md)
+5. [Monitor和Synchronized](java/juc/Monitor.md)
+6. [锁](java/juc/Java锁.md)
+7. [JMM](java/juc/JMM.md)
+8. [ThreadLocal](java/juc/ThreadLocal.md)
+9. [线程安全集合类](java/juc/线程安全集合类.md)
+10. [JUC工具类](java/juc/JUC工具类.md)
+11. [阻塞队列](java/juc/BlockingQueue.md)
+12. [线程池](java/juc/线程池.md)
 
 
 
@@ -161,8 +162,6 @@
 1. [开发流程](system-design/framework/spring/开发流程.md)
 
 ### 项目
-
-[Springboot医院药品管理系统](system-design/framework/spring/Springboot医院药品管理系统.md)
 
 [基于SpringbBoot的多智能体系统开发](system-design/framework/spring/基于SpringbBoot的多智能体系统开发.md)
 
