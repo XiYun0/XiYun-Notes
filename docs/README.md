@@ -18,7 +18,7 @@
 >
 > 正在阅读的书籍、博客：深入理解计算机系统
 >
-> 正在完成的项目：手写RPC框架，https://github.com/he2121/MyRPCFromZero，框架图：https://www.jianguoyun.com/p/Df1i-mAQ-Nv1CBjht-ID 
+> 正在做的项目：谷粒商城
 
 
 
@@ -46,10 +46,6 @@
 
 1. [我的简历](others/resume/我的简历.md)
 2. https://github.com/resumejob/awesome-resume
-
-
-
-
 
 # Java
 
@@ -113,20 +109,13 @@
 2. [线程运行原理代码图解](java/juc/线程运行原理代码图解.md)
 3. [JMM](java/juc/JMM.md)
 4. [ThreadLocal](java/juc/ThreadLocal.md)
-5. [Java锁](java/juc/Java锁.md)
-   1. Lock
-   2. AQS
-   3. ReentranLock
-   4. 读写锁
+5. [锁](java/juc/Java锁.md)
 6. [Monitor和Synchronized](java/juc/Monitor.md)
-7. 线程的6大状态
+7. [线程的状态及状态转换](java/juc/线程的6大状态及状态转换.md)
 8. [线程安全集合类](java/juc/线程安全集合类.md)
-9. [ConcurrentHashMap](java/juc/ConcurrentHashMap)
-10. [工具类](java/juc/)
-11. [阻塞队列](java/juc/BlockingQueue.md)
-12. [线程池](java/juc/线程池.md)
-
-
+9. [JUC工具类](java/juc/JUC工具类.md)
+10. [阻塞队列](java/juc/BlockingQueue.md)
+11. [线程池](java/juc/线程池.md)
 
 
 
@@ -174,8 +163,6 @@
 1. [开发流程](system-design/framework/spring/开发流程.md)
 
 ### 项目
-
-若依单模块前后端分离版
 
 [Springboot医院药品管理系统](system-design/framework/spring/Springboot医院药品管理系统.md)
 
@@ -269,8 +256,6 @@
 
 
 
-
-
 # 系统设计
 
 - [如何成为一名架构师](system-design/如何成为一名架构师.md)
@@ -358,14 +343,6 @@ seata
 
 ### 微服务
 
-若依微服务：https://gitee.com/y_project/RuoYi-Cloud?_from=gitee_search
-
-```
-若依微服务版手把手教你本地搭建环境并运行前后端项目：https://www.cnblogs.com/badaoliumangqizhi/p/13897643.html
-```
-
-
-
 > 微服务：每个项目都是独立自治的
 
 ### 服务组件
@@ -390,7 +367,7 @@ seata
 1. [Docker介绍](system-design/docker/Docker.md)
 2. [Linux安装Docker](system-design/docker/Linux安装Docker.md)
 
-## 架构之力——我的道路
+## 我的道路
 
 - [架构之力](system-design/架构之力.md)
 
