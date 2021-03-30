@@ -9,6 +9,7 @@
 7. [Ele实验室](https://space.bilibili.com/481434238)——科普
 8. [偶尔有点小迷糊](https://space.bilibili.com/39665558)——科普
 9. [七米qimi](https://space.bilibili.com/4638193)
+10. [九曲阑干](https://space.bilibili.com/354767108)——深入理解计算机系统
 
 ## 大厂
 

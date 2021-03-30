@@ -16,7 +16,7 @@
 
 > 写下一个小心愿，成为一名架构师。
 >
-> 正在阅读的面试博客：JAVA基础+JAVA集合+JVM+JUC
+> 正在阅读的书籍、博客：深入理解计算机系统
 >
 > 正在完成的项目：手写RPC框架，https://github.com/he2121/MyRPCFromZero，框架图：https://www.jianguoyun.com/p/Df1i-mAQ-Nv1CBjht-ID 
 
@@ -26,8 +26,6 @@
 
 1. [开源项目](others/开源项目.md)
 2. [视频](others/视频.md)
-   1. Java：毕向东Java基础、宋红康JVM、满一航JVM和JUC、周阳JUC
-   2. 系统架构设计的视频：雷丰阳谷粒商城、周阳SpringCloud、石杉亿级流量项目、念安CRM项目
 3. [我的书单](others/书单.md)
 4. [我的常用工具](others/工具.md)
 5. [UP主、技术大神、大厂、培训机构](others/UP主、技术大神)
@@ -38,6 +36,7 @@
 # 读书笔记
 
 - 2021.3.19 [码农翻身](读书笔记/码农翻身.md)
+- 2021.3.29 深入理解计算机系统
 
 # 注：
 
@@ -53,8 +52,6 @@
 
 
 # Java
-
-> 学好Java，走遍天下都不怕
 
 ## 基础
 
@@ -80,6 +77,7 @@
 > 容器类就是容纳并管理多项数据的类
 
 1. [Java集合面试总结](java/base/Java集合.md)
+2. [HashMap](java/base/HashMap.md)
 
 ## JVM
 
@@ -90,6 +88,8 @@
 视频推荐：尚硅谷宋红康、黑马满一航
 
 <img src="图片/170ec7cd31581d15" alt="img" style="zoom: 67%;" />
+
+
 
 1. [Class Files 结构](java/jvm/类文件结构.md)
    1. 字符串常量池StringTable
@@ -105,25 +105,26 @@
 
 ## JUC
 
+
+
 视频推荐：尚硅谷周阳、黑马满一航
 
-- [Monitor和Synchronized](java/juc/Monitor.md)
-- 线程的6大状态
-
-
-
 1. [多线程基础](java/juc/多线程基础.md)
-2. [JMM](java/juc/JMM.md)
-3. [ThreadLocal](java/juc/ThreadLocal.md)
-4. [Java锁](java/juc/Java锁.md)
+2. [线程运行原理代码图解](java/juc/线程运行原理代码图解.md)
+3. [JMM](java/juc/JMM.md)
+4. [ThreadLocal](java/juc/ThreadLocal.md)
+5. [Java锁](java/juc/Java锁.md)
    1. Lock
    2. AQS
    3. ReentranLock
    4. 读写锁
-5. [并发容器](java/juc/)
-6. [工具类](java/juc/)
-7. [阻塞队列](java/juc/)
-8. [线程池](java/juc/线程池.md)
+6. [Monitor和Synchronized](java/juc/Monitor.md)
+7. 线程的6大状态
+8. [线程安全集合类](java/juc/线程安全集合类.md)
+9. [ConcurrentHashMap](java/juc/ConcurrentHashMap)
+10. [工具类](java/juc/)
+11. [阻塞队列](java/juc/BlockingQueue.md)
+12. [线程池](java/juc/线程池.md)
 
 
 
@@ -136,7 +137,7 @@
 3. [在IDEA中编写优雅简洁的Java代码](java/编写优雅简洁的Java代码.md)
 4. [RestFul API 简明教程](https://snailclimb.gitee.io/javaguide/#/docs/system-design/coding-way/RESTfulAPI%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B)
 
-## Java-GUI
+## GUI
 
 1. [JavaFx](java/gui/JavaFx.md)
 2. Swing
@@ -181,6 +182,12 @@
 [基于SpringbBoot的多智能体系统开发](system-design/framework/spring/基于SpringbBoot的多智能体系统开发.md)
 
 # 计算机基础
+
+## 计算机系统
+
+参考书：深入理解计算机系统
+
+1. [计算机系统漫游](计算机系统/计算机系统漫游.md)
 
 ## 操作系统
 
@@ -466,5 +473,7 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 - [原则读书笔记](others/纵横天下/原则读书笔记.md)
 - [债务危机读书笔记](others/纵横天下/债务危机读书笔记.md)
 
+# 视频制作
 
+manim：https://github.com/manim-kindergarten/manim_sandbox/wiki
 
