@@ -65,6 +65,7 @@
 
 1. IO
 2. [BIO,NIO,AIO 总结 ](java/BIO-NIO-AIO.md)
+3. [Netty，在后面系统设计介绍](#Netty)
 
 ## 集合（容器）
 
@@ -265,9 +266,27 @@
 
 - [深入理解Netty](system-design/netty/深入理解Netty.md)
 
+> 黑马满一航
+
+1. [nio三大组件](java/io/nio三大组件.md)
+
 ## 高并发
 
 瞬间的高并发、大流量访问可能导致服务器宕机。
+
+### 读写分离
+
+```r
+读写分离主要是为了将数据库的读和写操作分不到不同的数据库节点上。主服务器负责写，从服务器负责读。另外，一主一从或者一主多从都可以。
+读写分离可以大幅提高读性能，小幅提高写的性能。因此，读写分离更适合单机并发读请求比较多的场景。
+```
+
+### 分库分表
+
+```r
+分库分表是为了解决由于库、表数据量过大，而导致数据库性能持续下降的问题。 常见的分库分表工具有：sharding-jdbc（当当）、TSharding（蘑菇街）、MyCAT（基于 Cobar）、Cobar（阿里巴巴）...。
+推荐使用 sharding-jdbc 。 因为，sharding-jdbc 是一款轻量级 Java 框架，以 jar 包形式提供服务，不要我们做额外的运维工作，并且兼容性也很好。
+```
 
 ### 缓存架构
 
@@ -291,21 +310,32 @@
 
 ### 分库分表
 
-## 高可用
+## 微服务
 
-1. [什么是高可用架构](system-design/high-available/什么是高可用架构.md)
+微服务：每个项目都是独立自治的
 
-### hystrix
+[SpringCloud项目创建步骤](system-design/micro-service/SpringCloud.md)
 
-限流、熔断、降级
+[谷粒商城](system-design/micro-service/谷粒商城.md)
 
-### Sentinel
+### RPC
 
-## 分布式
+1. [手写RPC框架](system-design/micro-service/手写RPC.md)
+2. [Dubbo](system-design/micro-service/Dubbo.md)
+
+#### ZooKeeper
+
+- [ZooKeeper 相关概念总结](system-design/framework/ZooKeeper.md)
+
+- [ZooKeeper 数据模型和常见命令](system-design/framework/ZooKeeper数据模型和常见命令.md)
+
+### 集群、分布式
+
+集群是一种物理形态，分布式是一种工作方式，分布式系统就是将整个集群变得像一个整体一样。集群不一定是分布式，分布式一定是集群。
 
 1. [幂等性](system-design/micro-service/幂等性.md)
 
-### CAP
+#### CAP
 
 CAP概念
 
@@ -327,33 +357,63 @@ BASE
 
 seata
 
-## 微服务
+### 负载均衡
+
+```r
+订单服务调用商品服务，商品服务的压力肯定很大，此时应该放到多台机器上。
+
+分布式系统中，A服务需要调用B服务，B服务在多台机器中都存在，A调用任意一个服务器均可完成功能。
+
+为了使每一个服务器都不要太忙或者太闲，我们可以负载均衡的调用每一个服务器提升网站的`鲁棒性`。
+```
 
 
 
+### 服务注册中心、配置中心
+
+注册中心
+
+```r
+A服务调用B服务，A服务并不知道B服务当前在哪几台服务器有，哪些正常的，哪些服务已经下线。解决这个问题可以引入`注册中心`;
+如果某些服务下线，我们其他人可以实时的感知到其他服务的状态，`从而避免调用不可用的服务`。
+```
+
+配置中心
+
+```r
+每一个服务最终都有大量的配置，并且每个服务都可能部署在多台机器上。`我们经常需要变更配置`，我们可以让每个服务在配置中心获取自己的配置。
+配置中心用来集中管理微服务的配置信息。
+```
+
+[Nacos](system-design/micro-service/Nacos.md)-服务注册中心、配置中心
 
 
-### RPC
 
-1. [手写RPC框架](system-design/micro-service/手写RPC.md)
-2. [Dubbo](system-design/micro-service/Dubbo.md)
+### 高可用——服务限流、熔断、降级
 
-### 微服务
+[什么是高可用架构](system-design/high-available/什么是高可用架构.md)
 
-> 微服务：每个项目都是独立自治的
+问题
 
-### 服务组件
+```r
+在微服务架构中，微服务之间通过网络进行通信，存在相互依赖，当其中一个服务不可用时，有可能会造成雪崩效应。要防止这样的情况，必须要有容错机制来保护服务。
+如：订单服务 - > 商品服务 - > 库存服务。加入库存服务宕机了或者网络通信慢了（10秒数据才返回），商品服务会一直等待10秒才响应。越来越多的请求进来阻塞会导致请求积压。
+```
 
-1. [SpringCloud项目创建步骤](system-design/micro-service/SpringCloud.md)
-2. [Nacos](system-design/micro-service/Nacos.md)-服务注册中心、配置中心
-3. Sentinel-取代hystrix
-4. [Gateway](system-design/micro-service/Gateway.md)-API网关
 
-#### ZooKeeper
 
-- [ZooKeeper 相关概念总结](system-design/framework/ZooKeeper.md)
+```r
+1)、服务熔断。
+	a. 设置服务的超时，当被调用的服务经常失败到达某个`阀值`，我们可以开启断路保护机制，后来的请求不再去调用这个服务。`本地直接返回默认的数据`，比如直接返回null。
+2)、服各降级
+	a.在运维期间， 当系统处于高峰期，`系统资源紧张`，我们可以让`非核心业务降级运行`。降级：某些服务不处理，或者简单处理[抛异常、返回NULL、调用Mock数据、调用Fallback处理逻辑]。
+```
 
-- [ZooKeeper 数据模型和常见命令](system-design/framework/ZooKeeper数据模型和常见命令.md)
+Sentinel-取代hystrix
+
+### API网关
+
+[Gateway](system-design/micro-service/Gateway.md)-API网关
 
 ## 秒杀系统
 
