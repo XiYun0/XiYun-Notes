@@ -90,7 +90,7 @@
 2. 类加载器子系统
    1. [类加载过程](java/jvm/类加载过程.md)（广义的加载）
    2. [类加载器](java/jvm/类加载器.md)（狭义的加载）
-3. [Java内存区域](java/jvm/Java内存区域.md)
+3. [Java内存区域:earth_africa:](java/jvm/Java内存区域.md)
 4. 执行引擎
    1. 解释器
    2. 即时编译器
@@ -185,7 +185,7 @@
 ### Linux
 
 - [虚拟机Linux安装和宝塔](https://www.yuque.com/docs/share/dde3805e-0e52-4de6-b5b1-f7a88b4035e6?# )
-- [后端程序员必备的 Linux 基础知识](operating-system/后端程序员必备的Linux基础知识.md)  
+- [Linux 基础知识](operating-system/linux/Linux基础知识.md)  
 - [Shell 编程入门](operating-system/Shell.md) 
 
 ## 计算机网络
@@ -234,7 +234,7 @@
 
 ## Redis
 
-1. [Redis概述 ](database/Redis.md)
+1. [Redis概述 ](database/redis/Redis.md)
 2. [Redis安装](database/redis/Redis安装.md)
 3. [Redis缓存](database/redis/Redis缓存.md)——分布式缓存中间件
 4. [Redis分布式锁](database/redis/Redis分布式锁.md)
