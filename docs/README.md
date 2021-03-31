@@ -65,7 +65,15 @@
 
 1. IO
 2. [BIO,NIO,AIO 总结 ](java/BIO-NIO-AIO.md)
-3. [Netty，在后面系统设计介绍](#Netty)
+
+### Netty
+
+> 下面笔记跟着满一航老师的视频来
+
+1. [NIO基础](java/io/NIO基础.md)
+2. [Netty入门](java/io/Netty入门.md)
+3. [Netty进阶](java/io/Netty进阶.md)
+4. [Netty优化与源码](java/io/Netty优化与源码.md)
 
 ## 集合（容器）
 
@@ -261,14 +269,6 @@
 ## 设计模式
 
 - [设计模式系列文章](system-design/设计模式.md)
-
-## Netty
-
-- [深入理解Netty](system-design/netty/深入理解Netty.md)
-
-> 黑马满一航
-
-1. [nio三大组件](java/io/nio三大组件.md)
 
 ## 高并发
 
