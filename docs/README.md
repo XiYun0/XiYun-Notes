@@ -39,6 +39,8 @@
 # 注：
 
 > 代码和绘图都放在了坚果云里面。
+>
+> 语雀：https://www.yuque.com/kuangxiqiruogu
 
 # 面试、简历关
 
@@ -58,8 +60,6 @@
    6. [Java 反射](java/base/Java反射.md)
 2. 新特性
    1. [Java 8 新特性总结](java/What's%20New%20in%20JDK8/Java8Tutorial.md)
-
-
 
 ## IO
 
@@ -440,6 +440,12 @@ Sentinel-取代hystrix
 
 ## Flume
 
+[🚀Flume](https://www.yuque.com/docs/share/882bfdb2-5eeb-477c-a910-673f358f0534?# )
+
+## Kafka
+
+ [✈️Kafka](https://www.yuque.com/docs/share/c5cbfb81-a598-43ce-93c8-20404aa7e1b4?#)
+
 # 前端
 
 ### TypeScript
@@ -458,7 +464,6 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 # Python
 
 - [功能齐全、强大的第三方库](python/第三方库.md)
-- [OpenCV](python/OpenCV.md)
 - [python脚本控制手机软件！尽搞些花里胡哨的](python/python脚本控制手机软件.md)
 - [解放双手的自动化](python/自动化.md)
 - [自动抢货](python/自动抢货.md)
