@@ -94,8 +94,7 @@
 
 
 
-1. [Class Files 结构](java/jvm/类文件结构.md)
-   1. 字符串常量池StringTable
+1. [Class文件结构](java/jvm/类文件结构.md)
 2. 类加载器子系统
    1. [类加载过程](java/jvm/类加载过程.md)（广义的加载）
    2. [类加载器](java/jvm/类加载器.md)（狭义的加载）
