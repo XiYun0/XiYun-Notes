@@ -44,8 +44,10 @@
 
 # 面试、简历关
 
-1. [我的简历](others/resume/我的简历.md)
-2. https://github.com/resumejob/awesome-resume
+1. :crossed_swords:[面试—话术](others/面试—纯话版.md):crossed_swords:
+2. [面经](others/面经.md)
+3. [我的简历](others/resume/我的简历.md)
+4. https://github.com/resumejob/awesome-resume
 
 # Java
 
@@ -446,6 +448,16 @@ Sentinel-取代hystrix
  [✈️Kafka](https://www.yuque.com/docs/share/c5cbfb81-a598-43ce-93c8-20404aa7e1b4?#)
 
 # 前端
+
+## HTML
+
+
+
+## CSS
+
+## JavaScript
+
+
 
 ### TypeScript
 
