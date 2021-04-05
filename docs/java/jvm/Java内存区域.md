@@ -188,13 +188,61 @@ Java堆是JVM管理的内存中最大的一块，也是所有线程`共享的`�
 
 别名叫做Non-Heap（非堆），目的应该是与Java堆区分开来。
 
-#### StringTable
+#### 常量池
 
-### 运行时常量池
+以你好世界举例
+
+```java
+public class Hello(){
+    public static void main(String[] args){
+        System.out.println("你好世界");
+    }
+}
+```
+
+javap反编译
+
+```r
+public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #3                  // String 你好世界
+         5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 18: 0
+        line 19: 8
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0  args   [Ljava/lang/String;
+```
+
+细节
+
+```r
+1. getstatic得到某个类的静态成员变量，#2表示到常量池去找
+    #2 = Fieldref           #21.#22        // java/lang/System.out:Ljava/io/PrintStream;
+    意思是找到一个java.lang包下的System类的out成员变量，这个out成员变量是PrintStream类型的。
+2. ldc加载，找到一个引用地址
+3. invokevirtual 调用虚方法，刚才我们找到了PrintStream类型的out成员变量，现在调用将这个成员变量引用的对象的方法，也就是println
+```
+
+
+
+
+
+#### 运行时常量池
+
+上面我们看到的是常量池信息，但是运行时是要把常量池放到内存里面的，也就是运行时常量池。
 
 方法区的一部分。
 
 class文件中有一个常量池，用于`存放编译期`生成的各种字面量和符号引用，这部分内容将在类加载后进入方法区的运行时常量池中存放。 
+
+#### StringTable
 
 
 
