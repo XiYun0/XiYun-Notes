@@ -5,6 +5,8 @@
 
 
 >github阅读：https://xiyun0.github.io/XiYun-Notes/#/
+>
+>gitee阅读（国内访问快）：http://xiyun0.gitee.io/xiyun-notes/
 
 
 
