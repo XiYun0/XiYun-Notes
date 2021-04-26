@@ -1,3 +1,7 @@
+## 微信公众号
+
+1. 码农翻身
+
 ## B站
 
 1. [孙帅suns](https://space.bilibili.com/284638819)——顶尖的架构师
@@ -15,7 +19,7 @@
 
 - [阿里技术沙龙](http://club.alibabatech.org/)
 - [美团点评技术团队](http://tech.meituan.com/)
-- [IBM中国java技术社区](http://www.ibm.com/developerworks/cn/java/)
+- [IBM中国java技术社区](http://www.ibm.com/developerworks/cn/后端/java/)
 - [OneAPM团队技术博客](http://blog.oneapm.com/)
 - [淘宝测试团队技术博客](http://test.taobao.com/index.htm)
 - [阿里云栖团队技术博客](https://yq.aliyun.com/articles/)

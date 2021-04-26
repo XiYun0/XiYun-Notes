@@ -69,7 +69,7 @@ javap
 
 ```java
 public static void main(java.lang.String[]);
-	descriptor:([Ljava/lang/String;)V
+	descriptor:([L后端/java/lang/String;)V
 	flags:ACC_PUBLIC,ACC_STATIC
 	Code:
 		stack=2,locals=3,args_size=1
@@ -101,12 +101,12 @@ public static void main(java.lang.String[]);
             line 11:24
         LocalVariableTable:
         	Start  Length  Slot  Name   Signature
-        		0 	  25   0     args   [Ljava/lang/String;
+        		0 	  25   0     args   [L后端/java/lang/String;
          StackMapTable: number_of_entries = 2
          	frame_type = 255 /* full_frame */
          		offset_delta = 19
-         		locals = [ class "[Ljava/lang/String;", class java/lang/Object ]
-         		stack = [ class java/lang/Throwable ]
+         		locals = [ class "[L后端/java/lang/String;", class 后端/java/lang/Object ]
+         		stack = [ class 后端/java/lang/Throwable ]
          	frame_type = 250 /* chop */
          		offset_delta = 4
 

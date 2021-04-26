@@ -1,4 +1,4 @@
-https://snailclimb.gitee.io/javaguide/#/docs/system-design/naming
+https://snailclimb.gitee.io/javaguide/#/docs/后端/系统设计/naming
 
 >There are only two hard things in Computer Science: cache invalidation and naming things.
 >

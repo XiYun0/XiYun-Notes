@@ -2070,7 +2070,7 @@ socket.getOutputStream().write(buf);
 
 进一步优化（底层采用了 linux 2.1 后提供的 sendFile 方法），java 中对应着两个 channel 调用 transferTo/transferFrom 方法拷贝数据
 
-![](../../../../../坚果云笔记/Java/基础/IO/黑马Netty教程源码资料/讲义/Netty-讲义/img/0026.png)
+![](../../../../../坚果云笔记/后端/java/基础/IO/黑马Netty教程源码资料/讲义/Netty-讲义/img/0026.png)
 
 1. java 调用 transferTo 方法后，要从 java 程序的**用户态**切换至**内核态**，使用 DMA将数据读入**内核缓冲区**，不会使用 cpu
 2. 数据从**内核缓冲区**传输到 **socket 缓冲区**，cpu 会参与拷贝
@@ -2085,7 +2085,7 @@ socket.getOutputStream().write(buf);
 
 进一步优化（linux 2.4）
 
-![](../../../../../坚果云笔记/Java/基础/IO/黑马Netty教程源码资料/讲义/Netty-讲义/img/0027.png)
+![](../../../../../坚果云笔记/后端/java/基础/IO/黑马Netty教程源码资料/讲义/Netty-讲义/img/0027.png)
 
 1. java 调用 transferTo 方法后，要从 java 程序的**用户态**切换至**内核态**，使用 DMA将数据读入**内核缓冲区**，不会使用 cpu
 2. 只会将一些 offset 和 length 信息拷入 **socket 缓冲区**，几乎无消耗

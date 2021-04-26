@@ -204,27 +204,27 @@ javap反编译
 
 ```r
 public static void main(java.lang.String[]);
-    descriptor: ([Ljava/lang/String;)V
+    descriptor: ([L后端/java/lang/String;)V
     flags: ACC_PUBLIC, ACC_STATIC
     Code:
       stack=2, locals=1, args_size=1
-         0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         0: getstatic     #2                  // Field 后端/java/lang/System.out:L后端/java/io/PrintStream;
          3: ldc           #3                  // String 你好世界
-         5: invokevirtual #4                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         5: invokevirtual #4                  // Method 后端/java/io/PrintStream.println:(L后端/java/lang/String;)V
          8: return
       LineNumberTable:
         line 18: 0
         line 19: 8
       LocalVariableTable:
         Start  Length  Slot  Name   Signature
-            0       9     0  args   [Ljava/lang/String;
+            0       9     0  args   [L后端/java/lang/String;
 ```
 
 细节
 
 ```r
 1. getstatic得到某个类的静态成员变量，#2表示到常量池去找
-    #2 = Fieldref           #21.#22        // java/lang/System.out:Ljava/io/PrintStream;
+    #2 = Fieldref           #21.#22        // 后端/java/lang/System.out:L后端/java/io/PrintStream;
     意思是找到一个java.lang包下的System类的out成员变量，这个out成员变量是PrintStream类型的。
 2. ldc加载，找到一个引用地址
 3. invokevirtual 调用虚方法，刚才我们找到了PrintStream类型的out成员变量，现在调用将这个成员变量引用的对象的方法，也就是println

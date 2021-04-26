@@ -22,198 +22,77 @@
 
 
 
+>代码和绘图都放在了坚果云里面。
+>
+>语雀：https://www.yuque.com/kuangxiqiruogu
+
 # 资源
 
-1. [开源项目](others/开源项目.md)
-2. [视频](others/视频.md)
-3. [我的书单](others/书单.md)
-4. [我的常用工具](others/工具.md)
-5. [UP主、技术大神、大厂、培训机构](others/UP主、技术大神)
-6. [博客、文章](others/blog.md)
-7. [Technology-Stack](https://github.com/XiYun0/Technology-Stack)
-8. [好用的网站](others/好用的网站.md)
+1. [开源项目](其他/开源项目.md)
+2. [视频](其他/视频.md)
+3. [我的书单](其他/书单.md)
+4. [我的常用工具](其他/工具.md)
+5. [UP主、技术大神、大厂、培训机构](其他/UP主、技术大神)
+6. [博客、文章](其他/blog.md)
+8. [好用的网站](其他/好用的网站.md)
 
 # 读书笔记
 
 - 2021.3.19 [码农翻身](读书笔记/码农翻身.md)
 - 2021.3.29 深入理解计算机系统
+- 2021.4.26 操作系统哲学原理
 
-# 注：
 
-> 代码和绘图都放在了坚果云里面。
->
-> 语雀：https://www.yuque.com/kuangxiqiruogu
 
 # 面试、简历关
 
-1. :crossed_swords:[面试—话术](others/面试—纯话版.md):crossed_swords:
-2. [面经](others/面经.md)
-3. [我的简历](others/resume/我的简历.md)
+1. :crossed_swords:[面试—话术](其他/面试—纯话版.md):crossed_swords:
+2. [面经](其他/面经.md)
+3. [我的简历](其他/resume/我的简历.md)
 4. https://github.com/resumejob/awesome-resume
 
-# Java
+# 计算机系统
 
-## 基础
+## 计算机组成
 
-1. [Java 基础面试总结](java/base/Java基础.md)
-   1. [接口和抽象类](java/base/接口和抽象类.md)
-   2. 包装类：自动装箱与拆箱
-   3. 泛型：为容器而生
-   4. 异常：生病，生死无常
-   5. 注解
-   6. [Java 反射](java/base/Java反射.md)
-2. 新特性
-   1. [Java 8 新特性总结](java/What's%20New%20in%20JDK8/Java8Tutorial.md)
-
-## IO
-
-1. IO
-2. [BIO,NIO,AIO 总结 ](java/BIO-NIO-AIO.md)
-
-### Netty
-
-> 下面笔记跟着满一航老师的视频来
-
-1. [NIO基础](java/io/NIO基础.md)
-2. [Netty入门](java/io/Netty入门.md)
-3. [Netty进阶](java/io/Netty进阶.md)
-4. [Netty优化与源码](java/io/Netty优化与源码.md)
-
-## 集合（容器）
-
-> 容器类就是容纳并管理多项数据的类
-
-1. [Java集合面试总结](java/base/Java集合.md)
-2. [HashMap](java/base/HashMap.md)
-
-## JVM
-
->Java与C++之间有一堵由内存动态分配和垃圾收集技术所围成的“高墙”，墙外面的人想进去，墙里面的人却想出来。
-
-书籍推荐：《深入理解Java虚拟机》、《自己动手写Java虚拟机》、《Java性能权威指南》
-
-视频推荐：尚硅谷宋红康、黑马满一航
-
-<img src="图片/170ec7cd31581d15" alt="img" style="zoom: 67%;" />
-
-
-
-1. [Class文件结构](java/jvm/类文件结构.md)
-2. 类加载器子系统
-   1. [类加载过程](java/jvm/类加载过程.md)（广义的加载）
-   2. [类加载器](java/jvm/类加载器.md)（狭义的加载）
-3. [Java内存区域:earth_africa:](java/jvm/Java内存区域.md)
-4. 执行引擎
-   1. 解释器
-   2. 即时编译器
-5. [JVM垃圾回收机制](java/jvm/JVM垃圾回收机制.md)
-6. [JDK 监控和故障处理工具](java/jvm/JDK监控和故障处理工具总结.md)
-
-## JUC
-
-书籍推荐：《Java并发编程的艺术》、《Java并发编程之美》
-
-视频推荐：尚硅谷周阳、黑马满一航
-
-1. [多线程的一些基础知识](java/juc/多线程基础.md)
-2. [创建多线程的方式](java/juc/创建多线程的方式.md)
-3. [线程运行原理代码图解](java/juc/线程运行原理代码图解.md)
-4. [线程的状态及状态转换](java/juc/线程的6大状态及状态转换.md)
-5. [Monitor和Synchronized](java/juc/Monitor.md)
-6. [锁](java/juc/Java锁.md)
-7. [JMM](java/juc/JMM.md)
-8. [ThreadLocal](java/juc/ThreadLocal.md)
-9. [线程安全集合类](java/juc/线程安全集合类.md)
-10. [JUC工具类](java/juc/JUC工具类.md)
-11. [阻塞队列](java/juc/BlockingQueue.md)
-12. [线程池](java/juc/线程池.md)
-
-
-
-## 编程规范
-
-1. [Java 编程规范](java/Java编程规范.md)
-2. [Java命名](java/Java命名.md)
-3. [在IDEA中编写优雅简洁的Java代码](java/编写优雅简洁的Java代码.md)
-4. [RestFul API 简明教程](https://snailclimb.gitee.io/javaguide/#/docs/system-design/coding-way/RESTfulAPI%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B)
-
-## GUI
-
-1. [JavaFx](java/gui/JavaFx.md)
-2. Swing
-
-## 源码阅读
-
-1. [String源码](java/base/String源码.md)
-
-## IDEA
-
-1. [快捷键设置](java/IDEA/快捷键设置.md)
-
-## Spring
-
-
-
-- [Spring](system-design/framework/spring/Spring.md)
-- [Spring——孙帅老师的视频，强烈推荐，事务讲得也棒](system-design/framework/spring/Spring（孙老师笔记）.md)
-- SpringMVC
-- Mybatis
-
-## SpringBoot
-
-[Springboot源码阅读](system-design/framework/spring/SpringBoot源码阅读.md)
-
-- [SpringBoot基础](system-design/framework/spring/SpringBoot基础.md)
-- [SpringBoot核心——Web](system-design/framework/spring/SpringBoot核心——Web.md)
-- [SpringBoot核心——数据访问](system-design/framework/spring/SpringBoot核心——数据访问.md)
-- [SpringBoot——Mybatis](system-design/framework/spring/SpringBoot——Mybatis.md)
-- [文件上传](system-design/framework/spring/SpringBoot文件上传.md)
-
-### 开发流程
-
-1. [开发流程](system-design/framework/spring/开发流程.md)
-
-### 项目
-
-[基于SpringbBoot的多智能体系统开发](system-design/framework/spring/基于SpringbBoot的多智能体系统开发.md)
-
-# 计算机基础
-
-## 计算机系统
-
-参考书：深入理解计算机系统
+> 书籍：
+>
+> - 深入理解计算机系统
 
 1. [计算机系统漫游](计算机系统/计算机系统漫游.md)
 
 ## 操作系统
 
+> 书籍：
+>
+> - 操作系统导论
+> - 操作系统哲学原理
+
 - 虚拟化
   - 虚拟化CPU
-  - [内存管理](operating-system/内存管理.md)
+  - [内存管理](计算机系统/操作系统/内存管理.md)
 - 进程管理
-- [死锁](operating-system/死锁.md)
+- [死锁](计算机系统/操作系统/死锁.md)
 - 持久化
 
 ### Linux
 
 - [虚拟机Linux安装和宝塔](https://www.yuque.com/docs/share/dde3805e-0e52-4de6-b5b1-f7a88b4035e6?# )
-- [Linux 基础知识](operating-system/linux/Linux基础知识.md)  
-- [Shell 编程入门](operating-system/Shell.md) 
+- [Linux 基础知识](计算机系统/操作系统/linux/Linux基础知识.md)  
+- [Shell 编程入门](计算机系统/操作系统/Shell.md) 
 
 ## 计算机网络
 
-> 快递收发
-
-- [何为网络？](network/何为网络.md)
+- [何为网络？](计算机系统/计算机网络/何为网络.md)
 
 - 计算机网络面试题
 
   ↓自顶向下↓
 
-1. [应用层](network/应用层.md)
-2. [传输层](network/传输层.md)——运输商
-3. [网络层](network/网络层.md)
-4. [数据链路层](network/网络层.md)
+1. [应用层](计算机系统/计算机网络/应用层.md)
+2. [传输层](计算机系统/计算机网络/传输层.md)——运输商
+3. [网络层](计算机系统/计算机网络/网络层.md)
+4. [数据链路层](计算机系统/计算机网络/网络层.md)
 
 
 
@@ -223,75 +102,199 @@
 
 > 工具
 
-1. [数据结构知识学习与面试](dataStructures-algorithms/数据结构.md)
+1. [数据结构知识学习与面试](计算机系统/数据结构与算法/数据结构.md)
 
 ### 算法
 
 > 实现的方法
 
-1. [算法学习资源推荐](dataStructures-algorithms/算法学习资源推荐.md)
-2. [刷爆力扣和剑指！](dataStructures-algorithms/刷爆力扣和剑指！.md)
+1. [算法学习资源推荐](计算机系统/数据结构与算法/算法学习资源推荐.md)
+2. [刷爆力扣和剑指！](计算机系统/数据结构与算法/刷爆力扣和剑指！.md)
 
-# 数据库
+# 前端
 
-1. [ORM框架](database/ORM框架.md)
-2. 数据库服务器的主从热备功能
-3. SQL
-
-## MySQL
-
-1. [MySQL概述](database//mysql/MySQL.md)
-2. 索引
-3. 存储引擎
-
-## Redis
-
-1. [Redis概述 ](database/redis/Redis.md)
-2. [Redis安装](database/redis/Redis安装.md)
-3. [Redis缓存](database/redis/Redis缓存.md)——分布式缓存中间件
-4. [Redis分布式锁](database/redis/Redis分布式锁.md)
-   1. Redisson
-   2. [缓存数据一致性](database/redis/缓存数据一致性.md)
-5. [Redis持久化及其意义](database/redis/Redis持久化.md)
-6. [LRU缓存清除算法](database/redis/LRU缓存清除算法.md)
-7. [缓存雪崩、缓存穿透](database/redis/缓存雪崩、缓存穿透.md)
-8. [Redis的实战](database/redis/Redis实战.md)
-
-## ElasticSearch
-
-## Hbase
+## HTML
 
 
 
+## CSS
 
 
-# 系统设计
 
-- [如何成为一名架构师](system-design/如何成为一名架构师.md)
+## JavaScript
 
-## 设计模式
 
-- [设计模式系列文章](system-design/设计模式.md)
 
-## 高并发
+### TypeScript
+
+https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
+
+### Vue3
+
+- [vue3](前端/vue3.md)
+
+
+
+# 后端
+
+## Java
+
+### 基础
+
+1. [Java 基础面试总结](后端/java/base/Java基础.md)
+   1. [接口和抽象类](后端/java/base/接口和抽象类.md)
+   2. 包装类：自动装箱与拆箱
+   3. 泛型：为容器而生
+   4. 异常：生病，生死无常
+   5. 注解
+   6. [Java 反射](后端/java/base/Java反射.md)
+2. 新特性
+   1. [Java 8 新特性总结](后端/java/What's%20New%20in%20JDK8/Java8Tutorial.md)
+
+### IO
+
+1. IO
+2. [BIO,NIO,AIO 总结 ](后端/java/BIO-NIO-AIO.md)
+
+### Netty
+
+> 下面笔记跟着满一航老师的视频来
+
+1. [NIO基础](后端/java/io/NIO基础.md)
+2. [Netty入门](后端/java/io/Netty入门.md)
+3. [Netty进阶](后端/java/io/Netty进阶.md)
+4. [Netty优化与源码](后端/java/io/Netty优化与源码.md)
+
+### 集合（容器）
+
+> 容器类就是容纳并管理多项数据的类
+
+1. [Java集合面试总结](后端/java/base/Java集合.md)
+2. [HashMap](后端/java/base/HashMap.md)
+
+### JVM
+
+>Java与C++之间有一堵由内存动态分配和垃圾收集技术所围成的“高墙”，墙外面的人想进去，墙里面的人却想出来。
+
+书籍推荐：《深入理解Java虚拟机》、《自己动手写Java虚拟机》、《Java性能权威指南》
+
+视频推荐：尚硅谷宋红康、黑马满一航
+
+<img src="images/170ec7cd31581d15" alt="img" style="zoom: 67%;" />
+
+
+
+1. [Class文件结构](后端/java/jvm/类文件结构.md)
+2. 类加载器子系统
+   1. [类加载过程](后端/java/jvm/类加载过程.md)（广义的加载）
+   2. [类加载器](后端/java/jvm/类加载器.md)（狭义的加载）
+3. [Java内存区域:earth_africa:](后端/java/jvm/Java内存区域.md)
+4. 执行引擎
+   1. 解释器
+   2. 即时编译器
+5. [JVM垃圾回收机制](后端/java/jvm/JVM垃圾回收机制.md)
+6. [JDK 监控和故障处理工具](后端/java/jvm/JDK监控和故障处理工具总结.md)
+
+### JUC
+
+书籍推荐：《Java并发编程的艺术》、《Java并发编程之美》
+
+视频推荐：尚硅谷周阳、黑马满一航
+
+1. [多线程的一些基础知识](后端/java/juc/多线程基础.md)
+2. [创建多线程的方式](后端/java/juc/创建多线程的方式.md)
+3. [线程运行原理代码图解](后端/java/juc/线程运行原理代码图解.md)
+4. [线程的状态及状态转换](后端/java/juc/线程的6大状态及状态转换.md)
+5. [Monitor和Synchronized](后端/java/juc/Monitor.md)
+6. [锁](后端/java/juc/Java锁.md)
+7. [JMM](后端/java/juc/JMM.md)
+8. [ThreadLocal](后端/java/juc/ThreadLocal.md)
+9. [线程安全集合类](后端/java/juc/线程安全集合类.md)
+10. [JUC工具类](后端/java/juc/JUC工具类.md)
+11. [阻塞队列](后端/java/juc/BlockingQueue.md)
+12. [线程池](后端/java/juc/线程池.md)
+
+
+
+### 编程规范
+
+1. [Java 编程规范](后端/java/Java编程规范.md)
+2. [Java命名](后端/java/Java命名.md)
+3. [在IDEA中编写优雅简洁的Java代码](后端/java/编写优雅简洁的Java代码.md)
+4. [RestFul API 简明教程](https://snailclimb.gitee.io/javaguide/#/docs/后端/系统设计/coding-way/RESTfulAPI%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B)
+
+### GUI
+
+1. [JavaFx](后端/java/gui/JavaFx.md)
+2. Swing
+
+### 源码阅读
+
+1. [String源码](后端/java/base/String源码.md)
+
+### IDEA
+
+1. [快捷键设置](后端/java/IDEA/快捷键设置.md)
+
+### Spring
+
+
+
+- [Spring](后端/系统设计/framework/spring/Spring.md)
+- [Spring——孙帅老师的视频，强烈推荐，事务讲得也棒](后端/系统设计/framework/spring/Spring（孙老师笔记）.md)
+- SpringMVC
+- Mybatis
+
+### SpringBoot
+
+[Springboot源码阅读](后端/系统设计/framework/spring/SpringBoot源码阅读.md)
+
+- [SpringBoot基础](后端/系统设计/framework/spring/SpringBoot基础.md)
+- [SpringBoot核心——Web](后端/系统设计/framework/spring/SpringBoot核心——Web.md)
+- [SpringBoot核心——数据访问](后端/系统设计/framework/spring/SpringBoot核心——数据访问.md)
+- [SpringBoot——Mybatis](后端/系统设计/framework/spring/SpringBoot——Mybatis.md)
+- [文件上传](后端/系统设计/framework/spring/SpringBoot文件上传.md)
+
+### 开发流程
+
+1. [开发流程](后端/系统设计/framework/spring/开发流程.md)
+
+### 项目
+
+[基于SpringbBoot的多智能体系统开发](后端/系统设计/framework/spring/基于SpringbBoot的多智能体系统开发.md)
+
+## Golang
+
+- [Golang基础](后端/golang/Golang基础.md)
+- [Golang并发](后端/golang/Golang并发.md)
+
+## 系统设计
+
+- [如何成为一名架构师](后端/系统设计/如何成为一名架构师.md)
+
+### 设计模式
+
+- [设计模式系列文章](后端/系统设计/设计模式.md)
+
+### 高并发
 
 瞬间的高并发、大流量访问可能导致服务器宕机。
 
-### 读写分离
+#### 读写分离
 
 ```r
 读写分离主要是为了将数据库的读和写操作分不到不同的数据库节点上。主服务器负责写，从服务器负责读。另外，一主一从或者一主多从都可以。
 读写分离可以大幅提高读性能，小幅提高写的性能。因此，读写分离更适合单机并发读请求比较多的场景。
 ```
 
-### 分库分表
+#### 分库分表
 
 ```r
 分库分表是为了解决由于库、表数据量过大，而导致数据库性能持续下降的问题。 常见的分库分表工具有：sharding-jdbc（当当）、TSharding（蘑菇街）、MyCAT（基于 Cobar）、Cobar（阿里巴巴）...。
 推荐使用 sharding-jdbc 。 因为，sharding-jdbc 是一款轻量级 Java 框架，以 jar 包形式提供服务，不要我们做额外的运维工作，并且兼容性也很好。
 ```
 
-### 缓存架构
+#### 缓存架构
 
 网站访问遵循二八定律：80%的业务访问集中在20%的数据上。把这些小部分数据缓存在内存中，就可以减少数据库压力，提高网站的数据访问速度，改善数据库的写入性能。
 
@@ -302,49 +305,47 @@
    1. `本地缓存`及其在分布式系统下的问题——Map
    2. `分布式缓存`、缓存中间件
       1. [Redis](#Redis)
-   2. SpringCache
+   3. SpringCache
 2. 分布式锁，与之对应的就是synchronized、Lock那一套的本地锁
 
-### 负载均衡
+#### 负载均衡
 
 负载均衡调度服务器：将来自浏览器的用户访问请求分发到不同的应用服务器上，以降低服务器的负载压力。用户多了，就增加集群中应用服务器的数量。
 
-### 异步队列架构
+#### 异步队列架构
 
-### 分库分表
+#### 分库分表
 
-## 微服务
+### 微服务
 
 微服务：每个项目都是独立自治的
 
-[SpringCloud项目创建步骤](system-design/micro-service/SpringCloud.md)
+[SpringCloud项目创建步骤](后端/系统设计/micro-service/SpringCloud.md)
 
-[谷粒商城](system-design/micro-service/谷粒商城.md)
+[谷粒商城](后端/系统设计/micro-service/谷粒商城.md)
 
-### RPC
+#### RPC
 
-1. [手写RPC框架](system-design/micro-service/手写RPC.md)
-2. [Dubbo](system-design/micro-service/Dubbo.md)
+1. [手写RPC框架](后端/系统设计/micro-service/手写RPC.md)
+2. [Dubbo](后端/系统设计/micro-service/Dubbo.md)
 
 #### ZooKeeper
 
-- [ZooKeeper 相关概念总结](system-design/framework/ZooKeeper.md)
+- [ZooKeeper 相关概念总结](后端/系统设计/framework/ZooKeeper.md)
 
-- [ZooKeeper 数据模型和常见命令](system-design/framework/ZooKeeper数据模型和常见命令.md)
+- [ZooKeeper 数据模型和常见命令](后端/系统设计/framework/ZooKeeper数据模型和常见命令.md)
 
-### 集群、分布式
+#### 集群、分布式
 
 集群是一种物理形态，分布式是一种工作方式，分布式系统就是将整个集群变得像一个整体一样。集群不一定是分布式，分布式一定是集群。
 
-1. [幂等性](system-design/micro-service/幂等性.md)
+1. [幂等性](后端/系统设计/micro-service/幂等性.md)
 
 #### CAP
 
 CAP概念
 
-```markdown
 
-```
 
 Raft
 
@@ -356,11 +357,11 @@ BASE
 
 
 
-### 分布式事务
+#### 分布式事务
 
 seata
 
-### 负载均衡
+#### 负载均衡
 
 ```r
 订单服务调用商品服务，商品服务的压力肯定很大，此时应该放到多台机器上。
@@ -372,7 +373,7 @@ seata
 
 
 
-### 服务注册中心、配置中心
+#### 服务注册中心、配置中心
 
 注册中心
 
@@ -388,13 +389,13 @@ A服务调用B服务，A服务并不知道B服务当前在哪几台服务器有�
 配置中心用来集中管理微服务的配置信息。
 ```
 
-[Nacos](system-design/micro-service/Nacos.md)-服务注册中心、配置中心
+[Nacos](后端/系统设计/micro-service/Nacos.md)-服务注册中心、配置中心
 
 
 
-### 高可用——服务限流、熔断、降级
+#### 高可用——服务限流、熔断、降级
 
-[什么是高可用架构](system-design/high-available/什么是高可用架构.md)
+[什么是高可用架构](后端/系统设计/high-available/什么是高可用架构.md)
 
 问题
 
@@ -414,11 +415,11 @@ A服务调用B服务，A服务并不知道B服务当前在哪几台服务器有�
 
 Sentinel-取代hystrix
 
-### API网关
+#### API网关
 
-[Gateway](system-design/micro-service/Gateway.md)-API网关
+[Gateway](后端/系统设计/micro-service/Gateway.md)-API网关
 
-## 秒杀系统
+### 秒杀系统
 
 1. 定时任务，cron表达式：https://cron.qqe2.com/
 
@@ -426,20 +427,36 @@ Sentinel-取代hystrix
 
 
 
-# Kubernets集群
+2. 
 
-## Docker
+## 数据库
 
-1. [Docker介绍](system-design/docker/Docker.md)
-2. [Linux安装Docker](system-design/docker/Linux安装Docker.md)
+1. [ORM框架](database/ORM框架.md)
+2. 数据库服务器的主从热备功能
+3. SQL
 
-## Kubernets
+### MySQL
 
-- [Kubernets](高可用集群/谷粒商城—高可用集群.md)
+1. [MySQL概述](database//mysql/MySQL.md)
+2. 索引
+3. 存储引擎
 
-## Kubeflow
+### Redis
 
+1. [Redis概述 ](database/redis/Redis.md)
+2. [Redis安装](database/redis/Redis安装.md)
+3. [Redis缓存](database/redis/Redis缓存.md)——分布式缓存中间件
+4. [Redis分布式锁](database/redis/Redis分布式锁.md)
+   1. Redisson
+   2. [缓存数据一致性](database/redis/缓存数据一致性.md)
+5. [Redis持久化及其意义](database/redis/Redis持久化.md)
+6. [LRU缓存清除算法](database/redis/LRU缓存清除算法.md)
+7. [缓存雪崩、缓存穿透](database/redis/缓存雪崩、缓存穿透.md)
+8. [Redis的实战](database/redis/Redis实战.md)
 
+### ElasticSearch
+
+### Hbase
 
 
 
@@ -449,11 +466,15 @@ Sentinel-取代hystrix
 
 > 大数据存储引擎
 
-
+1. Hadoop部署
 
 ## HIve
 
+
+
 ## Flink
+
+
 
 ## Spark
 
@@ -467,43 +488,38 @@ Sentinel-取代hystrix
 
 
 
+# 云计算
+
+## Docker
+
+1. [Docker介绍](后端/系统设计/docker/Docker.md)
+2. [Linux安装Docker](后端/系统设计/docker/Linux安装Docker.md)
+
+## Kubernets
+
+- [Kubernets](后端/高可用集群/谷粒商城—高可用集群.md)
+
+## Kubeflow
+
+1. Kubeflow概述
+2. Kubeflow部署
 
 
-# 前端
-
-## HTML
 
 
 
-## CSS
 
-## JavaScript
-
-
-
-### TypeScript
-
-https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
-
-### Vue3
-
-- [vue3](前端/vue3.md)
-
-# Golang
-
-- [Golang基础](golang/Golang基础.md)
-- [Golang并发](golang/Golang并发.md)
-
-# Python
-
-- [功能齐全、强大的第三方库](python/第三方库.md)
-- [python脚本控制手机软件！尽搞些花里胡哨的](python/python脚本控制手机软件.md)
-- [解放双手的自动化](python/自动化.md)
-- [自动抢货](python/自动抢货.md)
-- [游戏脚本](python/游戏脚本.md)
-- [数据可视化](python/数据可视化.md)
 
 # 人工智能
+
+## Python
+
+- [功能齐全、强大的第三方库](人工智能/python/第三方库.md)
+- [python脚本控制手机软件！尽搞些花里胡哨的](人工智能/python/python脚本控制手机软件.md)
+- [解放双手的自动化](人工智能/python/自动化.md)
+- [自动抢货](人工智能/python/自动抢货.md)
+- [游戏脚本](人工智能/python/游戏脚本.md)
+- [数据可视化](人工智能/python/数据可视化.md)
 
 ## 机器学习
 
@@ -517,8 +533,8 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 ### Pytorch
 
-1. [pytorch笔记](ai/deeplearning/pytorch/pytorch笔记.md)
-2. [张量Tensor](ai/deeplearning/pytorch/张量Tensor.md)
+1. [pytorch笔记](人工智能/deeplearning/pytorch/pytorch笔记.md)
+2. [张量Tensor](人工智能/deeplearning/pytorch/张量Tensor.md)
 
 ## 强化学习
 
@@ -532,23 +548,19 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 >
 > - [多智能体系统学习指南](https://xiyun0.github.io/MultiAgentLearning/#/)
 
-# 区块链
 
-[区块链和比特币入门](blockchain/区块链和比特币入门.md)
 
-# 其他
+# [其他](others.md)
 
-- [其他](others.md)
+## 纵横天下
 
-# 纵横天下
+- [原则读书笔记](其他/纵横天下/原则读书笔记.md)
+- [债务危机读书笔记](其他/纵横天下/债务危机读书笔记.md)
 
-- [原则读书笔记](others/纵横天下/原则读书笔记.md)
-- [债务危机读书笔记](others/纵横天下/债务危机读书笔记.md)
-
-# 视频制作
+## 视频制作
 
 manim：https://github.com/manim-kindergarten/manim_sandbox/wiki
 
 # 我的道路
 
-- [架构之力](system-design/架构之力.md)
+- [架构之力](后端/系统设计/架构之力.md)
