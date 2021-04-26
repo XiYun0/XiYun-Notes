@@ -1,4 +1,4 @@
-![logo](图片/icon.svg)
+![logo](images/icon.svg)
 
 # 溪云笔记
 
