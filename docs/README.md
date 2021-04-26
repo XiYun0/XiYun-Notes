@@ -10,12 +10,6 @@
 
 
 
->是故易有太极，是生两仪，两仪生四象，四象生八卦，八卦定吉凶，吉凶生大业。——《系辞》
->
->伏羲演八卦而可知万物，万物皆对象！
-
-
-
 > 正在阅读的书籍、博客：深入理解计算机系统
 >
 > 正在做的项目：谷粒商城
@@ -462,21 +456,13 @@ Sentinel-取代hystrix
 
 # 大数据
 
-## Hadoop
+## 数据中台
 
-> 大数据存储引擎
+视频
 
-1. Hadoop部署
+- [网易大数据专家，为你剖析数据中台的现状及未来](https://www.bilibili.com/video/BV1EQ4y1M7fW?from=search&seid=4799545926254065116)，[笔记](https://www.bilibili.com/read/cv5693165?spm_id_from=333.788.b_636f6d6d656e74.9)
 
-## HIve
-
-
-
-## Flink
-
-
-
-## Spark
+## 数据采集
 
 ## Flume
 
@@ -485,6 +471,40 @@ Sentinel-取代hystrix
 ## Kafka
 
  [✈️Kafka](https://www.yuque.com/docs/share/c5cbfb81-a598-43ce-93c8-20404aa7e1b4?#)
+
+## 数据存储
+
+### Hadoop
+
+> 大数据存储引擎
+
+1. Hadoop部署
+
+### HIve
+
+
+
+### Hbase
+
+
+
+### Hudi
+
+## 数据处理
+
+### Flink
+
+
+
+### Spark
+
+
+
+## 数据可视化
+
+### Superset
+
+
 
 
 
