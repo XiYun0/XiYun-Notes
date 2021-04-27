@@ -435,28 +435,31 @@ Sentinel-取代hystrix
 
 ## 数据库
 
-1. [ORM框架](database/ORM框架.md)
+1. [ORM框架](后端/数据库/ORM框架.md)
 2. 数据库服务器的主从热备功能
 3. SQL
 
 ### MySQL
 
-1. [MySQL概述](database//mysql/MySQL.md)
-2. 索引
-3. 存储引擎
+1. [概述](后端/数据库/mysql/MySQL.md)
+2. [存储引擎](后端/数据库/mysql/存储引擎.md)
+3. [索引](后端/数据库/mysql/索引.md)
+4. [锁](后端/数据库/mysql/锁.md)
+5. [事务](后端/数据库/mysql/事务.md)
+6. [高性能调优](后端/数据库/mysql/存储引擎.md)
 
 ### Redis
 
-1. [Redis概述 ](database/redis/Redis.md)
+1. [Redis概述 ](后端/数据库/redis/Redis.md)
 2. [Redis安装](后端/数据库/redis/Redis安装.md)
-3. [Redis缓存](database/redis/Redis缓存.md)——分布式缓存中间件
+3. [Redis缓存](后端/数据库/redis/Redis缓存.md)——分布式缓存中间件
 4. [Redis分布式锁](数据库/redis/Redis分布式锁.md)
    1. Redisson
-   2. [缓存数据一致性](database/redis/缓存数据一致性.md)
-5. [Redis持久化及其意义](database/redis/Redis持久化.md)
-6. [LRU缓存清除算法](database/redis/LRU缓存清除算法.md)
-7. [缓存雪崩、缓存穿透](database/redis/缓存雪崩、缓存穿透.md)
-8. [Redis的实战](database/redis/Redis实战.md)
+   2. [缓存数据一致性](后端/数据库/redis/缓存数据一致性.md)
+5. [Redis持久化及其意义](后端/数据库/redis/Redis持久化.md)
+6. [LRU缓存清除算法](后端/数据库/redis/LRU缓存清除算法.md)
+7. [缓存雪崩、缓存穿透](后端/数据库/redis/缓存雪崩、缓存穿透.md)
+8. [Redis的实战](后端/数据库/redis/Redis实战.md)
 
 ### ElasticSearch
 
