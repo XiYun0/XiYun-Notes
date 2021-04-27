@@ -1,28 +1,69 @@
-网站：https://docs.docker.com/engine/install/centos/
+> 网站：https://docs.docker.com/engine/install/centos/
+
+
+
+# Docker安装
+
+卸载之前的docker
+
+```
+yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+```
 
 安装
 
-```
-sudo yum-config-manager \
+```sh
+yum install -y yum-utils
+
+yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
+    
+yum -y install docker-ce docker-ce-cli containerd.io
 ```
-
-
 
 启动docker
 
-```
+```sh
 systemctl start docker
 systemctl restart  docker
 service docker stop
 ```
 
+配置镜像加速
 
-
-## Mysql
-
+```sh
+mkdir -p /etc/docker
+tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://ke9h1pt4.mirror.aliyuncs.com"]
+}
+EOF
 ```
+
+重启
+
+```sh
+systemctl daemon-reload
+systemctl restart docker
+```
+
+启动Docker && 设置docker开机启动
+
+```sh
+systemctl enable docker
+```
+
+## Mysql安装
+
+```sh
 docker pull mysql:5.7   # 拉取 mysql 5.7
 sudo docker images
 sudo docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7	
@@ -32,13 +73,9 @@ sudo docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:5
     -d：后台运行容器，保证在退出终端后容器继续运行
 ```
 
-
-
-
-
 进入docker
 
-```
+```sh
 docker exec -it mysql bin/bash
 exit;
 ```
@@ -46,11 +83,9 @@ exit;
 
 
 ```
-
-
-因为有目录映射，所以我们可以直接在镜像外执行
+# 因为有目录映射，所以我们可以直接在镜像外执行
 mkdir -p /mydata/mysql/conf
-vi /mydata/mysql/conf/my.conf 
+vim /mydata/mysql/conf/my.conf 
 
 [client]
 default-character-set=utf8
@@ -86,10 +121,6 @@ docker stop
 
 
 
-
-
-
-
 ### 如果用的服务器
 
 要关闭防火墙，如：用的是腾讯云，要在腾讯云网站开放3306端口
@@ -105,7 +136,47 @@ firewall-cmd --permanent --zone=public --add-port=3306/udp
 
 
 
-## Java
+
+
+## Redis安装
+
+pull镜像
+
+```shell
+docker pull redis
+```
+
+启动docker
+
+```shell
+mkdir -p /mydata/redis/conf
+touch /mydata/redis/conf/redis.conf
+echo "appendonly yes"  >> /mydata/redis/conf/redis.conf
+docker run -p 6379:6379 --name redis -v /mydata/redis/data:/data \
+> -v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf \
+> -d redis redis-server /etc/redis/redis.conf
+ce7ae709711986e3f90c9278b284fe6f51f1c1102ba05f3692f0e934ceca1565
+```
+
+ 连接到docker的redis
+
+```shell
+docker exec -it redis redis-cli
+
+127.0.0.1:6379> set key1 v1
+OK
+127.0.0.1:6379> get key1
+"v1"
+127.0.0.1:6379> 
+```
+
+设置redis容器在docker启动的时候启动
+
+```shell
+docker update redis --restart=always
+```
+
+## Java安装
 
 ```
 yum install java-1.8.0-openjdk.x86_64
@@ -157,6 +228,5 @@ docker run -p 80:80 --name nginx \
 
 
 docker update nginx --restart=always
-
 ```
 
