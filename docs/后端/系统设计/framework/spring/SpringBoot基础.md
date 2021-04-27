@@ -6,31 +6,26 @@
 
 # 基础入门
 
-
-
-### 新建Maven项目
+### 新建 Maven项目
 
 初学者建议从Maven开始创建，而不是直接Spring
-
-boot01-helloworld
 
 ### 引入依赖
 
 ```xml
-	<parent>
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.4.RELEASE</version>
+</parent>
+
+<dependencies>
+    <dependency>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.4.RELEASE</version>
-    </parent>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-    </dependencies>
+</dependencies>
 ```
 
 ### 创建主程序
@@ -41,22 +36,15 @@ boot01-helloworld
 resources/xml文件 -> dao层 -> 自动注入controller等 -> 启动类（包括MapperScan自动扫描dao） 
 ```
 
-
-
-创建`com.xiyun.boot.MainApplication`类
+创建`com.glong.boot.MainApplication`类
 
 写上注解@SpringBootApplication，说明这是一个SpringBoot应用！
 
 SpringApplication.run	让Spring应用跑起来吧。怎么跑起来呢，把主类加载进来，把参数args传进来
 
 ```java
-/**
- * 主程序类
- * @SpringBootApplication：这是一个SpringBoot应用
- */
 @SpringBootApplication
 public class MainApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(MainApplication.class,args);
     }
@@ -65,7 +53,7 @@ public class MainApplication {
 
 ### 业务逻辑
 
-com.xiyun.boot.controller.HelloController类
+com.glong.boot.controller.HelloController类
 
 标注注解@Controller
 
