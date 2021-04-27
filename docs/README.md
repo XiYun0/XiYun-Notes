@@ -448,7 +448,7 @@ Sentinel-取代hystrix
 ### Redis
 
 1. [Redis概述 ](database/redis/Redis.md)
-2. [Redis安装](database/redis/Redis安装.md)
+2. [Redis安装](数据库/redis/Redis安装.md)
 3. [Redis缓存](database/redis/Redis缓存.md)——分布式缓存中间件
 4. [Redis分布式锁](database/redis/Redis分布式锁.md)
    1. Redisson
