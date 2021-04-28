@@ -147,8 +147,8 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 graph TD;
 	Java-->Java基础
 	Java基础-->集合
-	Java基础--> 
-	Java基础-->IO
+	Java基础-->泛型
+	Java基础-->异常
 	Java基础-->IO
 	Java基础-->网络编程
 	Java基础-->注解
@@ -158,7 +158,11 @@ graph TD;
 	Java-->Spring
 ```
 
+
+
 ### 基础
+
+
 
 1. [Java 基础面试总结](后端/java/base/Java基础.md)
    1. [接口和抽象类](后端/java/base/接口和抽象类.md)
