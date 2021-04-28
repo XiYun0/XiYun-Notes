@@ -143,6 +143,17 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 ## Java
 
+```mermaid
+graph TD;
+	Java-->Java基础
+	Java基础-->集合
+	Java基础-->IO
+	Java基础-->注解
+	Java基础-->反射
+    Java-->JVM
+    Java-->多线程&JUC
+```
+
 ### 基础
 
 1. [Java 基础面试总结](后端/java/base/Java基础.md)
@@ -249,6 +260,14 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 ### SpringBoot
 
+```mermaid
+graph TD;
+    SpringBoot-->Mybatis整合&数据访问;
+    SpringBoot-->Swagger2文档工具;
+    SpringBoot-->热部署;
+    SpringBoot-->单元测试;    
+```
+
 > [Springboot源码阅读](后端/系统设计/framework/spring/SpringBoot源码阅读.md)
 
 入门
@@ -260,7 +279,7 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 进阶
 
 1. [Web](后端/spring/springboot/Web.md)
-2. [数据访问](后端/spring/springboot/数据访问.md)，[集成Mybatis](后端/spring/springboot/Mybatis.md)
+2. [集成Mybatis](后端/spring/springboot/Mybatis.md)
 3. API文档构建工具，[集成Swagger](后端/spring/springboot/Swagger.md)
 4. 热部署
 5. 单元测试
