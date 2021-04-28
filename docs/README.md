@@ -143,21 +143,6 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 ## Java
 
-```mermaid
-graph TD;
-	Java-->Java基础
-	Java基础-->集合
-	Java基础-->泛型
-	Java基础-->异常
-	Java基础-->IO
-	Java基础-->网络编程
-	Java基础-->注解
-	Java基础-->反射
-    Java-->JVM
-    Java-->多线程&JUC
-	Java-->Spring
-```
-
 
 
 ### 基础
@@ -267,14 +252,6 @@ graph TD;
 - Mybatis
 
 ### SpringBoot
-
-```mermaid
-graph TD;
-    SpringBoot-->Mybatis整合&数据访问;
-    SpringBoot-->Swagger2文档工具;
-    SpringBoot-->热部署;
-    SpringBoot-->单元测试;    
-```
 
 > [Springboot源码阅读](后端/系统设计/framework/spring/SpringBoot源码阅读.md)
 
