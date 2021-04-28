@@ -255,10 +255,11 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 1. [注解&零配置开发](后端/spring/springboot/注解.md)
 2. [概念&特点](后端/系统设计/framework/spring/SpringBoot基础.md)
-3. [SpringBoot核心——Web](后端/系统设计/framework/spring/SpringBoot核心——Web.md)
-4. [SpringBoot核心——数据访问](后端/系统设计/framework/spring/SpringBoot核心——数据访问.md)
-5. [SpringBoot——Mybatis](后端/系统设计/framework/spring/SpringBoot——Mybatis.md)
-6. [文件上传](后端/系统设计/framework/spring/SpringBoot文件上传.md)
+3. [核心配置](后端/spring/springboot/核心配置.md)
+4. [SpringBoot核心——Web](后端/系统设计/framework/spring/SpringBoot核心——Web.md)
+5. [SpringBoot核心——数据访问](后端/系统设计/framework/spring/SpringBoot核心——数据访问.md)
+6. [SpringBoot——Mybatis](后端/系统设计/framework/spring/SpringBoot——Mybatis.md)
+7. [文件上传](后端/系统设计/framework/spring/SpringBoot文件上传.md)
 
 ### 开发流程
 
