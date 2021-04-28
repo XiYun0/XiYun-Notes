@@ -23,6 +23,8 @@
     if (typeof navigator.serviceWorker !== 'undefined') {
       navigator.serviceWorker.register('sw.js')
     }
+    var num = 0;
+    mermaid.initialize({ startOnLoad: false });
     window.$docsify = {
       coverpage : true,
       name: '溪云笔记',
@@ -33,6 +35,22 @@
       auto2top: true,//切换页面后是否自动跳转到页面顶部
       //ga: 'UA-138586553-1',
       //logo: 'https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3logo-透明.png' ,
+      
+      markdown: {
+        renderer: {
+          code: function(code, lang) {
+              // 判断语言是否为 mermaid
+            if (lang === "mermaid") {
+                // 将div 返回
+              return (
+                '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>"
+              );
+            }
+            return this.origin.code.apply(this, arguments);
+          }
+        }
+      },
+
       search: {
         //maxAge: 86400000, // 过期时间，单位毫秒，默认一天
         paths: 'auto',
