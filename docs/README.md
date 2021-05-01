@@ -88,10 +88,9 @@
 ## 计算机网络
 
 - [何为网络？](计算机系统/计算机网络/何为网络.md)
+- 在地址栏输入www.baidu.com并回敲发生了什么？
 
-- 计算机网络面试题
 
-  ↓自顶向下↓
 
 1. [应用层](计算机系统/计算机网络/应用层.md)
 2. [传输层](计算机系统/计算机网络/传输层.md)——运输商
@@ -446,7 +445,7 @@ Sentinel-取代hystrix
 3. [索引](后端/数据库/mysql/索引.md)
 4. [锁](后端/数据库/mysql/锁.md)
 5. [事务](后端/数据库/mysql/事务.md)
-6. [高性能调优](后端/数据库/mysql/存储引擎.md)
+6. [优化](后端/数据库/mysql/优化.md)——推荐文章：[MySQL大表优化方案 - SegmentFault 思否](https://segmentfault.com/a/1190000006158186)
 
 ### Redis
 
@@ -456,7 +455,7 @@ Sentinel-取代hystrix
 4. [Redis分布式锁](数据库/redis/Redis分布式锁.md)
    1. Redisson
    2. [缓存数据一致性](后端/数据库/redis/缓存数据一致性.md)
-5. [Redis持久化及其意义](后端/数据库/redis/Redis持久化.md)
+5. [Redis持久化——RDB/AOF](后端/数据库/redis/Redis持久化.md)
 6. [LRU缓存清除算法](后端/数据库/redis/LRU缓存清除算法.md)
 7. [缓存雪崩、缓存穿透](后端/数据库/redis/缓存雪崩、缓存穿透.md)
 8. [Redis的实战](后端/数据库/redis/Redis实战.md)
