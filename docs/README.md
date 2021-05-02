@@ -254,7 +254,7 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 浏览器和服务器的交互模式
 
-<img src="image-20210502110710963.png" alt="image-20210502110710963" style="zoom:50%;" />
+<img src="/images/image-20210502110710963.png" alt="image-20210502110710963" style="zoom:50%;" />
 
 1. [HTTP协议](后端/java/servlet/HTTP协议.md)
 2. [Tomcat服务器](后端/java/servlet/Tomcat服务器.md)
@@ -508,13 +508,15 @@ Sentinel-取代hystrix
 
 ## 数据采集
 
-## Flume
+### DataX
 
-[🚀Flume](https://www.yuque.com/docs/share/882bfdb2-5eeb-477c-a910-673f358f0534?# )
+### Flume
 
-## Kafka
+- [🚀Flume](https://www.yuque.com/docs/share/882bfdb2-5eeb-477c-a910-673f358f0534?# )
 
- [✈️Kafka](https://www.yuque.com/docs/share/c5cbfb81-a598-43ce-93c8-20404aa7e1b4?#)
+### Kafka
+
+- [✈️Kafka](https://www.yuque.com/docs/share/c5cbfb81-a598-43ce-93c8-20404aa7e1b4?#)
 
 ## 数据存储
 
@@ -522,9 +524,10 @@ Sentinel-取代hystrix
 
 > 大数据存储引擎
 
-1. Hadoop部署
+1. [Hadoop部署](大数据/hadoop/部署.md)
+2. Hadoop概念与原理
 
-### HIve
+### Hive
 
 
 
@@ -567,12 +570,6 @@ Sentinel-取代hystrix
 
 1. Kubeflow概述
 2. Kubeflow部署
-
-
-
-
-
-
 
 # 人工智能
 
