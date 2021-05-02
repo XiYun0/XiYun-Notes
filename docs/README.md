@@ -525,7 +525,8 @@ Sentinel-取代hystrix
 > 大数据存储引擎
 
 1. [Hadoop部署](大数据/hadoop/部署.md)
-2. Hadoop概念与原理
+2. [Hadoop操作](大数据/hadoop/操作.md)
+3. Hadoop概念与原理
 
 ### Hive
 
