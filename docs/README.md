@@ -41,8 +41,6 @@
 - 2021.3.29 深入理解计算机系统
 - 2021.4.26 操作系统哲学原理
 
-
-
 # 面试、简历关
 
 1. :crossed_swords:[面试—话术](其他/面试—纯话版.md):crossed_swords:
@@ -153,8 +151,6 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 
 ### 基础
-
-
 
 1. [Java 基础面试总结](后端/java/base/Java基础.md)
    1. [接口和抽象类](后端/java/base/接口和抽象类.md)
