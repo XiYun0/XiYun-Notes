@@ -3,7 +3,7 @@
 </p>
 
 
-
+溪云笔记
 
 >github阅读：https://xiyun0.github.io/XiYun-Notes/#/
 >
@@ -23,7 +23,7 @@
 
 
 
-[关于我](其他/关于我.md)
+
 
 # 资源
 
@@ -138,13 +138,13 @@
 
 https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
-### Vue3
+## Vue
 
 - [vue3](前端/vue3.md)
 
-### 表单设计工具
+## 表单设计工具
 
-[form-generator (gitee.io)](https://mrhj.gitee.io/form-generator/#/)
+- [form-generator (gitee.io)](https://mrhj.gitee.io/form-generator/#/)
 
 # 后端
 
@@ -245,12 +245,14 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 ### 源码阅读
 
+
+
 1. [String源码](后端/java/base/String源码.md)
 
 ### IDEA
 
 1. [快捷键设置](后端/java/IDEA/快捷键设置.md)
-2. [插件](后端/java/IDEA/插件.md)
+2. [常用工具插件](后端/java/IDEA/插件.md)
 
 ### Sevlet
 
@@ -266,8 +268,14 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 - [Spring简介](后端/系统设计/framework/spring/Spring.md)
 - [Spring——孙帅老师的视频，强烈推荐，事务讲得也棒](后端/系统设计/framework/spring/Spring（孙老师笔记）.md)
-- SpringMVC
-- Mybatis
+
+
+
+#### SpringMVC
+
+#### Mybatis
+
+
 
 ### SpringBoot
 
@@ -483,7 +491,7 @@ Sentinel-取代hystrix
 4. [锁](后端/数据库/mysql/锁.md)
 5. [事务](后端/数据库/mysql/事务.md)
 6. [优化](后端/数据库/mysql/优化.md)——推荐文章：[MySQL大表优化方案 - SegmentFault 思否](https://segmentfault.com/a/1190000006158186)
-7. [MySQL概述](后端/数据库//mysql/MySQL.md)
+7. [主从复制](后端/数据库/mysql/主从复制.md)
 
 ### Redis
 
@@ -514,6 +522,12 @@ Sentinel-取代hystrix
 
 - [网易大数据专家，为你剖析数据中台的现状及未来](https://www.bilibili.com/video/BV1EQ4y1M7fW?from=search&seid=4799545926254065116)，[笔记](https://www.bilibili.com/read/cv5693165?spm_id_from=333.788.b_636f6d6d656e74.9)
 
+
+
+## 数据生成
+
+
+
 ## 数据采集
 
 ### DataX
@@ -536,9 +550,24 @@ Sentinel-取代hystrix
 2. [Hadoop操作](大数据/hadoop/操作.md)
 3. Hadoop概念与原理
 
+#### HDFS
+
+1. [通信框架](大数据/hadoop/hdfs/通信框架.md)
+2. [NameNode](大数据/hadoop/hdfs/NameNode.md)
+3. [DataNode](大数据/hadoop/hdfs/DataNode.md)
+4. [HDFS客户端](大数据/hadoop/hdfs/HDFS客户端.md)
+
+#### MapReduce
+
+
+
+#### Yarn
+
+
+
 ### Hive
 
-
+1. Hive部署
 
 ### Hbase
 
@@ -582,8 +611,6 @@ Sentinel-取代hystrix
 
 ## Python
 
-- [功能齐全、强大的第三方库](人工智能/python/第三方库.md)
-- [python脚本控制手机软件！尽搞些花里胡哨的](人工智能/python/python脚本控制手机软件.md)
 - [解放双手的自动化](人工智能/python/自动化.md)
 - [自动抢货](人工智能/python/自动抢货.md)
 - [游戏脚本](人工智能/python/游戏脚本.md)
@@ -619,6 +646,8 @@ Sentinel-取代hystrix
 
 
 # [其他](others.md)
+
+[关于我](其他/关于我.md)
 
 ## 纵横天下
 
