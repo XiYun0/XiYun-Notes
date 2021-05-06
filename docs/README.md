@@ -5,13 +5,19 @@
 
 
 
->github阅读：https://xiyun0.github.io/XiYun-Notes/#/
+
+
+
+
+
+
+>github阅读：https://glong1997.github.io/XiYun-Notes/#/
 >
->gitee阅读（国内访问快）：http://xiyun0.gitee.io/xiyun-notes/
+>gitee阅读（国内访问快）：http://glong1997.gitee.io/xiyun-notes/
 
 
 
-> 正在阅读的书籍、博客：深入理解计算机系统
+> 正在阅读的书籍、博客：
 >
 > 正在做的项目：谷粒商城
 
@@ -486,6 +492,7 @@ Sentinel-取代hystrix
 视频
 
 - [网易大数据专家，为你剖析数据中台的现状及未来](https://www.bilibili.com/video/BV1EQ4y1M7fW?from=search&seid=4799545926254065116)，[笔记](https://www.bilibili.com/read/cv5693165?spm_id_from=333.788.b_636f6d6d656e74.9)
+- [菜鸟数据中台技术演进之路](https://www.bilibili.com/video/BV1F741177R9/?spm_id_from=333.788.recommend_more_video.0)
 
 ## 数据采集
 
