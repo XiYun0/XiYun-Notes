@@ -30,7 +30,7 @@
 1. [开源项目](其他/开源项目.md)
 2. [视频](其他/视频.md)
 3. [论文阅读](其他/论文阅读.m)
-4. [我的书单](其他/书单.md)
+4. [我的书单](其他/书单.md)，[下载](https://www.yuque.com/kuangxiqiruogu/sglzt1)
 5. [我的常用工具](其他/工具.md)
 6. [UP主、技术大神、大厂、培训机构](其他/UP主、技术大神)
 7. [博客、文章](其他/blog.md)
@@ -393,6 +393,16 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 ## 系统设计
 
+
+
+### 服务器
+
+#### Nginx
+
+
+
+#### Tomcat
+
 ### 设计模式
 
 - [设计模式系列文章](后端/系统设计/设计模式.md)
@@ -553,12 +563,13 @@ Sentinel-取代hystrix
 ### MySQL
 
 1. [概述](后端/数据库/mysql/MySQL.md)
-2. [存储引擎](后端/数据库/mysql/存储引擎.md)
-3. [索引](后端/数据库/mysql/索引.md)
-4. [锁](后端/数据库/mysql/锁.md)
-5. [事务](后端/数据库/mysql/事务.md)
-6. [优化](后端/数据库/mysql/优化.md)——推荐文章：[MySQL大表优化方案 - SegmentFault 思否](https://segmentfault.com/a/1190000006158186)
-7. [主从复制](后端/数据库/mysql/主从复制.md)
+2. [安装](后端/数据库/mysql/安装.md)
+3. [存储引擎](后端/数据库/mysql/存储引擎.md)
+4. [索引](后端/数据库/mysql/索引.md)
+5. [锁](后端/数据库/mysql/锁.md)
+6. [事务](后端/数据库/mysql/事务.md)
+7. [优化](后端/数据库/mysql/优化.md)——推荐文章：[MySQL大表优化方案 - SegmentFault 思否](https://segmentfault.com/a/1190000006158186)
+8. [主从复制](后端/数据库/mysql/主从复制.md)
 
 ### Redis
 
@@ -577,11 +588,15 @@ Sentinel-取代hystrix
 
 ### ElasticSearch
 
+
+
 ### Hbase
 
 
 
 # 大数据
+
+玩大数据先安装一套Linux系统的虚拟机集群，个人推荐3台，内存至少16G。
 
 ## 数据中台
 
@@ -607,22 +622,24 @@ Sentinel-取代hystrix
 
 - [✈️Kafka](https://www.yuque.com/docs/share/c5cbfb81-a598-43ce-93c8-20404aa7e1b4?#)
 
+SpringBoot
+
 ## 数据存储
 
 ### Hadoop
 
 > 大数据存储引擎
 
-1. [Hadoop部署](大数据/hadoop/部署.md)
-2. [Hadoop操作](大数据/hadoop/操作.md)
+1. [Hadoop部署](大数据/数据存储/hadoop/部署.md)
+2. [Hadoop操作](大数据/数据存储/hadoop/操作.md)
 3. Hadoop概念与原理
 
 #### HDFS
 
-1. [通信框架](大数据/hadoop/hdfs/通信框架.md)
-2. [NameNode](大数据/hadoop/hdfs/NameNode.md)
-3. [DataNode](大数据/hadoop/hdfs/DataNode.md)
-4. [HDFS客户端](大数据/hadoop/hdfs/HDFS客户端.md)
+1. [通信框架](大数据/数据存储/hadoop/hdfs/通信框架.md)
+2. [NameNode](大数据/数据存储/hadoop/hdfs/NameNode.md)
+3. [DataNode](大数据/数据存储/hadoop/hdfs/DataNode.md)
+4. [HDFS客户端](大数据/数据存储/hadoop/hdfs/HDFS客户端.md)
 
 #### MapReduce
 
@@ -642,21 +659,28 @@ Sentinel-取代hystrix
 
 ### Hudi
 
+1. [Hudi安装](大数据/数据存储/hudi/Hudi安装.md)
+
 ## 数据处理
 
 ### Flink
 
-
+1. [Flink安装](大数据/数据处理/flink/Flink安装.md)
 
 ### Spark
 
 
 
+### Kylin
+
+1. [Kylin安装](大数据/数据处理/kylin/Kylin安装.md)
+2. Kylin原理
+
 ## 数据可视化
 
 ### Superset
 
-
+- [Superset部署和使用](大数据/数据可视化/Superset部署和使用.m)
 
 # 云计算
 
