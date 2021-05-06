@@ -2,9 +2,11 @@
 
 思维导图：https://www.processon.com/view/link/5ecb3925f346fb6907154970#map
 
+# 基础
 
+## 快速开始
 
-依旧是Hello,World!
+依旧是`Hello,World!`
 
 新建main.go
 
@@ -19,13 +21,11 @@ func main() {
 }
 ```
 
-生成.exe
+生成`.exe`
 
 ```
 go build main.go
 ```
-
-
 
 ### 常量和变量
 
@@ -34,6 +34,19 @@ go build main.go
 > const
 
 
+
+
+
+
+
+### 函数
+
+```go
+func test(num int) string{
+	s := "aaa"
+	return s
+}
+```
 
 
 

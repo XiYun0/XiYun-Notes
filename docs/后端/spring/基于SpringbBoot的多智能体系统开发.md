@@ -10,9 +10,7 @@
 	mysql
 ```
 
-
-
-
+使用ry-vue脚手架
 
 ```yaml
 # mysql
@@ -22,7 +20,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mas?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
     username: root
-    password: '000000'
+    password: root
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
@@ -30,10 +28,6 @@ mybatis:
 server:
   port: 9000
 ```
-
-
-
-
 
 
 
