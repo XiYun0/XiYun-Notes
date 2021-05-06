@@ -553,8 +553,6 @@ Sentinel-取代hystrix
 
 
 
-
-
 # 人工智能
 
 ## Python
@@ -566,11 +564,24 @@ Sentinel-取代hystrix
 - [游戏脚本](人工智能/python/游戏脚本.md)
 - [数据可视化](人工智能/python/数据可视化.md)
 
+### Anaconda
+
+清华大学镜像：https://mirror.tuna.tsinghua.edu.cn/help/anaconda/
+
+### IDE
+
+```markdown
+jupyter notebook
+Pycharm
+```
+
+- [jupyter notebook在服务器上的安装及使用](https://www.jianshu.com/p/4c3c6d47ca97?from=singlemessage)
+
 ## 机器学习
 
 > 数据决定了机器学习的上限，而算法只能是尽可能逼近这个上限。
 
-1. [特征工程](https://www.cnblogs.com/wxquare/p/5484636.html)
+- [特征工程](https://www.cnblogs.com/wxquare/p/5484636.html)
 
 ## 深度学习
 
