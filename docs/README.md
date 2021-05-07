@@ -633,6 +633,9 @@ Sentinel-取代hystrix
 
 
 1. 拦截器
+2. [日志采集 Flume 安装](大数据/数据采集/flume/日志采集 Flume 安装.md)
+3. [消费 Kafka 数据 Flume](大数据/数据采集/flume/消费 Kafka 数据 Flume.md)
+4. [Flume内存优化](大数据/数据采集/flume/Flume内存优化.md)
 
 ### Kafka
 
@@ -641,6 +644,7 @@ Sentinel-取代hystrix
 
 
 1. Kafka压力测试
+2. 
 
 
 
@@ -703,8 +707,11 @@ SpringBoot集成Kafka
 
 ### Kylin
 
-1. [Kylin安装](大数据/数据处理/kylin/Kylin安装.md)
-2. Kylin原理
+1. Kylin原理
+
+2. [Kylin安装](大数据/数据处理/kylin/Kylin安装.md)
+
+   
 
 ## 数据可视化
 
