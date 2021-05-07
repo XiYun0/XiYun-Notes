@@ -342,7 +342,10 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 #### SpringMVC
 
-#### Mybatis
+### Mybatis
+
+1. Mybatis
+2. MybatisPlus
 
 
 
@@ -598,6 +601,14 @@ Sentinel-取代hystrix
 
 玩大数据先安装一套Linux系统的虚拟机集群，个人推荐3台，内存至少16G。
 
+
+
+## 数仓
+
+1. [数仓概念](大数据/数仓/数仓概念.md)
+2. [数仓需求](大数据/数仓/数仓需求.md)
+3. [数仓架构](大数据/数仓/数仓架构.md)
+
 ## 数据中台
 
 视频
@@ -618,11 +629,21 @@ Sentinel-取代hystrix
 
 - [🚀Flume](https://www.yuque.com/docs/share/882bfdb2-5eeb-477c-a910-673f358f0534?# )
 
+
+
+1. 拦截器
+
 ### Kafka
 
 - [✈️Kafka](https://www.yuque.com/docs/share/c5cbfb81-a598-43ce-93c8-20404aa7e1b4?#)
 
-SpringBoot
+
+
+1. Kafka压力测试
+
+
+
+SpringBoot集成Kafka
 
 ## 数据存储
 
@@ -651,6 +672,8 @@ SpringBoot
 
 ### Hive
 
+
+
 1. Hive部署
 
 ### Hbase
@@ -659,13 +682,19 @@ SpringBoot
 
 ### Hudi
 
-1. [Hudi安装](大数据/数据存储/hudi/Hudi安装.md)
+[汇总Apache Hudi相关资料](https://github.com/leesf/hudi-resources)
+
+1. [Hudi概念](大数据/数据存储/hudi/Hudi概念.md)
+2. [Hudi安装](大数据/数据存储/hudi/Hudi安装.md)
 
 ## 数据处理
 
 ### Flink
 
+
+
 1. [Flink安装](大数据/数据处理/flink/Flink安装.md)
+2. Flink SQL
 
 ### Spark
 
@@ -681,6 +710,8 @@ SpringBoot
 ### Superset
 
 - [Superset部署和使用](大数据/数据可视化/Superset部署和使用.m)
+
+## 脚本
 
 # 云计算
 
