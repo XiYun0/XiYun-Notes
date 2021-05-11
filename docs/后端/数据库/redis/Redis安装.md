@@ -1,6 +1,8 @@
 
 
-> 不推荐Windows
+# Windows安装
+
+https://github.com/tporadowski/redis/releases
 
 # Docker安装
 

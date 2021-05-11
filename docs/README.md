@@ -727,7 +727,9 @@ SpringBoot集成Kafka
 
 ### Kylin
 
-1. Kylin原理
+> 即席查询
+
+1. [Kylin概述与原理](大数据/数据处理/kylin/Kylin概述与原理.md)
 
 2. [Kylin安装](大数据/数据处理/kylin/Kylin安装.md)
 
@@ -737,7 +739,7 @@ SpringBoot集成Kafka
 
 ### Superset
 
-- [Superset部署和使用](大数据/数据可视化/Superset部署和使用.m)
+- [Superset部署和使用](大数据/数据可视化/Superset部署和使用.md)
 
 ## 脚本
 

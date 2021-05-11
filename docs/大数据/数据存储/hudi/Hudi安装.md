@@ -111,16 +111,11 @@ source /etc/profile
 # Start the flink standalone cluster
 ./bin/start-cluster.sh
 
-
 # 创建hdfs文件
-hadoop fs -mkdir /hudi/t1
+hadoop fs -mkdir -/hudi/t1
 
 ./bin/sql-client.sh embedded -j /opt/module/hudi-flink-bundle_2.11-0.8.0.jar shell
 ```
-
-
-
-
 
 ### 创建表结构
 
