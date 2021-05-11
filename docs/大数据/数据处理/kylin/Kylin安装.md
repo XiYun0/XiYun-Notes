@@ -50,6 +50,10 @@ export PATH=$PATH:$HIVE_HOME/bin
 #hbase
 export HBASE_HOME=/opt/module/hbase-2.0.5
 export PATH=$PATH:$HBASE_HOME/bin
+
+#kylin
+export KYLIN_HOME=/opt/module/kylin
+export PATH=$PATH:$KYLIN_HOME/bin
 ```
 
 ```
@@ -70,8 +74,8 @@ zk.sh start
 # 启动hbase
 start-hbase.sh
 
-cd kylin
-bin/kylin.sh start
+# 启动k
+kylin.sh start
 ```
 
 启动之后查看各个节点进程：
