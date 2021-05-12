@@ -67,7 +67,7 @@ systemctl enable docker
 docker pull mysql:5.7   # 拉取 mysql 5.7
 sudo docker images
 sudo docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7	
-    –name：容器名，此处命名为mysql
+   其中 –name：容器名，此处命名为mysql
     -e：配置信息，此处配置mysql的root用户的登陆密码
     -p：端口映射，此处映射 主机3306端口 到 容器的3306端口
     -d：后台运行容器，保证在退出终端后容器继续运行
@@ -110,7 +110,11 @@ docker restart mysql
 docker run --restart=always mysql:5.7
 ```
 
+进入docker登录mysql
 
+```
+docker exec -it e4074a7eff88 bash
+```
 
 启动关闭实例
 
@@ -121,7 +125,7 @@ docker stop
 
 
 
-### 如果用的服务器
+### 如果用服务器
 
 要关闭防火墙，如：用的是腾讯云，要在腾讯云网站开放3306端口
 
@@ -135,6 +139,10 @@ firewall-cmd --permanent --zone=public --add-port=3306/udp
 ```
 
 
+
+### AlibabaCloud安装docker
+
+[部署并使用Docker（Alibaba Cloud Linux 2） - 云服务器 ECS - 阿里云 (aliyun.com)](https://help.aliyun.com/document_detail/51853.html)
 
 
 
@@ -152,10 +160,8 @@ docker pull redis
 mkdir -p /mydata/redis/conf
 touch /mydata/redis/conf/redis.conf
 echo "appendonly yes"  >> /mydata/redis/conf/redis.conf
-docker run -p 6379:6379 --name redis -v /mydata/redis/data:/data \
-> -v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf \
-> -d redis redis-server /etc/redis/redis.conf
-ce7ae709711986e3f90c9278b284fe6f51f1c1102ba05f3692f0e934ceca1565
+docker run -p 6379:6379 --name redis -v /mydata/redis/data:/data -v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf -d redis redis-server /etc/redis/redis.conf
+
 ```
 
  连接到docker的redis
