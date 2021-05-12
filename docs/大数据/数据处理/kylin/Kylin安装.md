@@ -31,7 +31,7 @@ cd /opt/module
 mv apache-kylin-3.1.2-bin-hadoop3 kylin
 ```
 
-> `注意`：需要在/etc/profile文件中配置HADOOP_HOME，HIVE_HOME，HBASE_HOME并将其对应的 sbin（如果有这个目录的话）和bin目录配置到Path，最后需要source使其生效。
+3）配置环境
 
 ```
 vim /etc/profile
@@ -60,7 +60,44 @@ export PATH=$PATH:$KYLIN_HOME/bin
 source /etc/profile
 ```
 
-3）启动
+
+
+4）兼容性问题
+
+修改脚本排除依赖冲突
+
+
+
+```
+cd /opt/module/kylin/bin
+vim find-hive-dependency.sh
+```
+
+![image-20210512135619378](images/image-20210512135619378.png)
+
+```sh
+hive_lib=`find -L ${hive_lib_dir} -name '*.jar' ! -name '*druid*' ! -name '*jackson*' ! -name 'metastore' ! -name '*slf4j*' ! -name '*avatica*' ! -name '*calcite*' ! -name '*jackson-datatype-joda*' ! -name '*derby*' -printf '%p:' | sed 's/:$//'`
+```
+
+
+
+```
+vim find-spark-dependency.sh
+```
+
+```sh
+spark_dependency=`find -L $spark_home/jars -name '*.jar' ! -name '*slf4j*' ! -name 'metastore' ! -name '*jackson*' ! -name '*calcite*' ! -name '*doc*' ! -name '*test*' ! -name '*sources*' ''-printf '%p:' | sed 's/:$//'`
+```
+
+
+
+如果是第二次启动，先删除缓存
+
+![image-20210512140045645](images/image-20210512140045645.png)
+
+
+
+5）启动
 
 启动Kylin之前，需先启动Hadoop（hdfs, yarn, jobhistoryserver） 、Zookeeper、 Hbase
 
@@ -74,7 +111,10 @@ zk.sh start
 # 启动hbase
 start-hbase.sh
 
-# 启动k
+# hive
+nohup hive --service metastore &
+
+# 启动
 kylin.sh start
 ```
 
