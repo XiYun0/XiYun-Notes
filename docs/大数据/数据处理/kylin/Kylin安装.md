@@ -3,7 +3,7 @@
 ## 版本选型
 
 ```
-3.1.2
+3.0.2
 ```
 
 ## 安装
@@ -18,17 +18,17 @@
 
 1）下载并上传到/opt/software
 
-```
-https://www.apache.org/dyn/closer.cgi/kylin/apache-kylin-3.1.2/apache-kylin-3.1.2-bin-hadoop3.tar.gz
-```
+
+
+
 
 2）解压 apache-kylin-3.1.2-bin-hadoop3.tar.gz 到 /opt/module
 
 ```
-tar -zxvf apache-kylin-3.1.2-bin-hadoop3.tar.gz -C /opt/module/
+tar -zxvf apache-kylin-3.0.2-bin.tar.gz -C /opt/module/
 
 cd /opt/module
-mv apache-kylin-3.1.2-bin-hadoop3 kylin
+mv apache-kylin-3.0.2-bin kylin
 ```
 
 3）配置环境
@@ -64,19 +64,37 @@ source /etc/profile
 
 4）兼容性问题
 
-修改脚本排除依赖冲突
+由于/opt/module/spark/jars中的hive依赖版本与我们使用的hive冲突
+
+```
+[root@tsingdata01 jars]# ls -al | grep hive
+-rw-r--r--.  1 tsing-data tsing-data   138464 9月   8 2020 hive-beeline-1.2.1.spark2.jar
+-rw-r--r--.  1 tsing-data tsing-data    40817 9月   8 2020 hive-cli-1.2.1.spark2.jar
+-rw-r--r--.  1 tsing-data tsing-data 11498852 9月   8 2020 hive-exec-1.2.1.spark2.jar
+-rw-r--r--.  1 tsing-data tsing-data   100680 9月   8 2020 hive-jdbc-1.2.1.spark2.jar
+-rw-r--r--.  1 tsing-data tsing-data  5505200 9月   8 2020 hive-metastore-1.2.1.spark2.jar
+-rw-r--r--.  1 tsing-data tsing-data  1565700 9月   8 2020 orc-core-1.5.5-nohive.jar
+-rw-r--r--.  1 tsing-data tsing-data   812313 9月   8 2020 orc-mapreduce-1.5.5-nohive.jar
+-rw-r--r--.  1 tsing-data tsing-data  1358996 9月   8 2020 spark-hive_2.11-2.4.7.jar
+-rw-r--r--.  1 tsing-data tsing-data  1815976 9月   8 2020 spark-hive-thriftserver_2.11-2.4.7.jar
+```
 
 
+
+需要通过修改脚本排除依赖冲突
 
 ```
 cd /opt/module/kylin/bin
+```
+
+
+
+```
 vim find-hive-dependency.sh
 ```
 
-![image-20210512135619378](images/image-20210512135619378.png)
-
 ```sh
-hive_lib=`find -L ${hive_lib_dir} -name '*.jar' ! -name '*druid*' ! -name '*jackson*' ! -name 'metastore' ! -name '*slf4j*' ! -name '*avatica*' ! -name '*calcite*' ! -name '*jackson-datatype-joda*' ! -name '*derby*' -printf '%p:' | sed 's/:$//'`
+hive_lib=`find -L ${hive_lib_dir} -name '*.jar' ! -name '*druid*' ! -name '*jackson*' ! -name '*metastore*' !-name '*slf4j*' ! -name '*avatica*' ! -name '*calcite*' ! -name '*jackson-datatype-joda*' ! -name '*derby*' -printf '%p:' | sed 's/:$//'`
 ```
 
 
@@ -86,7 +104,7 @@ vim find-spark-dependency.sh
 ```
 
 ```sh
-spark_dependency=`find -L $spark_home/jars -name '*.jar' ! -name '*slf4j*' ! -name 'metastore' ! -name '*jackson*' ! -name '*calcite*' ! -name '*doc*' ! -name '*test*' ! -name '*sources*' ''-printf '%p:' | sed 's/:$//'`
+spark_dependency=`find -L $spark_home/jars -name '*.jar' ! -name '*jackson*' ! -name '*metastore*' ! -name '*slf4j*' ! -name '*calcite*' ! -name '*doc*' ! -name '*test*' ! -name '*sources*' ''-printf '%p:' | sed 's/:$//'`
 ```
 
 
@@ -113,10 +131,24 @@ start-hbase.sh
 
 # hive
 nohup hive --service metastore &
+hive
 
 # 启动
 kylin.sh start
 ```
+
+![image-20210513102655453](images/image-20210513102655453.png)
+
+说明启动成功了
+
+访问：http://192.168.157.128:7070/kylin/
+
+```
+用户名	ADMIN
+密码	KYLIN
+```
+
+> 注意：一定要将kylin加上
 
 启动之后查看各个节点进程：
 
@@ -152,16 +184,7 @@ xcall jps
 2815 SecondaryNameNode
 ```
 
-> 注意：启动Kylin之前要保证HDFS，YARN，ZK，HBASE相关进程是正常运行的。
-
-在http://tsingdata01:7070/kylin查看Web页面
-
-```
-用户名为：ADMIN
-密码为：KYLIN（系统已填）
-```
-
-4）关闭
+6）关闭
 
 ```
 bin/kylin.sh stop
