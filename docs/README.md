@@ -325,9 +325,34 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 ### 编程规范
 
 1. [Java 编程规范](后端/java/Java编程规范.md)
+
 2. [Java命名](后端/java/Java命名.md)
+
 3. [在IDEA中编写优雅简洁的Java代码](后端/java/编写优雅简洁的Java代码.md)
+
 4. [RestFul API 简明教程](https://snailclimb.gitee.io/javaguide/#/docs/后端/系统设计/coding-way/RESTfulAPI%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B)
+
+   #### RESTful
+
+   ```go
+   // 不适用RESTful风格
+   r.GET("/create_book", ...)
+   r.GET("/update_book", ...)
+   
+   r.GET("/remove_book", ...)	// 有的人删除
+   r.GET("/delete_book", ...)	// 有的人删除
+   r.GET("/shanchu_book", ...)	// 有的人删除
+   
+   // 使用RESTful风格
+   r.GET("book", ...)
+   r.POST("book", ...)
+   r.PUT("book", ...)
+   r.DELETE("book", ...)
+   ```
+
+   
+
+
 
 ### GUI
 
@@ -407,19 +432,35 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 ## Golang
 
-开源项目
+Golang标准库文档：https://studygolang.com/pkgdoc
+
+
+
+1. [Golang基础](后端/golang/Golang基础.md)
+2. [Golang并发](后端/golang/Golang并发.md)
+
+### 开源项目
 
 1. [7天用Go从零实现Web框架Gee教程](https://geektutu.com/post/gee.html)
 2. [rosedb](https://github.com/roseduan/rosedb)
 
 
 
-- [Golang基础](后端/golang/Golang基础.md)
-- [Golang并发](后端/golang/Golang并发.md)
+
+
+
+
+
 
 
 
 ### Goland
+
+
+
+### Gin
+
+- [基于gin框架和gorm的web开发实战](后端/golang/gin/基于gin框架和gorm的web开发实战.md)
 
 
 
@@ -673,11 +714,24 @@ Sentinel-取代hystrix
 
 
 1. Kafka压力测试
-2. 
+
+
 
 
 
 SpringBoot集成Kafka
+
+
+
+
+
+### Pulsar
+
+[TGIP-CN 直播合集](https://www.bilibili.com/video/BV1T741147B6/?spm_id_from=333.788.b_636f6d6d656e74.8)
+
+
+
+1. [Pulsar安装](大数据/数据采集/pulsar/Pulsar安装.md)
 
 ## 数据存储
 
