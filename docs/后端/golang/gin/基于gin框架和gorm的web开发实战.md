@@ -530,3 +530,217 @@ http://localhost:9090/another_json
 
 
 ### gin获取querystring参数
+
+GET请求 URL `?` 后面的是querystring参数
+
+方法1
+```go
+func main() {
+	r := gin.Default()
+
+	r.GET("/", func(c *gin.Context){
+		// 获取浏览器那边发起的请求携带的 query string 参数
+		name := c.Query("query")	// 通过Query获取请求中携带的querystring参数
+		c.JSON(http.StatusOK, gin.H{
+			"name": name,
+		})
+	})
+	r.Run(":9000")
+}
+```
+
+http://localhost:9000/?query=宋茜
+
+```
+{"name":"宋茜"}
+```
+
+方法2
+
+```go
+func main() {
+	r := gin.Default()
+
+	r.GET("/", func(c *gin.Context){
+		// 获取浏览器那边发起的请求携带的 query string 参数
+		//name := c.Query("query")	// 通过Query获取请求中携带的querystring参数
+		name := c.DefaultQuery("query", "somebody")	// 取不到就用指定的默认值
+		c.JSON(http.StatusOK, gin.H{
+			"name": name,
+		})
+	})
+	r.Run(":9000")
+}
+```
+
+http://localhost:9000/?xxx
+
+```
+{"name":"somebody"}
+```
+
+方法3
+
+```go
+func main() {
+	r := gin.Default()
+
+	r.GET("/", func(c *gin.Context){
+		// 获取浏览器那边发起的请求携带的 query string 参数
+		//name := c.Query("query")	// 通过Query获取请求中携带的querystring参数
+		//name := c.DefaultQuery("query", "somebody")	// 取不到就用指定的默认值
+		name, ok := c.GetQuery("query")	// 取不到第二个参数就返回false
+		if !ok {
+			// 取不到
+			name = "somebody"
+		}
+		c.JSON(http.StatusOK, gin.H{
+			"name": name,
+		})
+	})
+	r.Run(":9000")
+}
+```
+
+
+
+#### 传多个参数（数量较少）
+
+`key=value`格式，多个key-value用 `&` 连接
+
+```go
+func main() {
+	r := gin.Default()
+
+	r.GET("/", func(c *gin.Context){
+		// 获取浏览器那边发起的请求携带的 query string 参数
+		name := c.Query("query")	// 通过Query获取请求中携带的querystring参数
+		age := c.Query("age")	// 通过Query获取请求中携带的querystring参数
+		//name := c.DefaultQuery("query", "somebody")	// 取不到就用指定的默认值
+		c.JSON(http.StatusOK, gin.H{
+			"name": name,
+			"age": age,
+		})
+	})
+	r.Run(":9000")
+}
+```
+
+http://localhost:9000/?query=宋茜&age=18
+
+```
+{"age":"18","name":"宋茜"}
+```
+
+### gin获取form参数
+
+form表单通常使用POST
+
+```go
+func main() {
+	r := gin.Default()
+	r.LoadHTMLFiles("./login.html")
+
+	r.GET("/login", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "login.html", nil)
+	})
+
+	r.Run(":9000")
+}
+```
+
+创建login.html
+
+```html
+<body>
+    <form action="/login" method="post" novalidate autocomplete="off">
+        <div>
+            <label for="username">username:</label>
+            <input type="text" name="username" id="username">
+        </div>
+
+        <div>
+            <label for="password">password:</label>
+            <input type="text" name="password" id="password">
+        </div>
+
+        <input type="button" value="登录">
+    </form>
+</body>
+```
+
+访问：http://127.0.0.1:9000/login
+
+> 注意：此时只是让后端渲染了页面，再点击也没用了
+>
+> 记住，一次请求对应了一个响应！！！
+
+现在点击登录，后端来处理POST请求
+
+```go
+func main() {
+	r := gin.Default()
+	r.LoadHTMLFiles("./login.html", "./index.html")
+
+	r.GET("/login", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "login.html", nil)
+	})
+
+	// login post
+	r.POST("/login", func(c *gin.Context) {
+		// 获取form表单提交的数据
+		//username := c.PostForm("username")
+		//password := c.PostForm("password")	// 取到就返回值，取不到就返回空字符串
+
+		//username := c.DefaultPostForm("username", "somebody")
+		//password := c.DefaultPostForm("xxx", "******")
+
+		username, ok := c.GetPostForm("username")
+		if !ok {
+			username = "sb"
+		}
+		password, _ := c.GetPostForm("password")
+
+		c.HTML(http.StatusOK, "index.html", gin.H{
+			"Name": username,
+			"Password": password,
+		})
+	})
+	r.Run(":9000")
+}
+```
+
+创建index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+  <h1>hello, {{ .Name }}!</h1>
+  <p>your password is {{ .Password }}</p>
+</body>
+</html>
+```
+
+
+
+gin获取URI路径参数
+
+
+
+
+
+# GORM
+
+```
+go get -u gorm.io/gorm
+```
+
+
+
+连接MySQL
+
