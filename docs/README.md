@@ -465,8 +465,6 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 
 ## 系统设计
 
-
-
 ### 服务器
 
 #### Nginx
@@ -672,6 +670,14 @@ Sentinel-取代hystrix
 
 相关大数据书籍文档下载：https://www.yuque.com/kuangxiqiruogu/sglzt1/ydl8wy
 
+## 云/物理服务器安装
+
+[老男孩教育-李导-手把手带你玩转物理服务器](https://www.bilibili.com/video/BV1rb411n7a8)
+
+
+
+- [我在公司安装物理服务器集群的记录](大数据/服务器/我在公司安装物理服务器集群的记录.md)
+
 ## 数仓
 
 1. [数仓概念](大数据/数仓/数仓概念.md)
@@ -865,6 +871,10 @@ SpringBoot集成Kafka
 # [其他](others.md)
 
 [关于我](其他/关于我.md)
+
+
+
+
 
 ## 纵横天下
 
