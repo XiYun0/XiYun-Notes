@@ -728,7 +728,114 @@ func main() {
 
 
 
-gin获取URI路径参数
+### gin获取URI路径参数
+
+```go
+func main() {
+	r := gin.Default()
+	r.GET("/user/:name/:age", func(c *gin.Context) {
+		name := c.Param("name")
+		age := c.Param("age")
+		c.JSON(http.StatusOK, gin.H{
+			"name": name,
+			"age": age,
+		})
+	})
+
+	r.Run(":9000")
+}
+```
+
+http://localhost:9000/user/小王子/18
+
+### gin参数绑定
+
+```go
+type UserInfo struct {
+   username string
+   password string
+}
+
+func main() {
+   r := gin.Default()
+
+   r.GET("/user", func(c *gin.Context) {
+
+      username := c.Query("username")
+      password := c.Query("password")
+      u := UserInfo{
+         username: username,
+         password: password,
+      }
+      fmt.Println("%#v\n", u)
+      c.JSON(http.StatusOK, gin.H{
+         "message" : "ok",
+      })
+
+   })
+   r.Run(":9000")
+}
+```
+
+http://localhost:9000/user?username=glong&password=123456
+
+后台返回
+
+```bash
+[GIN] 2021/05/16 - 10:46:53 |?[97;42m 200 ?[0m|       861.1µs |             ::1 |?[97;44m GET     ?[0m "/user?username=glong&password=123456"
+```
+
+用gin提供的绑定方法
+
+```go
+type UserInfo struct {
+	Username string `form:"username" json:"username"`
+	Password string	`form:"password" json:"password"`
+}
+
+func main() {
+	r := gin.Default()
+	r.LoadHTMLFiles("./index.html")
+	r.GET("/index", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index.html", nil)
+	})
+	r.POST("/form", func(c *gin.Context) {
+
+		var u UserInfo	// 申明一个UserInfo类型的变量
+		// ShouldBind作用，通过反射找到结构体有哪些字段
+		err := c.ShouldBind(&u)	// go语言是值传递，要想修改传进去的值，需要指针
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": err.Error(),
+			})
+		}else{
+			fmt.Print("%#v\n", u)
+			c.JSON(http.StatusOK, gin.H{
+				"status": "ok",
+			})
+		}
+	})
+	r.Run(":9000")
+}
+```
+
+
+
+index.html
+
+```html
+<body>
+    <form action="/form" method="post"></form>
+        用户名：
+        <input type="text" name="username">
+        密码：
+        <input type="password" name="password">
+
+        <input type="submit" value="提交">
+</body>
+```
+
+http://localhost:9000/index
 
 
 
