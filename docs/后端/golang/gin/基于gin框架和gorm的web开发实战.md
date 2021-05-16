@@ -839,7 +839,52 @@ http://localhost:9000/index
 
 
 
+### gin文件上传
 
+```html
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="f1">
+    <input type="submit" name=""上传>
+</form>
+```
+
+
+
+```go
+func main() {
+	r := gin.Default()
+	r.LoadHTMLFiles("./index.html")
+	r.GET("/index", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index.html", nil)
+	})
+
+	r.POST("/upload", func(c *gin.Context) {
+		// 从请求中读取未见
+		f, err := c.FormFile("f1")
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"errpr": err.Error(),
+			})
+		}else {
+			// 将读取的文件保存到本地（服务器本地）
+			//dst := fmt.Sprintf("./%s", f.Filename)	// 拼接
+			dst := path.Join("./", f.Filename)
+			c.SaveUploadedFile(f, dst)
+			c.JSON(http.StatusOK, gin.H{
+				"status": "ok",
+			})
+		}
+	})
+
+	r.Run(":9000")
+}
+```
+
+http://localhost:9000/index
+
+> 多个文件，for循环
+
+### gin请求重定向
 
 # GORM
 
