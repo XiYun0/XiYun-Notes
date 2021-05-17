@@ -28,6 +28,12 @@ cd /opt/module/apache-pulsar-2.7.1
 ## 启动
 
 ```
+z
+```
+
+
+
+```
 bin/pulsar standalone
 ```
 
