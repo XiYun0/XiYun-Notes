@@ -449,7 +449,8 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 ### rosedb
 
 1. [server](后端/golang/rosedb/server.md)
-2. [client](后端/golang/rosedb/client.m)
+2. [client](后端/golang/rosedb/client.md)
+3. [cache](后端/golang/rosedb/cache.md)
 
 
 
@@ -508,6 +509,12 @@ Golang标准库文档：https://studygolang.com/pkgdoc
       1. [Redis](#Redis)
    3. SpringCache
 2. 分布式锁，与之对应的就是synchronized、Lock那一套的本地锁
+
+
+
+##### 缓存淘汰策略
+
+[动手写分布式缓存 - GeeCache第一天 LRU 缓存淘汰策略 | 极客兔兔 (geektutu.com)](https://geektutu.com/post/geecache-day1.html)
 
 #### 负载均衡
 
