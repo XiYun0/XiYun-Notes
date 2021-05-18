@@ -884,6 +884,102 @@ http://localhost:9000/index
 
 > 多个文件，for循环
 
+### gin文件下载
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>溪云系统</title>
+</head>
+<body>
+
+<div>
+    <h1>你好，欢迎来到溪云系统</h1>
+</div>
+
+
+    <div>
+        <h2>文件上传</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="f1">
+            <input type="submit" name="上传">
+        </form>
+    </div>
+
+    <div>
+        <h2>文件下载</h2>
+        <form action="/download01" method="post" enctype="multipart/form-data">
+            txt:
+            <input type="submit" name="f2" value="下载">
+        </form>
+
+        <form action="/download02" method="post" enctype="multipart/form-data">
+            pdf:
+            <input type="submit" value="下载">
+        </form>
+    </div>
+
+
+</body>
+</html>
+```
+
+
+
+
+
+```go
+func main() {
+	r := gin.Default()
+	r.LoadHTMLFiles("./index.html")
+	r.GET("/index", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index.html", nil)
+	})
+
+	r.POST("/upload", func(c *gin.Context) {
+		// 从请求中读取未见
+		f, err := c.FormFile("f1")
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"errpr": err.Error(),
+			})
+		}else {
+			// 将读取的文件保存到本地（服务器本地）
+			//dst := fmt.Sprintf("./%s", f.Filename)	// 拼接
+			dst := path.Join("./", f.Filename)
+			c.SaveUploadedFile(f, dst)
+			c.JSON(http.StatusOK, gin.H{
+				"status": "ok",
+			})
+		}
+	})
+
+    // 1.
+	r.POST("/download01", func(c *gin.Context) {
+		c.Writer.Header().Add("Content-Disposition", fmt.Sprintf("attachment; filename=%s", "file.txt"))
+		//fmt.Sprintf("attachment; filename=%s", filename)对下载的文件重命名
+		c.Writer.Header().Add("Content-Type", "application/octet-stream")
+		c.File("./file.txt")
+
+
+	})
+
+    
+	r.POST("/download02", func(c *gin.Context) {
+		c.Writer.Header().Add("Content-Disposition", fmt.Sprintf("attachment; filename=%s", "main.go"))
+		//fmt.Sprintf("attachment; filename=%s", filename)对下载的文件重命名
+		c.Writer.Header().Add("Content-Type", "application/octet-stream")
+		c.File("./main.go")
+	})
+
+	r.Run(":9000")
+}
+```
+
+
+
 ### gin请求重定向
 
 # GORM
