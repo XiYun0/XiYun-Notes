@@ -708,6 +708,8 @@ Sentinel-取代hystrix
 
 ### DataX
 
+- [安装与使用](大数据/数据采集/datax/安装与使用.md)
+
 ### Flume
 
 - [🚀Flume](https://www.yuque.com/docs/share/882bfdb2-5eeb-477c-a910-673f358f0534?# )
