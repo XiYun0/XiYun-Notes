@@ -714,6 +714,11 @@ Sentinel-取代hystrix
 
 - [🚀Flume](https://www.yuque.com/docs/share/882bfdb2-5eeb-477c-a910-673f358f0534?# )
 
+```
+flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name agent1 --conf conf -Dflume.root.logger=INFO,console
+
+```
+
 
 
 1. 拦截器
