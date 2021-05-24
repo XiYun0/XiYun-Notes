@@ -775,7 +775,12 @@ SpringBoot集成Kafka
 
 #### Yarn
 
+#### Hue
 
+官网：https://gethue.com/
+
+1. [Hue介绍](大数据\数据存储\hadoop\hue\Hue介绍.md)
+2. [Hue安装与使用](大数据\数据存储\hadoop\hue\Hue安装与使用.md)
 
 ### Hive
 
@@ -794,6 +799,15 @@ SpringBoot集成Kafka
 
 1. [Hudi概念](大数据/数据存储/hudi/Hudi概念.md)
 2. [Hudi安装](大数据/数据存储/hudi/Hudi安装.md)
+
+
+
+### Clickhouse
+
+文档：https://clickhouse.tech/docs/zh/
+
+1. [Clickhouse介绍](大数据/数据存储/clickhouse/Clickhouse介绍.md)
+2. [Clickhouse安装](大数据/数据存储/clickhouse/Clickhouse安装.md)
 
 ## 数据处理
 
