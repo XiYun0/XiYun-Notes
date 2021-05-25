@@ -233,7 +233,8 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 ## Vue
 
-- [vue3](前端/vue3.md)
+1. [vue3](前端/vue/vue3.md)
+2. [vue部署](前端/vue/vue部署.md)
 
 ### 表单设计工具
 
@@ -470,7 +471,7 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 
 #### Nginx
 
-
+1. [Nginx安装](后端\系统设计\服务器\nginx\Nginx安装.md)
 
 #### Tomcat
 
@@ -839,6 +840,14 @@ SpringBoot集成Kafka
 ### Superset
 
 - [Superset部署和使用](大数据/数据可视化/Superset部署和使用.md)
+
+
+
+## 集群监控
+
+### Zabbix
+
+
 
 ## 脚本
 

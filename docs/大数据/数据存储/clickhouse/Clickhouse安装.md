@@ -127,7 +127,7 @@ vim /etc/metrika.xml
 ```xml
 <yandex>
     <clickhouse_remote_servers>
-        <cluster-01>
+        <perftest_3shards_1replicas>
             <shard>
                 <internal_replication>true</internal_replication>
                 <replica>
@@ -136,8 +136,8 @@ vim /etc/metrika.xml
                 </replica>
             </shard>
             <shard>
-                <internal_replication>true</internal_replication>
                 <replica>
+                    <internal_replication>true</internal_replication>
                     <host>tsingdata02</host>
                     <port>9000</port>
                 </replica>
@@ -149,9 +149,9 @@ vim /etc/metrika.xml
                     <port>9000</port>
                 </replica>
             </shard>
-        </cluster-01>
+        </perftest_3shards_1replicas>
     </clickhouse_remote_servers>
-    
+    <!--zookeeper相关配置-->
     <zookeeper-servers>
         <node index="1">
             <host>tsingdata01</host>
@@ -166,15 +166,12 @@ vim /etc/metrika.xml
             <port>2181</port>
         </node>
     </zookeeper-servers>
-    
-     <macros>
-      <replica>tsingdata01</replica>
+    <macros>
+        <replica>tsingdata01</replica>
     </macros>
-    
     <networks>
-     <ip>::/0</ip>
+        <ip>::/0</ip>
     </networks>
-    
     <clickhouse_compression>
         <case>
             <min_part_size>10000000000</min_part_size>
@@ -182,7 +179,6 @@ vim /etc/metrika.xml
             <method>lz4</method>
         </case>
     </clickhouse_compression>
-    
 </yandex>
 ```
 
@@ -191,8 +187,6 @@ vim /etc/metrika.xml
 >      <macros>
 >       <replica>tsingdata01</replica>
 >     </macros>
-
-
 
 
 
@@ -211,7 +205,7 @@ systemctl start clickhouse-server.service
 启动第一个机器的clickhouse客户端
 
 ```
-c
+clickhouse-client
 ```
 
 
