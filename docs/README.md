@@ -114,8 +114,6 @@
 
 1. [数组Array](计算机系统/数据结构与算法/数据结构/数组.md)
 2. [链表LinkedList](计算机系统/数据结构与算法/数据结构/链表.md)
-   1. 双向链表
-   2. 跳表
 3. [队列Queue](计算机系统/数据结构与算法/数据结构/队列.md)
 4. [栈Stack](计算机系统/数据结构与算法/数据结构/栈.md)
 5. [哈希表HashTable](计算机系统/数据结构与算法/数据结构/哈希表.md)
@@ -721,8 +719,6 @@ Sentinel-取代hystrix
 flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name agent1 --conf conf -Dflume.root.logger=INFO,console
 
 ```
-
-
 
 1. 拦截器
 2. [日志采集 Flume 安装](大数据/数据采集/flume/日志采集 Flume 安装.md)
