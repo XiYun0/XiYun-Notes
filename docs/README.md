@@ -733,15 +733,7 @@ flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name ag
 
 1. Kafka压力测试
 
-
-
-
-
 SpringBoot集成Kafka
-
-
-
-
 
 ### Pulsar
 
@@ -783,9 +775,7 @@ SpringBoot集成Kafka
 
 ### Hive
 
-
-
-1. Hive部署
+1. [Hive部署](大数据\数据存储\hive\Hive部署.md)
 
 ### HBase
 
@@ -839,8 +829,6 @@ SpringBoot集成Kafka
 
 - [Superset部署和使用](大数据/数据可视化/Superset部署和使用.md)
 
-
-
 ## 集群监控
 
 ### Zabbix
@@ -866,6 +854,14 @@ SpringBoot集成Kafka
 
 1. Kubeflow概述
 2. Kubeflow部署
+
+
+
+
+
+## MLFlow
+
+- [MLflow安装](云计算\mlflow\MLflow安装.md)
 
 # 人工智能
 
