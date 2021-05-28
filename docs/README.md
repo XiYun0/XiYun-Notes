@@ -831,6 +831,8 @@ SpringBoot集成Kafka
 
 ### Atlas
 
+1. [Atlas部署](大数据\元数据管理\atlas\Atlas部署.md)
+
 ### Metacat
 
 1. [Metacat安装](大数据/元数据管理/metacat/Metacat安装.md)

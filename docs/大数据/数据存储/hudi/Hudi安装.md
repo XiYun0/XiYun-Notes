@@ -67,9 +67,11 @@ mvn clean package -DskipTests -Dscala-2.12
 packaging/hudi-flink-bundle/target/hudi-flink-bundle_2.11-0.8.0.jar
 ```
 
-或者直接下载官方提供的jar包：https://repo.maven.apache.org/maven2/org/apache/hudi/hudi-flink-bundle_2.11/0.8.0/
+或者直接下载官方提供的jar包：https://repo.maven.apache.org/maven2/org/apache/hudi/hudi-flink-bundle_2.12/0.8.0/hudi-flink-bundle_2.12-0.8.0.jar
 
 # Spark on Hudi
+
+[Apache Hudi集成Spark SQL抢先体验](https://www.cnblogs.com/leesf456/p/14802281.html)
 
 
 
@@ -78,6 +80,8 @@ packaging/hudi-flink-bundle/target/hudi-flink-bundle_2.11-0.8.0.jar
 参考：[重磅！解锁Apache Flink读写Apache Hudi新姿势](https://zhuanlan.zhihu.com/p/364026320)
 
 下载 Flink 1.12.3 ：https://mirrors.tuna.tsinghua.edu.cn/apache/flink/
+
+也可以用中科大的镜像站
 
 ![image-20210506170857861](images/image-20210506170857861.png)
 
@@ -89,7 +93,7 @@ packaging/hudi-flink-bundle/target/hudi-flink-bundle_2.11-0.8.0.jar
 
 
 
-启动` flink-sql `客户端，提前把 `hudi-flink-bundle_2.11-0.8.0.jar`（我这里使用 flink scala 2.12 版本。）
+启动` flink-sql `客户端，提前把 `hudi-flink-bundle_2.12-0.8.0.jar`（我这里使用 flink scala 2.12 版本。）
 
 如果是 scala2.11 版本需要编译成 `hudi-flink-bundle_2.11-0.8.0.jar `拷贝到 $FLINK_HOME/lib 目录下
 
@@ -112,9 +116,9 @@ source /etc/profile
 ./bin/start-cluster.sh
 
 # 创建hdfs文件
-hadoop fs -mkdir -/hudi/t1
+hadoop fs -mkdir -p /hudi/t1
 
-./bin/sql-client.sh embedded -j /opt/module/hudi-flink-bundle_2.11-0.8.0.jar shell
+./bin/sql-client.sh embedded -j /opt/module/hudi/hudi-flink-bundle_2.12-0.8.0.jar shell
 ```
 
 ### 创建表结构

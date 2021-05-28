@@ -736,7 +736,7 @@ nohup java -jar service-0.6.0.jar>service.out 2>&1 &
 tail -f service.out
 ```
 
-`注`：新版可以不使用如上的java -jar方式启动，这个是官网老的版本启动方式，新版直接执行脚本start.sh即可，详情见下
+> `注`：新版可以不使用如上的java -jar方式启动，这个是官网老的版本启动方式，新版直接执行脚本start.sh即可，详情见下
 
 
 

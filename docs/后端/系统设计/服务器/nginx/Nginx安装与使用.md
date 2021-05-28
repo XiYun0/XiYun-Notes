@@ -4,8 +4,6 @@ http://nginx.org/en/download.html
 
 alibaba cloud centos安装nginx教程：https://www.cnblogs.com/wuxu-dl/p/10516325.html
 
-
-
 ```
 tar -zxvf nginx-1.20.0.tar.gz -C /opt/module/
 ```
@@ -49,87 +47,38 @@ make && make install
 sbin/nginx
 ```
 
+访问http://192.168.28.116/
 
+## 部署其他
 
+部署前端，以Griffin为例
 
+#### 部署到服务器
 
 ```
-worker_processes  1;
+npm run-script build
+```
 
-events {
-    worker_connections  1024;
-}
+得到` dist `
 
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-    sendfile        on;
-    keepalive_timeout  65;
+把 dist 文件夹下的打包文件拷贝到 nginx/html 下并重命名为 griffinUI
 
-    server {
-        listen       80;
-        server_name  localhost;
+修改 `conf/nginx.conf `文件
 
-		location / {
-            root   /opt/module/mas/max-ui;
-			try_files $uri $uri/ /index.html;
-            index  index.html index.htm;
-        }
-		
-		location /prod-api/{
-			proxy_set_header Host $http_host;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header REMOTE-HOST $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_pass http://localhost:8080/;
-		}
-
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-    }
+```
+location / {
+   root html/griffinUI;
+   index index.html index.htm;
 }
 ```
 
-
+启动 nginx
 
 ```
-server {
-	listen       80;  # 前端的端口
-    server_name  localhost; # 不建议用localhost，Linux的ip地址
- 
-	location / {
-	        root   /opt/module/mas/mas-ui; # 前端的包所在路径
-			try_files $uri $uri/ /index.html; # 按此顺序查找请求的文件
-            index  index.html index.htm;
-        }
-		
-	# 生产环境的请求都是以/prod-api，可以按F12随便找一个请求看看它的路径
-	location /prod-api/{
-		proxy_set_header Host $http_host;
-		proxy_set_header X-Real-IP $remote_addr;
-		proxy_set_header REMOTE-HOST $remote_addr;
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-		proxy_pass http://localhost:8080/; # 转发到后端
-	}
-	
-	location /boom {
-		proxy_redirect off;
-		proxy_pass http://localhost:8080/;
-		proxy_set_header Host $http_host;
-		proxy_set_header X-Real-IP $remote_addr;
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-	}
- 
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-    }
+sbin/nginx
 ```
 
-
+在浏览器中输入http://192.168.28.116/即可看到项目
 
 ## 一些命令
 
