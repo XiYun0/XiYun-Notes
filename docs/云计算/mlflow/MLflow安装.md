@@ -61,7 +61,7 @@ mlflow ui
 
 如果在本地执行mlflow ui，那么浏览器输入：[http://localhost:5000/#/](https://links.jianshu.com/go?to=http%3A%2F%2Flocalhost%3A5000%2F%23%2F)，即可看到效果，查看本地端口。
 
->问题：因为mlflow服务启动的时候默认是127.0.0.1，通过代理访问的时候会有问题，需要重新绑定ip。
+> 问题：因为mlflow服务启动的时候默认是127.0.0.1，通过代理访问的时候会有问题，需要重新绑定ip。
 
 ```
 mlflow ui  --host 0.0.0.0

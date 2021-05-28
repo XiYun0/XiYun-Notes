@@ -213,9 +213,9 @@ export JAVA_HOME CLASSPATH PATH
 ## Ngnix
 
 ```
-docker pull nginx:1.10
+docker pull nginx:1.20
 # 随便启动一个nginx实例，只是为了复制出配置
-docker run -p 80:80 --name nginx -d nginx:1.10
+docker run -p 80:80 --name nginx -d nginx:1.20
 
 cd /mydata/nginx
 docker container cp nginx:/etc/nginx .
@@ -230,9 +230,10 @@ docker run -p 80:80 --name nginx \
 -v /mydata/nginx/html:/usr/share/nginx/html \
 -v /mydata/nginx/logs:/var/log/nginx \
 -v /mydata/nginx/conf:/etc/nginx \
--d nginx:1.10
-
+-d nginx:1.20
 
 docker update nginx --restart=always
+
+
 ```
 

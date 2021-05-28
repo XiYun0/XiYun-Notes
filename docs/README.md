@@ -466,9 +466,11 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 
 #### Nginx
 
-1. [Nginx安装](后端\系统设计\服务器\nginx\Nginx安装.md)
+1. [Nginx安装与使用](后端/系统设计/服务器/nginx/Nginx安装与使用.md)
 
 #### Tomcat
+
+1. [Tomcat安装与使用](后端/系统设计/服务器/tomcat/Tomcat安装与使用.md)
 
 ### 设计模式
 
@@ -683,7 +685,7 @@ Sentinel-取代hystrix
 
 ## 服务完整搭建
 
-- [服务完整搭建](大数据\服务完整搭建\服务完整搭建.md)
+- [服务完整搭建](大数据/服务完整搭建/服务完整搭建.md)
 
 ## 数仓
 
@@ -709,7 +711,7 @@ Sentinel-取代hystrix
 ### DataX
 
 - [安装与使用](大数据/数据采集/datax/安装与使用.md)
-- [使用DataX将数据从MySQL导入到HDFS](大数据\数据采集\datax\MySQL2HDFS.md)
+- [使用DataX将数据从MySQL导入到HDFS](大数据/数据采集/datax/MySQL2HDFS.md)
 
 ### Flume
 
@@ -770,12 +772,12 @@ SpringBoot集成Kafka
 
 官网：https://gethue.com/
 
-1. [Hue介绍](大数据\数据存储\hadoop\hue\Hue介绍.md)
-2. [Hue安装与使用](大数据\数据存储\hadoop\hue\Hue安装与使用.md)
+1. [Hue介绍](大数据/数据存储/hadoop/hue/Hue介绍.md)
+2. [Hue安装与使用](大数据/数据存储/hadoop/hue/Hue安装与使用.md)
 
 ### Hive
 
-1. [Hive部署](大数据\数据存储\hive\Hive部署.md)
+1. [Hive部署](大数据/数据存储/hive/Hive部署.md)
 
 ### HBase
 
@@ -809,19 +811,29 @@ SpringBoot集成Kafka
 
 ### Spark
 
-
+1. [Spark安装](大数据\数据处理\spark\Spark安装.md) 
 
 ### Kylin
 
 > 即席查询
 
 1. [Kylin概述与原理](大数据/数据处理/kylin/Kylin概述与原理.md)
-
 2. [Kylin安装](大数据/数据处理/kylin/Kylin安装.md)
-
 3. [Kylin使用](大数据/数据处理/kylin/Kylin使用.md)
 
-   
+## 数据质量
+
+### Griffin
+
+1. [Griffin部署](大数据/数据质量/griffin/Griffin部署.md)
+
+## 元数据
+
+### Atlas
+
+### Metacat
+
+1. [Metacat安装](大数据/元数据管理/metacat/Metacat安装.md)
 
 ## 数据可视化
 
@@ -837,7 +849,7 @@ SpringBoot集成Kafka
 
 ## 脚本
 
-[脚本合集](大数据\脚本\脚本.md)
+[脚本合集](大数据/脚本/脚本.md)
 
 # 云计算
 
@@ -857,11 +869,9 @@ SpringBoot集成Kafka
 
 
 
-
-
 ## MLFlow
 
-- [MLflow安装](云计算\mlflow\MLflow安装.md)
+- [MLflow安装](云计算/mlflow/MLflow安装.md)
 
 # 人工智能
 
