@@ -8,9 +8,10 @@ npm build
 
 ![image-20210525125703263](images/image-20210525125703263.png)
 
-配置nginx.conf
+配置`nginx.conf`
 
 ```
+user  root;
 worker_processes  1;
 
 events {
@@ -28,7 +29,7 @@ http {
         server_name  localhost;
 
 		location / {
-            root   /opt/module/mas/ruoyi-ui;
+            root   html/dist;
 			try_files $uri $uri/ /index.html;
             index  index.html index.htm;
         }
@@ -47,7 +48,12 @@ http {
         }
     }
 }
+
 ```
 
-启动niginx
+启动`niginx`
+
+```
+s/nginx
+```
 

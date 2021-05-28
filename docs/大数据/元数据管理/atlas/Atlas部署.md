@@ -509,6 +509,14 @@ Started Solr server on port 8983 (pid=6563). Happy searching!
 
 提示：启动 Solr 前，需要提前启动 **Zookeeper** 服务。
 
+> 如果启动报错：Solr home directory /opt/module/solr/ must contain a solr.xml file!
+>
+> 那么按照下面的方式启动
+>
+> ```
+> solr start -s /opt/module/solr/server/solr
+> ```
+
 ### 查看Solr页面
 
 9）Web 访问 8983 端口，可指定三台节点中的任意一台 IP，http://192.168.157.128:8983/
@@ -520,8 +528,6 @@ Started Solr server on port 8983 (pid=6563). Happy searching!
 ## Hive3.1.2
 
 略
-
-
 
 ## Azkaban3.8.4
 
@@ -834,8 +840,6 @@ mv apache-atlas-2.0.0/ atlas
 
 ## Atlas 集成 Hbase
 
- 
-
 1）进入/opt/module/atlas/conf/目录，修改配置文件
 
 ```
@@ -866,8 +870,6 @@ export HBASE_CONF_DIR=/opt/module/atlas/conf/hbase/conf
 ```
 
 ## Atlas 集成 Solr
-
-
 
 1）进入/opt/module/atlas/conf 目录，修改配置文件
 

@@ -902,6 +902,16 @@ case $1  in
 esac
 ```
 
+## 问题
+
+livy问题：Caused by: java.lang.IllegalArgumentException: Compression codec com.hadoop.compression.lzo.LzoCodec not found
+https://blog.csdn.net/Lcumin/article/details/113096793
+
+
+
+es问题：griffin.org.apache.http.conn.HttpHostConnectException: Connect to tsingdata01:9200 [tsingdata01/192.168.28.116] failed: 拒绝连接 (Connection refused)
+https://blog.csdn.net/weixin_34417183/article/details/86013573
+
 ## 参考教程
 
 [Griffin-0.6.0服务部署笔记](https://blog.csdn.net/u010834071/article/details/109843258?ops_request_misc=%7B%22request%5Fid%22%3A%22161845579616780255226649%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&request_id=161845579616780255226649&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-3-109843258.pc_search_result_hbase_insert&utm_term=griffin0.6)

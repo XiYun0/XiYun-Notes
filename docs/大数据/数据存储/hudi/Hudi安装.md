@@ -73,8 +73,6 @@ packaging/hudi-flink-bundle/target/hudi-flink-bundle_2.11-0.8.0.jar
 
 [Apache Hudi集成Spark SQL抢先体验](https://www.cnblogs.com/leesf456/p/14802281.html)
 
-
-
 # Flink on Hudi
 
 参考：[重磅！解锁Apache Flink读写Apache Hudi新姿势](https://zhuanlan.zhihu.com/p/364026320)

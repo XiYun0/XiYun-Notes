@@ -261,3 +261,10 @@ hive
     hive> quit;
 ```
 
+
+
+# 中文乱码问题
+
+[hive中解决中文乱码](https://www.cnblogs.com/DreamDrive/p/7469476.html)
+
+![image-20210528130414301](images/image-20210528130414301.png)
