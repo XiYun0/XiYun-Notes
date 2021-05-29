@@ -1,8 +1,6 @@
-![logo](图片/icon.svg)
+![logo](images/icon.svg)
 
 # 溪云笔记
-
-> 我的Java学习笔记
 
 * 从Java基础到各种开发框架
 * 从计算机基础到高级应用
