@@ -16,11 +16,9 @@
 
 
 
-> 正在阅读的书籍、博客：深入理解计算机系统
+> 正在阅读的书籍、博客：深入理解计算机系统、码农翻身
 >
 > 正在做的项目：谷粒商城
-
-
 
 # 资源
 
@@ -46,8 +44,8 @@
 
 # 面试、简历关
 
-1. :crossed_swords:[面试—话术](others/面试—纯话版.md):crossed_swords:
-2. [面经](others/面经.md)
+1. :crossed_swords:[面试—话术，我的](others/面试—纯话版.md):crossed_swords:
+2. [面经，别人的](others/面经.md)
 3. [我的简历](others/resume/我的简历.md)
 4. https://github.com/resumejob/awesome-resume
 
@@ -57,11 +55,12 @@
 
 1. [Java 基础面试总结](java/base/Java基础.md)
    1. [接口和抽象类](java/base/接口和抽象类.md)
-   2. 包装类：自动装箱与拆箱
-   3. 泛型：为容器而生
-   4. 异常：生病，生死无常
-   5. 注解
-   6. [Java 反射](java/base/Java反射.md)
+   2. [序列化：对象，跨越时空以得永生！](java/base/序列化.md)
+   3. 包装类：自动装箱与拆箱
+   4. 泛型：为容器而生
+   5. 异常：生病，生死无常
+   6. 注解
+   7. [Java 反射](java/base/Java反射.md)
 2. 新特性
    1. [Java 8 新特性总结](java/What's%20New%20in%20JDK8/Java8Tutorial.md)
 
@@ -435,9 +434,25 @@ Sentinel-取代hystrix
 
 ## Hadoop
 
+推荐视频：尚硅谷大海哥
+
 > 大数据存储引擎
 
+### HDFS
+
+- [HDFS](bigdata/hadoop/hdfs.md)
+
+### MapReduce
+
+
+
+### Yarn
+
+
+
 ## Flink
+
+
 
 ## Spark
 
@@ -456,6 +471,8 @@ Sentinel-取代hystrix
 
 
 ## CSS
+
+
 
 ## JavaScript
 
@@ -526,6 +543,8 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 - [债务危机读书笔记](others/纵横天下/债务危机读书笔记.md)
 
 # 视频制作
+
+http://carsondb.gitee.io/animeBoard/
 
 manim：https://github.com/manim-kindergarten/manim_sandbox/wiki
 
