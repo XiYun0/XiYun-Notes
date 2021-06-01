@@ -623,7 +623,9 @@ Sentinel-取代hystrix
 
 #### API网关
 
-[Gateway](后端/系统设计/micro-service/Gateway.md)-API网关
+1. [Kong](后端/系统设计/micro-service/API网关/Kong.md)
+
+
 
 ### 秒杀系统
 
@@ -723,8 +725,8 @@ flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name ag
 ```
 
 1. 拦截器
-2. [日志采集 Flume 安装](大数据/数据采集/flume/日志采集 Flume 安装.md)
-3. [消费 Kafka 数据 Flume](大数据/数据采集/flume/消费 Kafka 数据 Flume.md)
+2. [日志采集 Flume 安装](大数据/数据采集/flume/日志采集Flume安装.md)
+3. [消费 Kafka 数据 Flume](大数据/数据采集/flume/消费Kafka数据Flume.md)
 4. [Flume内存优化](大数据/数据采集/flume/Flume内存优化.md)
 
 ### Kafka
@@ -790,6 +792,7 @@ SpringBoot集成Kafka
 
 1. [Hudi概念](大数据/数据存储/hudi/Hudi概念.md)
 2. [Hudi安装](大数据/数据存储/hudi/Hudi安装.md)
+3. [Hudi使用](大数据\数据存储\hudi\Hudi使用.md)
 
 
 
@@ -903,23 +906,21 @@ SpringBoot集成Kafka
 
 > 我的研究方向，这部分笔记在下面这个仓库
 >
-> - [多智能体系统学习指南](https://xiyun0.github.io/MultiAgentLearning/#/)
+> - [多智能体系统学习指南](https://glong1997.github.io/MultiAgentLearning/#/)
 
 ### 多智能体强化学习
 
 > 我的研究方向，这部分笔记在下面这个仓库
 >
-> - [多智能体系统学习指南](https://xiyun0.github.io/MultiAgentLearning/#/)
+> - [多智能体系统学习指南](https://glong1997.github.io/MultiAgentLearning/#/)
 
+# 运维
 
+[Prometheus和Grafana](运维\Prometheus和Grafana.md)
 
 # [其他](others.md)
 
 [关于我](其他/关于我.md)
-
-
-
-
 
 ## 纵横天下
 

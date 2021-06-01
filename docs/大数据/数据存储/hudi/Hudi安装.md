@@ -111,7 +111,8 @@ source /etc/profile
 
 ```
 # Start the flink standalone cluster
-./bin/start-cluster.sh
+
+./bin/sql-client.sh embedded
 
 # 创建hdfs文件
 hadoop fs -mkdir -p /hudi/t1
@@ -132,7 +133,7 @@ CREATE TABLE t1(
 PARTITIONED BY (`partition`)
 WITH (
 'connector'= 'hudi',
-'path'= 'hdfs:///hudi/t1',
+'path'= 'hdfs://192.168.28.116:8/hudi/t1',
 'table.type'= 'MERGE_ON_READ'
 );
 ```
