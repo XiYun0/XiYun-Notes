@@ -97,6 +97,224 @@ pantsel/konga
 
 访问：http://192.168.28.118:1337/
 
+#### 完成
+
+配置 Kong's admin API的连接，然后激活此链接，炫酷的面板，大吉大利！！！
+
+```
+192.168.28.118:8001
+```
+
+![image-20210602103524425](images/image-20210602103524425.png)
+
+
+
+## 服务使用
+
+博客：https://www.cnblogs.com/bhfdz/p/14303309.html
+
+视频：[Rainbond 与 Kong API-Gateway 实践](https://www.bilibili.com/video/BV1zz411q7m7?from=search&seid=9381355276042576626)
+
+### 1.添加服务
+
+```shell
+curl -i -X POST http://192.168.28.118:8001/services \
+     --data name=example_service \
+     --data url='http://mockbin.org'
+```
+
+[http://mockbin.org](http://mockbin.org/) ，点进入你就知道是干啥的了！以下验证此服务
+
+```shell
+curl -i http://192.168.28.118:8001/services/example_service
+```
+
+### 2.添加路由
+
+```shell
+curl -i -X POST http://192.168.28.118:8001/services/example_service/routes \
+--data 'paths[]=/mock' \
+ --data 'name=mocking'
+```
+
+
+
+以下验证此服务
+
+```shell
+curl -i -X GET http://192.168.28.118:8000/mock
+```
+
+### 3.添加限流
+
+```shell
+curl -i -X POST http://192.168.28.118:8001/plugins \
+--data "name=rate-limiting" \
+--data "config.minute=5" \
+--data "config.policy=local"
+```
+
+以下验证此服务，每分钟只能请求5次
+
+```shell
+curl -i -X GET http://192.168.28.118:8000/mock/request
+```
+
+超过5次，
+
+```json
+{
+  "message":"API rate limit exceeded"
+}
+```
+
+如下图
+
+![img](https://img2020.cnblogs.com/blog/1116614/202101/1116614-20210120155247742-2094481912.png)
+
+### 4.代理缓存
+
+```shell
+curl -i -X POST http://192.168.28.118:8001/plugins \
+--data name=proxy-cache \
+--data config.content_type="application/json" \
+--data config.cache_ttl=30 \
+--data config.strategy=memory
+```
+
+注意抓取请求头的变化（与教程有点出入，不太好使！）
+
+```shell
+curl -i -X GET http://192.168.28.118:8000/mock/request
+```
+
+删除缓存
+
+```shell
+curl -i -X DELETE http://192.168.28.118:8001/proxy-cache
+```
+
+### 5.身份验证
+
+```shell
+curl -X POST http://192.168.28.118:8001/routes/mocking/plugins \
+--data name=key-auth
+```
+
+再次访问服务，HTTP/1.1 401 Unauthorized
+
+![img](https://img2020.cnblogs.com/blog/1116614/202101/1116614-20210120155256312-407486662.png)
+
+设置使用者
+
+```shell
+curl -i -X POST -d "username=consumer&custom_id=consumer" http://192.168.28.118:8001/consumers/
+```
+
+创建凭据，对于此示例，将密钥设置为apikey。如果未输入任何密钥，则Kong将自动生成密钥。
+
+```shell
+curl -i -X POST http://192.168.28.118:8001/consumers/consumer/key-auth -d 'key=apikey'
+```
+
+返回结果如下：
+
+```json
+{
+	"created_at": 1611110699,
+	"id": "6695bd72-16e6-490d-b983-c141c39b5da8",
+	"tags": null,
+	"ttl": null,
+	"key": "apikey",
+	"consumer": {
+		"id": "cbdec9e6-70aa-4166-9289-e1fe5737ab6e"
+	}
+}
+```
+
+再次访问服务，返回正常
+
+```shell
+curl -i http://192.168.28.118:8000/mock/request -H 'apikey:apikey'
+```
+
+### 6.禁用插件（可选）
+
+```shell
+curl -X GET http://192.168.28.118:8001/routes/mocking/plugins/
+```
+
+以下是返回的数据
+
+```json
+{
+	"next": null,
+	"data": [{
+		"created_at": 1611109944,
+		"id": "e488b6e6-6183-499c-b430-0aa676245ee5",
+		"tags": null,
+		"enabled": true,
+		"protocols": ["grpc", "grpcs", "http", "https"],
+		"name": "key-auth",
+		"consumer": null,
+		"service": null,
+		"route": {
+			"id": "ed6baf5a-5d32-4550-91d8-661fc3539e44"
+		},
+		"config": {
+			"key_in_query": true,
+			"key_names": ["apikey"],
+			"key_in_header": true,
+			"run_on_preflight": true,
+			"anonymous": null,
+			"hide_credentials": false,
+			"key_in_body": false
+		}
+	}]
+}
+```
+
+禁用此插件
+
+```shell
+curl -X PATCH http://192.168.28.118:8001/routes/mocking/plugins/e488b6e6-6183-499c-b430-0aa676245ee5 \
+ --data "enabled=false"
+```
+
+### 7.负载均衡
+
+配置上游服务
+
+```shell
+curl -X POST http://192.168.28.118:8001/upstreams \
+ --data name=upstream
+```
+
+以前配置的服务指向上游
+
+```shell
+curl -X PATCH http://192.168.28.118:8001/services/example_service \
+--data host='upstream'
+```
+
+向上游添加目标，***此处玩脱了容器卡住多次也不能添加成功***
+
+```shell
+curl -X POST http://192.168.28.118:8001/upstreams/upstream/targets \
+--data target='mockbin.org:80'
+
+curl -X POST http://192.168.28.118:8001/upstreams/upstream/targets \
+--data target='httpbin.org:80'
+```
+
+浏览器中访问 http://192.168.28.118:8000/mock 进行验证
+
+
+
+
+
+
+
 
 
 
@@ -112,7 +330,7 @@ api 经过 kong，会留下日志，prometheus 通过 `8001` 端点标准化采�
 
 使用教程！：https://www.cnblogs.com/guoxiangyue/p/11772717.html
 
-## prometheus
+## Prometheus
 
 >中文普罗米修斯，全链路实时监控
 
@@ -192,7 +410,7 @@ scrape_configs:
 
 
 
-## grafana
+## Grafana
 
 
 
@@ -238,7 +456,7 @@ admin
 
 
 
-## node_exporter
+## Node_exporter
 
 ```
 https://github.com/prometheus/node_exporter/releases/download/v1.1.2/node_exporter-1.1.2.linux-amd64.tar.gz
@@ -308,7 +526,7 @@ cd /opt/module/prometheus
 
 
 
-## dashboard
+## Dashboard
 
 https://grafana.com/grafana/dashboards 
 
@@ -399,4 +617,70 @@ scrape_configs:
 
 
 ![image-20210601164031144](images/image-20210601164031144.png)
+
+### 最重要的Kong模板:star:
+
+参考：http://blog.sunqiang.me/2019/12/24/kong-%E4%BD%BF%E7%94%A8prometheusgrafana%E8%BF%9B%E8%A1%8C%E7%9B%91%E6%8E%A7/
+
+在Konga安装Promethus模板
+
+http://luarocks.org/modules/kong/kong-prometheus-plugin
+
+#### 添加 Kong 数据信息
+
+在Promethus上添加配置
+
+```
+- targets: ['192.168.28.118:9090','192.168.28.118:8001']
+```
+
+#### 在konga中添加Prometheus插件
+
+![image-20210602105041476](images/image-20210602105041476.png)
+
+#### 打开kong的metrics支持
+
+http://192.168.28.118:8001/metrics
+
+
+
+#### 在 Grafana 管理界面添加数据源
+
+“Configuration” => “Add data source” => “Prometheus” => “select”
+
+输入普罗米修斯的地址
+
+http://192.168.28.118:9090
+
+#### 添加官方 Dashboard
+
+1、登录 Grafana 后，点击左边的 “+” => “Create” => “Import”。
+2、输入 `7424` ，7424 是 Kong 官方提供的与 Prometheus 插件配套的 Dashboard。
+3、完成，调用 Kong 网关接口即可查看数据。
+
+
+
+
+
+# 使用FastAPI服务
+
+启动fastapi服务
+
+> 我这边设置的fastapi是跑在8848端口的
+
+```
+curl -i -X POST http://192.168.28.118:8001/services/FastAPI/routes \
+--data 'paths[]=/fastapi' \
+ --data 'name=fastapi'
+```
+
+访问
+
+```
+curl -i -X GET http://192.168.28.118:8000/docs
+```
+
+> 这里可以得到和直接访问8848一样的结果，只不过我们走了一遍网关，网关路由到了8848那边的服务。
+
+现在可以使用Grafana来查看kong网关的情况，因为Prometheus那边会抓取kong的指数
 

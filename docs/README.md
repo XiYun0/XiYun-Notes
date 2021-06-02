@@ -78,7 +78,8 @@
 ### Linux
 
 - [虚拟机Linux安装和宝塔](https://www.yuque.com/docs/share/dde3805e-0e52-4de6-b5b1-f7a88b4035e6?# )
-- [Linux 基础知识](计算机系统/操作系统/linux/Linux基础知识.md)  
+- [Linux 基础知识](计算机系统/操作系统/linux/Linux基础知识.md) 
+- [我的常用命令](计算机系统\操作系统\linux\常用命令.md)
 - [Shell 编程入门](计算机系统/操作系统/Shell.md) 
 
 ## 计算机网络
@@ -460,6 +461,12 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 
 
 
+### Python
+
+#### FastAPI
+
+
+
 ## 系统设计
 
 ### 服务器
@@ -689,7 +696,7 @@ Sentinel-取代hystrix
 
 - [服务完整搭建](大数据/服务完整搭建/服务完整搭建.md)
 
-## 数仓
+## 数据仓库
 
 1. [数仓概念](大数据/数仓/数仓概念.md):star_of_david:
 2. [数仓需求](大数据/数仓/数仓需求.md)
@@ -702,6 +709,8 @@ Sentinel-取代hystrix
 - [网易大数据专家，为你剖析数据中台的现状及未来](https://www.bilibili.com/video/BV1EQ4y1M7fW?from=search&seid=4799545926254065116)，[笔记](https://www.bilibili.com/read/cv5693165?spm_id_from=333.788.b_636f6d6d656e74.9)
 
 
+
+1. [数据中台的概念](大数据\数据中台\数据中台的概念.md)
 
 ## 数据生成
 

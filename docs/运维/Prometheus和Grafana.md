@@ -1,7 +1,6 @@
 # 从0开始搭建Prometheus+Grafana
 
-api 经过 kong，会留下日志，prometheus 通过 `8001` 端点标准化采集的日志，
- `grafana` 通过 `prometheus `得到标准后的日志进行展示。
+Exporter（如node_exporter）在服务器上启动，然后通过端口将数据指标暴露给Prometheus，Prometheus定时拉取数据，Grafana可以配置Prometheus的数据源，再加上不同的dashbord模板，可视化这些数据并进行分析。
 
 
 
@@ -9,11 +8,28 @@ api 经过 kong，会留下日志，prometheus 通过 `8001` 端点标准化采�
 
 使用教程！：https://www.cnblogs.com/guoxiangyue/p/11772717.html
 
-## prometheus
+监控教程：https://blog.csdn.net/qq_37128049/article/details/108143110
+
+## Prometheus
 
 >中文普罗米修斯，全链路实时监控
 
 下载：https://prometheus.io/download/
+
+
+
+创建prometheus用户
+
+```text
+useradd prometheus
+passwd prometheus
+
+# 授予sudo权限
+visudo
+prometheus    ALL=(ALL)    NOPASSWD:ALL
+```
+
+
 
 在tsingdata03的/opt/software
 
@@ -37,7 +53,7 @@ tar -zxvf prometheus-2.27.1.linux-amd64.tar.gz -C /opt/module/
 
 
 
-prometheus.yml 文件配置如下
+prometheus.yml 文件配置如下，最重要的东西！
 
 ```
 cd /opt/module/prometheus
@@ -89,19 +105,18 @@ scrape_configs:
 
 
 
-## grafana
+## Grafana
 
-
+https://dl.grafana.com/oss/release/grafana-7.5.7-1.x86_64.rpm
 
 ```
-wget https://dl.grafana.com/oss/release/grafana-7.5.7-1.x86_64.rpm
 sudo yum install grafana-7.5.7-1.x86_64.rpm
 ```
 
 启动
 
 ```
-sudo service grafana-server start 
+sudo service grafana-server start
 ```
 
 使用下面命令检查是否启动成功
@@ -131,11 +146,37 @@ admin
 
 
 
+无密码登录
+
+```
+vim /etc/grafana/grafana.ini
+```
+
+将配置文件中的auth.anonymous的enabled设置为true就可以匿名登录，不用输入用户名和密码
+
+```
+#################################### Anonymous Auth ######################
+[auth.anonymous]
+# enable anonymous access
+;enabled = true
+
+# specify organization name that should be used for unauthenticated users
+;org_name = Main Org.
+
+# specify role for unauthenticated users
+;org_role = Viewer
+
+# mask the Grafana version number for unauthenticated users
+;hide_version = false
+```
 
 
 
 
-## node_exporter
+
+## Node_exporter
+
+>[NodeExporter](https://link.zhihu.com/?target=https%3A//github.com/prometheus/node_exporter)可以暴露很多和硬件/软件相关的指标(metrics)。
 
 ```
 https://github.com/prometheus/node_exporter/releases/download/v1.1.2/node_exporter-1.1.2.linux-amd64.tar.gz
@@ -162,7 +203,7 @@ cd node_exporter
 启动服务
 
 ```
-./node_exporter & 
+nohup ./node_exporter & 
 ```
 
 如果一切顺利你会看到类似下面的输出，默认端口是`9100`
@@ -205,9 +246,9 @@ cd /opt/module/prometheus
 
 
 
-## dashboard
+## Dashboard
 
-https://grafana.com/grafana/dashboards 
+模板：https://grafana.com/grafana/dashboards 
 
 ### 第一个模板
 
@@ -297,3 +338,40 @@ scrape_configs:
 
 ![image-20210601164031144](images/image-20210601164031144.png)
 
+
+
+## Grafana监控系统之邮件报警
+
+监控教程：https://blog.csdn.net/qq_37128049/article/details/108143110
+
+```
+vim /etc/grafana/grafana.ini
+```
+
+修改
+
+```
+[smtp]
+;enabled = true
+;host = smtp.qq.com:465
+;user =
+# If the password contains # or ; you have to wrap it with triple quotes. Ex """#password;"""
+;password =
+;cert_file =
+;key_file =
+;skip_verify = false
+;from_address = 1144760935@qq.com
+;from_name = Grafana
+# EHLO identity in SMTP dialog (defaults to instance_name)
+;ehlo_identity = dashboard.example.com
+# SMTP startTLS policy (defaults to 'OpportunisticStartTLS')
+;startTLS_policy = NoStartTLS
+```
+
+重启
+
+```
+service grafana-server restart
+```
+
+![image-20210602100103325](images/image-20210602100103325.png)

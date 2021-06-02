@@ -412,3 +412,41 @@ pip install kylinpy
 
 Charts
 
+# Superset汉化
+
+参考：https://www.jianshu.com/p/c751278996f8
+
+修改`config.py`
+
+```python
+BABEL_DEFAULT_LOCALE = "zh"		# 将默认的en改为zh
+# Your application default translation path
+BABEL_DEFAULT_FOLDER = "superset/translations"
+# The allowed translation for you app
+#  
+LANGUAGES = {
+    "en": {"flag": "us", "name": "English"},
+    #"es": {"flag": "es", "name": "Spanish"},
+    #"it": {"flag": "it", "name": "Italian"},
+    #"fr": {"flag": "fr", "name": "French"},
+    "zh": {"flag": "cn", "name": "Chinese"},
+    #"ja": {"flag": "jp", "name": "Japanese"},
+   # "de": {"flag": "de", "name": "German"},
+   # "pt": {"flag": "pt", "name": "Portuguese"},
+   # "pt_BR": {"flag": "br", "name": "Brazilian Portuguese"},
+   # "ru": {"flag": "ru", "name": "Russian"},
+   # "ko": {"flag": "kr", "name": "Korean"},
+}
+# Turning off i18n by default as translation in most languages are
+# incomplete and not well maintained.
+# LANGUAGES = {}
+```
+
+translations/zh/LC_MESSAGES/messages.po就是编译好了的文件，直接重启应用即可
+
+```
+superset.sh restart
+```
+
+
+
