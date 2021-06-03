@@ -461,11 +461,11 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 
 
 
-### Python
+## Python
 
-#### FastAPI
+### FastAPI
 
-
+1. [连接大数据](后端\python\fastapi\连接大数据.md)
 
 ## 系统设计
 
@@ -628,9 +628,13 @@ A服务调用B服务，A服务并不知道B服务当前在哪几台服务器有�
 
 Sentinel-取代hystrix
 
-#### API网关
+### API网关
+
+#### Kong
 
 1. [Kong](后端/系统设计/micro-service/API网关/Kong.md)
+
+#### SpringCloud GateWay
 
 
 
@@ -789,6 +793,7 @@ SpringBoot集成Kafka
 ### Hive
 
 1. [Hive部署](大数据/数据存储/hive/Hive部署.md)
+2. [使用Python连接Hive](大数据\数据存储\hive\使用Python连接Hive.md)
 
 ### HBase
 
