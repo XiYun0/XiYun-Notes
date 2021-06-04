@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://github.com/XiYun0/"><img src="https://img.shields.io/badge/阅读-read-brightgreen.svg" alt="阅读"></a>
 </p>
-参数
+
 
 溪云笔记
 
@@ -111,18 +111,19 @@
 
 [数据结构知识学习与面试](计算机系统/数据结构与算法/数据结构/数据结构.md)
 
-
+图解算法数据结构：用来刷剑指offer
 
 1. [数组Array](计算机系统/数据结构与算法/数据结构/数组.md)
-2. [链表LinkedList](计算机系统/数据结构与算法/数据结构/链表.md)
-3. [队列Queue](计算机系统/数据结构与算法/数据结构/队列.md)
-4. [栈Stack](计算机系统/数据结构与算法/数据结构/栈.md)
-5. [哈希表HashTable](计算机系统/数据结构与算法/数据结构/哈希表.md)
-6. [集合Set](计算机系统/数据结构与算法/数据结构/集合.md)
-7. [树Tree](计算机系统/数据结构与算法/数据结构/树.md)
-8. [堆Heap](计算机系统/数据结构与算法/数据结构/堆.md)
-9. [图Graph](计算机系统/数据结构与算法/数据结构/图.md)
-10. 字典树|前缀树
+2. [字符串String](计算机系统/数据结构与算法/数据结构/字符串.md)
+3. [链表LinkedList](计算机系统/数据结构与算法/数据结构/链表.md)
+4. [队列Queue](计算机系统/数据结构与算法/数据结构/队列.md)
+5. [栈Stack](计算机系统/数据结构与算法/数据结构/栈.md)
+6. [哈希表HashTable](计算机系统/数据结构与算法/数据结构/哈希表.md)
+7. [集合Set](计算机系统/数据结构与算法/数据结构/集合.md)
+8. [树Tree](计算机系统/数据结构与算法/数据结构/树.md)
+9. [堆Heap](计算机系统/数据结构与算法/数据结构/堆.md)
+10. [图Graph](计算机系统/数据结构与算法/数据结构/图.md)
+11. 字典树|前缀树
 
 ### 算法
 
@@ -630,9 +631,13 @@ Sentinel-取代hystrix
 
 ### API网关
 
+[API网关的说明](后端\系统设计\API网关\API网关.md)
+
+
+
 #### Kong
 
-1. [Kong](后端/系统设计/micro-service/API网关/Kong.md)
+1. [Kong安装与使用](后端/系统设计/API网关/Kong安装与使用.md)
 
 #### SpringCloud GateWay
 
@@ -734,7 +739,6 @@ Sentinel-取代hystrix
 
 ```
 flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name agent1 --conf conf -Dflume.root.logger=INFO,console
-
 ```
 
 1. 拦截器
@@ -759,6 +763,10 @@ SpringBoot集成Kafka
 
 
 1. [Pulsar安装](大数据/数据采集/pulsar/Pulsar安装.md)
+
+### DBus
+
+1. [DBus部署](https://bridata.github.io/DBus/deploy.html)
 
 ## 数据存储
 
@@ -838,6 +846,18 @@ SpringBoot集成Kafka
 2. [Kylin安装](大数据/数据处理/kylin/Kylin安装.md)
 3. [Kylin使用](大数据/数据处理/kylin/Kylin使用.md)
 
+### Druid
+
+1. [Druid的安装与使用](大数据\数据处理\druid\Druid的安装与使用.md)
+
+### Presto
+
+1. [Presto安装与使用](大数据\数据处理\presto\Presto安装与使用.md)
+
+### Wormhole
+
+- [Wormhole部署](https://edp963.github.io/wormhole/deployment.html)
+
 ## 数据质量
 
 ### Griffin
@@ -859,6 +879,10 @@ SpringBoot集成Kafka
 ### Superset
 
 - [Superset部署和使用](大数据/数据可视化/Superset部署和使用.md)
+
+### Davinci
+
+- [Davinci部署与使用](大数据\数据可视化\Davinci部署与使用.md)
 
 ## 集群监控
 
