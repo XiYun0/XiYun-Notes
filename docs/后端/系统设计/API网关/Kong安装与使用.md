@@ -127,6 +127,16 @@ pantsel/konga
 
 
 
+## 总结
+
+```
+docker start postgersql
+docker start kong
+docker start konga
+```
+
+
+
 ## 服务使用
 
 博客：https://www.cnblogs.com/bhfdz/p/14303309.html

@@ -134,7 +134,7 @@ query.max-memory=50GB
 discovery.uri=http://tsingdata01:8881
 ```
 
-在 tsingdata01 的/opt/module/hive 目录下，启动 Hive Metastore，用 atguigu 角色
+在 tsingdata01 的/opt/module/hive 目录下，启动 Hive Metastore，用 xxxx角色
 
 ```
 nohup bin/hive --service metastore >/dev/null 2>&1 &

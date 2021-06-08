@@ -172,6 +172,12 @@ vim /etc/grafana/grafana.ini
 
 
 
+卸载
+
+```
+grafana-cli plugins uninstall raintank-worldping-app
+```
+
 
 
 ## Node_exporter
@@ -338,6 +344,48 @@ scrape_configs:
 
 ![image-20210601164031144](images/image-20210601164031144.png)
 
+## Grafana监控系统之Griffin指标
+
+右键检查，NetWork，刷新网页，找到对应的API接口，如
+
+```
+http://192.168.28.116:8085/api/v1/metrics/values?metricName=null_count&size=300&offset=0
+```
+
+![image-20210608093306802](images/image-20210608093306802.png)
+
+#### 在本地 Grafana 上安装：
+
+对于本地实例，通过简单的 CLI 命令安装和更新插件。插件不会自动更新，但是当您的 Grafana 中有可用更新时，您会收到通知。
+
+##### 安装数据源
+
+使用 grafana-cli 工具从命令行安装 JSON API：
+
+```
+grafana-cli plugins install marcusolsson-json-datasource
+```
+
+该插件将安装到您的 grafana 插件目录中；默认为 /var/lib/grafana/plugins。[有关 cli 工具的更多信息](https://grafana.com/docs/grafana/latest/administration/cli/#plugins-commands)。
+
+或者，您可以手动[下载 .zip 文件](https://grafana.com/api/plugins/marcusolsson-json-datasource/versions/1.2.0/download)并将其解压到您的 grafana 插件目录中。
+
+#### 重启
+
+```
+service grafana-server restart
+```
+
+#### 打开Grafana
+
+添加数据源
+
+![image-20210608103634827](images/image-20210608103634827.png)
+
+添加看板
+
+![image-20210608112927155](images/image-20210608112927155.png)
+
 
 
 ## Grafana监控系统之邮件报警
@@ -350,22 +398,26 @@ vim /etc/grafana/grafana.ini
 
 修改
 
+> 分号也是注释的意思
+
 ```
 [smtp]
-;enabled = true
-;host = smtp.qq.com:465
-;user =
-# If the password contains # or ; you have to wrap it with triple quotes. Ex """#password;"""
-;password =
+enabled = true  #是否允许开启
+host = smtp.exmail.qq.com:465    #发送服务器地址，可以再邮箱的配置教程中找到：
+user = 你的邮箱
+# If the password contains # or ; you have to wrap it with trippel quotes. Ex """#password;"""
+# 这个密码是你开启smtp服务生成的密码
+password = 你的密码
 ;cert_file =
 ;key_file =
 ;skip_verify = false
-;from_address = 1144760935@qq.com
-;from_name = Grafana
+from_address = 你的邮箱
+from_name = Grafana
 # EHLO identity in SMTP dialog (defaults to instance_name)
-;ehlo_identity = dashboard.example.com
-# SMTP startTLS policy (defaults to 'OpportunisticStartTLS')
-;startTLS_policy = NoStartTLS
+ehlo_identity = dashboard.example.com
+[emails]
+;welcome_email_on_sign_up = true
+#################################### Logging ##########################
 ```
 
 重启
@@ -375,3 +427,4 @@ service grafana-server restart
 ```
 
 ![image-20210602100103325](images/image-20210602100103325.png)
+

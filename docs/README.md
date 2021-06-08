@@ -730,7 +730,7 @@ Sentinel-取代hystrix
 
 ### DataX
 
-- [安装与使用](大数据/数据采集/datax/安装与使用.md)
+- [DataX安装与使用](大数据/数据采集/datax/安装与使用.md)
 - [使用DataX将数据从MySQL导入到HDFS](大数据/数据采集/datax/MySQL2HDFS.md)
 
 ### Flume
@@ -954,7 +954,8 @@ SpringBoot集成Kafka
 
 # 运维
 
-[Prometheus和Grafana](运维\Prometheus和Grafana.md)
+1. [Prometheus和Grafana](运维\Prometheus和Grafana.md)
+2. [Grafana汉化](运维\Grafana汉化.md)
 
 # [其他](others.md)
 
