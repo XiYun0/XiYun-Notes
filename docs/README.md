@@ -5,15 +5,9 @@
 
 溪云笔记
 
->github阅读：https://xiyun0.github.io/XiYun-Notes/#/
+>github阅读：https://glong1997.github.io/XiYun-Notes/#/
 >
->gitee阅读（国内访问快）：http://xiyun0.gitee.io/xiyun-notes/
-
-
-
-> 正在阅读的书籍、博客：深入理解计算机系统
->
-> 正在做的项目：谷粒商城
+>gitee阅读（国内访问快）：
 
 
 
@@ -34,9 +28,7 @@
 
 # 读书笔记
 
-- 2021.3.19 [码农翻身](读书笔记/码农翻身.md)
-- 2021.3.29 深入理解计算机系统
-- 2021.4.26 操作系统哲学原理
+[码农翻身](读书笔记/码农翻身.md)
 
 # 面试、简历关
 
@@ -973,3 +965,4 @@ manim：https://github.com/manim-kindergarten/manim_sandbox/wiki
 # 我的道路
 
 - [架构之力](后端/系统设计/架构之力.md)
+
