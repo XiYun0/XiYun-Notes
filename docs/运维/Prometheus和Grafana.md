@@ -344,7 +344,19 @@ scrape_configs:
 
 ![image-20210601164031144](images/image-20210601164031144.png)
 
-## Grafana监控系统之Griffin指标
+
+
+## Grafana监控系统之ElasticSearch
+
+参考：https://www.cnblogs.com/wxwall/p/9642621.html
+
+以 Griffin 为例，其中 tmst 是必填的，在http://192.168.28.116:9200/griffin找到对应的时间格式
+
+![image-20210610110428703](images/image-20210610110428703.png)
+
+
+
+## Grafana监控系统之API
 
 右键检查，NetWork，刷新网页，找到对应的API接口，如
 
