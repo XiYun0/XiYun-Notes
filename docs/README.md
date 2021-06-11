@@ -676,6 +676,7 @@ Sentinel-取代hystrix
 
 1. [es概述与原理](后端\数据库\elasticsearch\es概述与原理.md)
 2. [es部署与使用](后端\数据库\elasticsearch\es部署与使用.md)
+3. [Java操作es](后端\数据库\elasticsearch\Java操作es.md)
 
 ### Hbase
 
