@@ -652,6 +652,8 @@ vim azkaban.properties
 
 2）按照如下配置修改azkaban.properties文件。
 
+> 时区
+
 ```
 #Azkaban Personalization Settings
 #服务器UI名称,用于服务器上方显示的名字
@@ -731,8 +733,9 @@ cache.directory=cache
 
 在azkaban web服务器安装目录 conf目录，按照如下配置修改azkaban-users.xml 文件，增加管理员用户。
 
-```
 vim azkaban-users.xml
+
+```xml
 <azkaban-users>
 	<user username="azkaban" password="azkaban" roles="admin" groups="azkaban" />
 	<user username="metrics" password="metrics" roles="metrics"/>
@@ -781,6 +784,13 @@ executor.maxThreads=50
 executor.port=12321
 #线程数
 executor.flow.threads=30
+
+azkaban.use.multiple.executors=true
+azkaban.executorselector.filters=StaticRemainingFlowSize,MinimumFreeMemory,CpuStatus
+azkaban.executorselector.comparator.NumberOfAssignedFlowComparator=1
+azkaban.executorselector.comparator.Memory=1
+azkaban.executorselector.comparator.LastDispatched=1
+azkaban.executorselector.comparator.CpuUsage=1
 ```
 
 #### 启动executor服务器
@@ -805,6 +815,8 @@ bin/start-web.sh
 
 先执行executor，再执行web，避免Web Server会因为找不到执行器启动失败。
 
+遇到启动不了的情况：https://blog.csdn.net/new_Xxx/article/details/104849590
+
 jps查看进程
 
 ```
@@ -814,7 +826,7 @@ jps
 3661 AzkabanWebServer
 ```
 
-启动完成后，在浏览器(建议使用谷歌浏览器)中输入http://192.168.157.128:8443/，即可访问azkaban服务了。
+启动完成后，在浏览器(建议使用谷歌浏览器)中输入http://192.168.28.116:8443/，即可访问azkaban服务了。
 
 在登录中输入刚才在azkaban-users.xml文件中新添加的户用名及密码，点击 login。
 

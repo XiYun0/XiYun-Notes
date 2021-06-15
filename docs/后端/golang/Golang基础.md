@@ -6,6 +6,18 @@
 
 ## 快速开始
 
+配置代理，win、macos都可
+
+```
+go version
+go env -w GO111MODULE=on
+go env -w GOPROXY=https://goproxy.cn,direct
+```
+
+
+
+
+
 依旧是`Hello,World!`
 
 新建main.go

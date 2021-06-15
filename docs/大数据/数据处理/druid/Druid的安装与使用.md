@@ -60,3 +60,4 @@ bin/supervise  -c conf/supervise/quickstart.conf
 >说明：每启动一个服务均会打印出一条日志。可以通过/opt/module/imply-2.7.10/var/sv/查看服务启动时的日志信息
 
 访问：http://192.168.28.116:9095/
+
