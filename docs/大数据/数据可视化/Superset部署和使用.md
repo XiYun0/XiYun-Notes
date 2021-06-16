@@ -38,7 +38,7 @@ vim ~/.bashrc
 ```
 
 ```
-export PATH="/opt/module/anaconda3/bin:$PATH"
+export PATH="/opt/module/minianaconda3/bin:$PATH"
 ```
 
 ```

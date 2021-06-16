@@ -546,7 +546,7 @@ azkaban-web-server-3.84.4.tar.gz
 mysql-connector-java-5.1.48.jar
 ```
 
-2) 选择**Mysql**作为Azkaban数据库，因为Azkaban建立了一些Mysql连接增强功能，以方便Azkaban设置，并增强服务可靠性。这个参考hive，将mysql-connector-java-5.1.48.jar放到hive/lib下面
+2) 选择**Mysql**作为Azkaban数据库，因为Azkaban建立了一些Mysql连接增强功能，以方便Azkaban设置，并增强服务可靠性。这个参考hive，将mysql-connector-java-5.1.48.jar放到server/lib下面
 
 #### 安装
 
@@ -652,81 +652,59 @@ vim azkaban.properties
 
 2）按照如下配置修改azkaban.properties文件。
 
-> 时区
-
-```
-#Azkaban Personalization Settings
-#服务器UI名称,用于服务器上方显示的名字
+```properties
+# Azkaban Personalization Settings
 azkaban.name=Test
-#描述
 azkaban.label=My Local Azkaban
-#UI颜色
 azkaban.color=#FF3601
 azkaban.default.servlet.path=/index
-#默认web server存放web文件的目录
-web.resource.dir=/opt/module/azkaban/server/web/
-#默认时区,已改为亚洲/上海 默认为美国
+web.resource.dir=web/
 default.timezone.id=Asia/Shanghai
- 
-#Azkaban UserManager class
+# Azkaban UserManager class
 user.manager.class=azkaban.user.XmlUserManager
-#用户权限管理默认类（绝对路径）
-user.manager.xml.file=/opt/module/azkaban/server/conf/azkaban-users.xml
- 
-#Loader for projects
-#global配置文件所在位置（绝对路径）
-executor.global.properties=/opt/module/azkaban/executor/conf/global.properties
+user.manager.xml.file=conf/azkaban-users.xml
+# Loader for projects
+executor.global.properties=conf/global.properties
 azkaban.project.dir=projects
- 
-#数据库类型
-database.type=mysql
-#端口号
-mysql.port=3306
-#数据库连接IP
-mysql.host=tsingdata01
-#数据库实例名
-mysql.database=azkaban
-#数据库用户名
-mysql.user=root
-#数据库密码
-mysql.password=root
-#最大连接数
-mysql.numconnections=100
- 
 # Velocity dev mode
 velocity.dev.mode=false
- 
 # Azkaban Jetty server properties.
-# Jetty服务器属性.
-#最大线程数
+jetty.use.ssl=false
 jetty.maxThreads=25
-#Jetty SSL端口
-jetty.ssl.port=8443
-#Jetty端口
 jetty.port=8081
-#SSL文件名（绝对路径）
-jetty.keystore=/opt/module/azkaban/server/keystore
-#SSL文件密码
-jetty.password=tsingdata
-#Jetty主密码与keystore文件相同
-jetty.keypassword=tsingdata
-#SSL文件名（绝对路径）
-jetty.truststore=/opt/module/azkaban/server/keystore
-#SSL文件密码
-jetty.trustpassword=tsingdata
- 
 # Azkaban Executor settings
-executor.port=12321
- 
 # mail settings
 mail.sender=
 mail.host=
+# User facing web server configurations used to construct the user facing server URLs. They are useful when there is a reverse proxy between Azkaban web servers and users.
+# enduser -> myazkabanhost:443 -> proxy -> localhost:8081
+# when this parameters set then these parameters are used to generate email links.
+# if these parameters are not set then jetty.hostname, and jetty.port(if ssl configured jetty.ssl.port) are used.
+# azkaban.webserver.external_hostname=myazkabanhost.com
+# azkaban.webserver.external_ssl_port=443
+# azkaban.webserver.external_port=8081
 job.failure.email=
 job.success.email=
- 
 lockdown.create.projects=false
- 
 cache.directory=cache
+# JMX stats
+jetty.connector.stats=true
+executor.connector.stats=true
+# Azkaban mysql settings by default. Users should configure their own username and password.
+database.type=mysql
+mysql.port=3306
+mysql.host=tsingdata01
+mysql.database=azkaban
+mysql.user=root
+mysql.password=root
+mysql.numconnections=100
+#Multiple Executor
+azkaban.use.multiple.executors=true
+azkaban.executorselector.filters=StaticRemainingFlowSize,CpuStatus
+azkaban.executorselector.comparator.NumberOfAssignedFlowComparator=1
+azkaban.executorselector.comparator.Memory=1
+azkaban.executorselector.comparator.LastDispatched=1
+azkaban.executorselector.comparator.CpuUsage=1
 ```
 
  3）web服务器用户配置
@@ -739,7 +717,7 @@ vim azkaban-users.xml
 <azkaban-users>
 	<user username="azkaban" password="azkaban" roles="admin" groups="azkaban" />
 	<user username="metrics" password="metrics" roles="metrics"/>
-	<user username="admin" password="admin" roles="admin,metrics" />
+	<user username="tsingdata" password="12345678" roles="admin" />
 	<role name="admin" permissions="ADMIN" />
 	<role name="metrics" permissions="METRICS"/>
 </azkaban-users>
@@ -756,19 +734,48 @@ vim azkaban.properties
 
 2） 按照如下配置修改azkaban.properties文件。
 
-```
-#Azkaban
-#时区
+```properties
+# Azkaban Personalization Settings
+azkaban.name=Test
+azkaban.label=My Local Azkaban
+azkaban.color=#FF3601
+azkaban.default.servlet.path=/index
+web.resource.dir=web/
 default.timezone.id=Asia/Shanghai
- 
-# Azkaban JobTypes Plugins
-#jobtype 插件所在位置
-azkaban.jobtype.plugin.dir=plugins/jobtypes
- 
-#Loader for projects
-executor.global.properties=/opt/module/azkaban/executor/conf/global.properties
+# Azkaban UserManager class
+user.manager.class=azkaban.user.XmlUserManager
+user.manager.xml.file=conf/azkaban-users.xml
+# Loader for projects
+executor.global.properties=conf/global.properties
 azkaban.project.dir=projects
- 
+# Velocity dev mode
+velocity.dev.mode=false
+# Azkaban Jetty server properties.
+jetty.use.ssl=false
+jetty.maxThreads=25
+jetty.port=8081
+# Where the Azkaban web server is located
+azkaban.webserver.url=http://tsingdata01:8009
+# mail settings
+mail.sender=
+mail.host=
+# User facing web server configurations used to construct the user facing server URLs. They are useful when there is a reverse proxy between Azkaban web servers and users.
+# enduser -> myazkabanhost:443 -> proxy -> localhost:8081
+# when this parameters set then these parameters are used to generate email links.
+# if these parameters are not set then jetty.hostname, and jetty.port(if ssl configured jetty.ssl.port) are used.
+# azkaban.webserver.external_hostname=myazkabanhost.com
+# azkaban.webserver.external_ssl_port=443
+# azkaban.webserver.external_port=8081
+job.failure.email=
+job.success.email=
+lockdown.create.projects=false
+cache.directory=cache
+# JMX stats
+jetty.connector.stats=true
+executor.connector.stats=true
+# Azkaban plugin settings
+azkaban.jobtype.plugin.dir=plugins/jobtypes
+# Azkaban mysql settings by default. Users should configure their own username and password.
 database.type=mysql
 mysql.port=3306
 mysql.host=tsingdata01
@@ -776,31 +783,46 @@ mysql.database=azkaban
 mysql.user=root
 mysql.password=root
 mysql.numconnections=100
- 
 # Azkaban Executor settings
-#最大线程数
 executor.maxThreads=50
-#端口号(如修改,请与web服务中一致)
-executor.port=12321
-#线程数
 executor.flow.threads=30
-
-azkaban.use.multiple.executors=true
-azkaban.executorselector.filters=StaticRemainingFlowSize,MinimumFreeMemory,CpuStatus
-azkaban.executorselector.comparator.NumberOfAssignedFlowComparator=1
-azkaban.executorselector.comparator.Memory=1
-azkaban.executorselector.comparator.LastDispatched=1
-azkaban.executorselector.comparator.CpuUsage=1
+executor.port=123321
 ```
+
+同步exec到其他服务器
+
+```
+xsync executor
+```
+
+
 
 #### 启动executor服务器
 
-在executor服务器目录下执行启动命令
+在三台服务器的executor目录下执行启动命令
 
 ```
 cd /opt/module/azkaban/executor
 bin/start-exec.sh
 ```
+
+> 不能使用./start-exec.sh，必须有bin
+
+在Azkaban数据库的executor表中
+
+![image-20210616135257318](imgaes/image-20210616135257318.png)
+
+说明启动成功
+
+逐个激活executor
+
+```
+curl -G "tsingdata01:12321"/executor?action=activate" && echo
+curl -G "tsingdata02:12321"/executor?action=activate" && echo
+curl -G "tsingdata03:12321"/executor?action=activate" && echo
+```
+
+也可以直接修改executor表中的active字段的值为1.
 
 #### 启动web服务器
 
