@@ -653,18 +653,19 @@ Sentinel-取代hystrix
 
 1. [ORM框架](后端/数据库/ORM框架.md)
 2. 数据库服务器的主从热备功能
-3. SQL
+3. [SQL](后端/数据库/SQL.md)
 
 ### MySQL
 
 1. [概述](后端/数据库/mysql/MySQL.md)
 2. [安装](后端/数据库/mysql/安装.md)
-3. [存储引擎](后端/数据库/mysql/存储引擎.md)
-4. [索引](后端/数据库/mysql/索引.md)
-5. [锁](后端/数据库/mysql/锁.md)
-6. [事务](后端/数据库/mysql/事务.md)
-7. [优化](后端/数据库/mysql/优化.md)——推荐文章：[MySQL大表优化方案 - SegmentFault 思否](https://segmentfault.com/a/1190000006158186)
-8. [主从复制](后端/数据库/mysql/主从复制.md)
+3. [操作](后端/数据库/mysql/操作.md)
+4. [存储引擎](后端/数据库/mysql/存储引擎.md)
+5. [索引](后端/数据库/mysql/索引.md)
+6. [锁](后端/数据库/mysql/锁.md)
+7. [事务](后端/数据库/mysql/事务.md)
+8. [优化](后端/数据库/mysql/优化.md)——推荐文章：[MySQL大表优化方案 - SegmentFault 思否](https://segmentfault.com/a/1190000006158186)
+9. [主从复制](后端/数据库/mysql/主从复制.md)
 
 ### Redis
 

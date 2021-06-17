@@ -20,14 +20,13 @@ export DAVINCI3_HOME=/opt/module/davinci
 source /etc/profile
 ```
 
-
-
 初始化数据库
 
 修改 bin 目录下 initdb.sh 中要的数据库信息为要初始化的数据库，如 davinci0.3
 
 ```
 mysql -P 3306 -h localhost -u root -proot davinci0.3 < $DAVINCI3_HOME/bin/davinci.sql
+mysql -P 3306 -h 192.168.28.116 -u root -proot davinci0.3 < $DAVINCI3_HOME/bin/davinci.sql
 ```
 
 运行脚本初始化数据库（注：由于 Davinci 系统数据库中包含存储过程，请务必在创建数据库时赋予执行权限）
