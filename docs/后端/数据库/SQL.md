@@ -1,0 +1,178 @@
+
+
+建表
+
+```sql
+CREATE TABLE 表名称
+(
+列名称1 数据类型,
+列名称2 数据类型,
+列名称3 数据类型,
+....
+)
+```
+
+```sql
+-- auto-generated definition
+create table wt_data
+(
+    s                                                        datetime       null,
+    nacelle_vibration_sensor_x                               double         null,
+    nacelle_vibration_sensor_y                               double         null,
+    nacelle_vibration_sensor_momentary_offset_max            double         null,
+    nacelle_vibration_effective_value                        double         null,
+    wind_speed_1                                             double         null,
+    wind_speed_2                                             double         null,
+    NC001                                                    double         null,
+    wind_direction_1                                         double         null,
+    wind_direction_2                                         double         null,
+    rotor_speed                                              double         null,
+    rotor_speed_for_control                                  double         null,
+    rotor_speed_1                                            double         null,
+    rotor_speed_2                                            double         null,
+    rotor_position                                           int            null,
+    rotor_position_rotor_speed                               int            null,
+    yaw                                                      double         null,
+    yaw_yawing_speed                                         double         null,
+    YW002                                                    decimal(10, 2) null,
+    gearbox_temperature_input_shaft1                         double         null,
+    gearbox_temperature_output_shaft2                        double         null,
+    gearbox_oil_temperature_oil_inlet                        double         null,
+    gearbox_oil_temperature_gearbox                          double         null,
+    gearbox_cooling_water_temperature                        int            null,
+    gearbox_lubrication_filter_inlet_pressure                double         null,
+    gearbox_lubrication_filter_outlet_pressure               int            null,
+    generator_bearing_temperature_a                          double         null,
+    generator_bearing_temperature_b                          double         null,
+    nacelle_outdoor_temperature                              double         null,
+    nacelle_temperature                                      double         null,
+    TR002                                                    double         null,
+    main_bearing_rotor_side_temperature                      double         null,
+    main_bearing_gearbox_side_temperature                    double         null,
+    converter_motor_speed                                    double         null,
+    main_loop_converter_torque_setpoint                      double         null,
+    converter_power                                          double         null,
+    converter_ctrl_converter_torque_setpoint                 double         null,
+    converter_generator_torque                               double         null,
+    main_loop_rotor_speed_demand                             double         null,
+    local_gearbox_lubrication_oil_filter_pressure_ok_disable int            null,
+    local_gearbox_lubrication_oil_pressure_ok_disable        int            null,
+    c                                                        int            null,
+    TR015                                                    int            null comment 'wt_status',
+    RT101                                                    decimal(10, 2) null
+);
+```
+
+>RT101，YW002必须要有小数。
+
+```sql
+CREATE TABLE wt_data(
+    NC001 DECIMAL COMMENT'风速ws-wind_speed',
+    			DECIMAL COMMENT'风向角wp',
+    TR002 DECIMAL COMMENT'功率gp-grid_power',
+    YW002 DECIMAL COMMENT'对风角yaw',
+    RT101 DECIMAL COMMENT'发电机仪表温度generator_bearing_temperature_a-ba',
+  				DECIMAL COMMENT'轮毂转速rotor_position',
+    TR015 VARCHAR(255) COMMENT'风力发电机状态-wt_status',
+    c INT COMMENT'风力发电机变量',
+    s DATETIME COMMENT'时间'
+)
+```
+
+```sql
+CREATE TABLE result_log(
+      start_time DATETIME COMMENT'开始时间',
+      end_time DATETIME COMMENT'结束时间',
+      deviceNum INT COMMENT'设备数量',
+      status_code INT COMMENT'状态码',
+      troubleType VARCHAR(255) COMMENT'问题类型',
+  		troubleLevel VARCHAR(255) COMMENT'问题等级',
+      actualOccurTime VARCHAR(255) COMMENT'当前发生时间',
+      dataJson VARCHAR(255) COMMENT'数据JSON'
+)
+```
+
+
+
+配置文件中
+
+```
+   wtid_var: c
+   ws: NC001
+   gp: TR002
+   yaw: YW002
+   dt: s
+   ba: RT101
+   wt_status: TR015
+```
+
+插入
+
+```sql
+INSERT INTO data.wt_data (NC001, TR002, YW002, RT101, TR015, c, s)
+VALUES (16.64172, 1554.6, 111.2447, 33.6, '1', 1, '2018-06-04 00:00:00');
+```
+
+
+
+
+
+添加字段
+
+```sql
+alter table wt_data add colomn password default null COMMENT'密码' after user
+```
+
+> 在user字段后面添加一个password字段
+
+在字段添加数据
+
+```sql
+UPDATE wt_data SET user= CONCAT(user,',phpchina')  WHERE id= '2';
+```
+
+
+
+
+
+## 随机生成大量数据
+
+### datafaker不推荐
+
+https://github.com/gangly/datafaker/blob/master/doc/zh_CN/README.md	使用datafaker
+
+https://github.com/gangly/datafaker/blob/master/doc/zh_CN/%E4%BD%BF%E7%94%A8%E4%B8%BE%E4%BE%8B.md
+
+编辑好元数据文件后,在命令行中执行命令:
+
+```
+datafaker rdb mysql+mysqldb://root:root@localhost:3306/data wt_data 10  --meta test.txt  --worker 8 --batch 2000
+```
+
+test.txt
+
+```
+RT101||decimal(4,2)||[:decimal(4,2,1)]
+```
+
+
+
+
+
+### 用sql语句
+
+```sql
+UPDATE wt_data set RT101=round(rand() * (95 - (-2))) /10 * 10  where RT101 is not null;
+```
+
+
+
+## 遇到各种语句卡死：
+
+https://blog.csdn.net/yangfengjueqi/article/details/81062123?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242
+
+```sql
+show full processlist;
+kill xxxxxx;
+```
+

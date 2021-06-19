@@ -42,9 +42,12 @@ cd src
 ```
 cd src
 ./redis-cli
-
-redis> set foo bar
-OK
-redis> get foo
-"bar"
 ```
+
+```
+redis> set name glong
+OK
+redis> get name
+"glong"
+```
+

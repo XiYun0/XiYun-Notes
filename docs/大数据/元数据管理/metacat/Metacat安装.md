@@ -18,11 +18,11 @@ https://tomcat.apache.org/download-80.cgi下载tar.gz的linux版本
 wget https://mirrors.bfsu.edu.cn/apache/tomcat/tomcat-8/v8.5.66/bin/apache-tomcat-8.5.66.tar.gz
 ```
 
-解压后，将上一步中的war包拷贝`apache-tomcat-8.5.66/webapps`目录下，并改名为ROOT.war
+解压后，将上一步中的war包拷贝`apache-tomcat-8.5.66/webapps`目录下，并改名为`ROOT.war`
 
 ![image-20210527143658705](images/image-20210527143658705.png)
 
-然后启动tomcat
+然后启动 tomcat
 
 ```
 #启动tomcat服务
@@ -30,8 +30,6 @@ wget https://mirrors.bfsu.edu.cn/apache/tomcat/tomcat-8/v8.5.66/bin/apache-tomca
 #停止tomcat服务
 ./shutdown.sh
 ```
-
-
 
 # 编译安装
 
@@ -43,9 +41,9 @@ wget https://mirrors.bfsu.edu.cn/apache/tomcat/tomcat-8/v8.5.66/bin/apache-tomca
 
 打成war包，路径与上面的一致
 
+http://192.168.28.116:8080/swagger-ui/index.html#
 
+> 注意端口号冲突问题
 
-http://localhost:8080/swagger-ui/index.html#
-
-http://localhost:8080/v3/api-docs
+http://192.168.28.116:8080/v3/api-docs
 

@@ -38,7 +38,7 @@ vim ~/.bashrc
 ```
 
 ```
-export PATH="/opt/module/anaconda3/bin:$PATH"
+export PATH="/opt/module/minianaconda3/bin:$PATH"
 ```
 
 ```
@@ -157,7 +157,6 @@ yum install -y gcc gcc-c++ libffi-devel python-devel python-pip python-wheel ope
 >```
 >#!/usr/bin/python2 -> #!/usr/bin/python2.7
 >```
->
 
 setuptools pip升级至最新版
 
@@ -243,6 +242,83 @@ ps -ef | awk '/superset/ && !/awk/{print $2}' | xargs kill -9
 
 
 
+## 启动脚本
+
+```
+vim superset.sh
+```
+
+
+
+```sh
+#! /bin/bash
+superset_status(){
+	result=`ps -ef | awk '/gunicorn/ && !/awk/{print $2}' | wc -l`
+	if [[ $result -eq 0 ]]; then
+		return 0
+	else
+		return 1
+	fi
+}
+superset_start(){
+	# 该段内容取自~/.bashrc，所用是进行 conda 初始化
+	# >>> conda initialize >>>
+	# !! Contents within this block are managed by 'condainit' !!
+	__conda_setup="$('/opt/module/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+	if [ $? -eq 0 ]; then
+		eval "$__conda_setup"
+	else
+		if [ -f "/opt/module/miniconda3/etc/profile.d/conda.sh" ]; then
+			. "/opt/module/miniconda3/etc/profile.d/conda.sh"
+		else
+			export PATH="/opt/module/miniconda3/bin:$PATH"
+		fi
+	fi
+	unset __conda_setup
+	# <<< conda initialize <<<
+	superset_status >/dev/null 2>&1
+	if [[ $? -eq 0 ]]; then
+		gunicorn --workers 5 --timeout 120 --bind 192.168.28.116:8787 --daemon 'superset.app:create_app()'
+	else
+		echo "superset 正在运行"
+	fi
+}
+superset_stop(){
+	superset_status >/dev/null 2>&1
+	if [[ $? -eq 0 ]]; then
+		echo "superset 未在运行"
+	else
+		ps -ef | awk '/gunicorn/ && !/awk/{print $2}' | xargs kill -9
+	fi
+}
+
+case $1 in
+	start )
+		echo "启动 Superset"
+		superset_start
+;;
+stop )
+		echo "停止 Superset"
+		superset_stop
+;;
+restart )
+		echo "重启 Superset"
+		superset_stop
+		superset_start
+;;
+status )
+	superset_status >/dev/null 2>&1
+	if [[ $? -eq 0 ]]; then
+		echo "superset 未在运行"
+	else
+		echo "superset 正在运行"
+	fi
+esac
+
+```
+
+
+
 # Superset使用
 
 ## 对接 MySQL 数据源
@@ -251,12 +327,14 @@ ps -ef | awk '/superset/ && !/awk/{print $2}' | xargs kill -9
 
 ```
 # 安装连接 MySQL 数据源的依赖
-conda install mysqlclient
+conda install mysqlclient	
 ```
 
 >注意：对接不同的数据源，需安装不同的依赖，以下地址为官网说明
 >
 >http://superset.apache.org/installation.html#database-dependencies
+
+
 
 ```
 # 重启 Superset
@@ -272,7 +350,7 @@ gunicorn --workers 5 --timeout 120 --bind tsingdata02:8787 "superset.app:create_
 
 1、Database 配置
 
-- 点击 Sources/Databases
+- 点击 Data/Databases
 
 ![image-20210511161445395](images/image-20210511161445395.png)
 
@@ -281,8 +359,8 @@ gunicorn --workers 5 --timeout 120 --bind tsingdata02:8787 "superset.app:create_
 ```
 # 点击填写 Database 及 SQL Alchemy URI
 
-Database: xxx
-SQLAIchemy URI: mysql://root:root@192.168.157.128:3306/xxx?charset=utf8
+Database: gmall_report
+SQLAIchemy URI: mysql://root:root@tsingdata01:3306/gmall_report?charset=utf8
 ```
 
 >注：SQL Alchemy URI 编写规范：mysql://账号:密码@IP:post/数据库名称
@@ -291,7 +369,84 @@ SQLAIchemy URI: mysql://root:root@192.168.157.128:3306/xxx?charset=utf8
 
 ![image-20210511161923486](images/image-20210511161923486.png)
 
+- 点击Data/Datasets
 
+
+
+## 对接 Hive 数据源
+
+安装驱动：https://superset.apache.org/docs/databases/installing-database-drivers
+
+```
+yum install gcc python-devel libsmbclient-devel openldap-devel zlib-devel libjpeg-turbo-devel libtiff-devel freetype-devel libwebp-devel lcms2-devel krb5-devel
+pip install sasl
+pip install thrift
+pip install thrift-sasl
+
+pip install pyhive		# 最重要的
+```
+
+
+
+```
+superset.sh restart
+```
+
+
+
+```
+hive://hive@192.168.28.116:10000/gmall
+```
+
+
+
+## 对接Kylin数据源
+
+```
+pip install kylinpy
+```
+
+
+
+## 实战
+
+Charts
+
+# Superset汉化
+
+参考：https://www.jianshu.com/p/c751278996f8
+
+修改`config.py`
+
+```python
+BABEL_DEFAULT_LOCALE = "zh"		# 将默认的en改为zh
+# Your application default translation path
+BABEL_DEFAULT_FOLDER = "superset/translations"
+# The allowed translation for you app
+#  
+LANGUAGES = {
+    "en": {"flag": "us", "name": "English"},
+    #"es": {"flag": "es", "name": "Spanish"},
+    #"it": {"flag": "it", "name": "Italian"},
+    #"fr": {"flag": "fr", "name": "French"},
+    "zh": {"flag": "cn", "name": "Chinese"},
+    #"ja": {"flag": "jp", "name": "Japanese"},
+   # "de": {"flag": "de", "name": "German"},
+   # "pt": {"flag": "pt", "name": "Portuguese"},
+   # "pt_BR": {"flag": "br", "name": "Brazilian Portuguese"},
+   # "ru": {"flag": "ru", "name": "Russian"},
+   # "ko": {"flag": "kr", "name": "Korean"},
+}
+# Turning off i18n by default as translation in most languages are
+# incomplete and not well maintained.
+# LANGUAGES = {}
+```
+
+translations/zh/LC_MESSAGES/messages.po就是编译好了的文件，直接重启应用即可
+
+```
+superset.sh restart
+```
 
 
 

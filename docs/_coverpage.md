@@ -1,10 +1,8 @@
-![logo](images/icon.svg)
+![logo](images/icon.jpeg)
 
 # 溪云笔记
 
-* 从Java基础到各种开发框架
-* 从计算机基础到高级应用
-* 从微观层面的代码到宏观层面的架构
+* 学习编码
 
-[溪云](https://github.com/XiYun0)        [开始](/README.md)    
+[溪云](https://github.com/glong1997)        [开始](/README.md)  
 
