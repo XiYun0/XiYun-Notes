@@ -18,10 +18,6 @@
 
 1）下载并上传到/opt/software
 
-
-
-
-
 2）解压 apache-kylin-3.1.2-bin-hadoop3.tar.gz 到 /opt/module
 
 ```
@@ -79,15 +75,11 @@ source /etc/profile
 -rw-r--r--.  1 tsing-data tsing-data  1815976 9月   8 2020 spark-hive-thriftserver_2.11-2.4.7.jar
 ```
 
-
-
 需要通过修改脚本排除依赖冲突
 
 ```
 cd /opt/module/kylin/bin
 ```
-
-
 
 ```
 vim find-hive-dependency.sh
@@ -97,8 +89,6 @@ vim find-hive-dependency.sh
 hive_lib=`find -L ${hive_lib_dir} -name '*.jar' ! -name '*druid*' ! -name '*jackson*' ! -name '*metastore*' !-name '*slf4j*' ! -name '*avatica*' ! -name '*calcite*' ! -name '*jackson-datatype-joda*' ! -name '*derby*' -printf '%p:' | sed 's/:$//'`
 ```
 
-
-
 ```
 vim find-spark-dependency.sh
 ```
@@ -107,13 +97,9 @@ vim find-spark-dependency.sh
 spark_dependency=`find -L $spark_home/jars -name '*.jar' ! -name '*jackson*' ! -name '*metastore*' ! -name '*slf4j*' ! -name '*calcite*' ! -name '*doc*' ! -name '*test*' ! -name '*sources*' ''-printf '%p:' | sed 's/:$//'`
 ```
 
-
-
 如果是第二次启动，先删除缓存
 
 ![image-20210512140045645](images/image-20210512140045645.png)
-
-
 
 5）启动
 
@@ -148,7 +134,7 @@ kylin.sh start
 密码	KYLIN
 ```
 
-> 注意：一定要将kylin加上
+> 注意：访问一定要将kylin加上
 
 启动之后查看各个节点进程：
 
@@ -189,4 +175,8 @@ xcall jps
 ```
 bin/kylin.sh stop
 ```
+
+### 报错解决
+
+[关于启动kylin报Failed to find metadata store by url: kylin_metadata@hbase的问题解决](https://www.cnblogs.com/harrymore/p/10882090.html)
 

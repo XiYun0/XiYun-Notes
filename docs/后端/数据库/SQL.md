@@ -80,16 +80,17 @@ CREATE TABLE wt_data(
 ```
 
 ```sql
-CREATE TABLE result_log(
-      start_time DATETIME COMMENT'开始时间',
-      end_time DATETIME COMMENT'结束时间',
-      deviceNum INT COMMENT'设备数量',
-      status_code INT COMMENT'状态码',
-      troubleType VARCHAR(255) COMMENT'问题类型',
-  		troubleLevel VARCHAR(255) COMMENT'问题等级',
-      actualOccurTime VARCHAR(255) COMMENT'当前发生时间',
-      dataJson VARCHAR(255) COMMENT'数据JSON'
-)
+create table result_log
+(
+    start_time      datetime       null comment '开始时间',
+    end_time        datetime       null comment '结束时间',
+    deviceNum       int            null comment '设备数量',
+    status_code     varchar(20)    null comment '状态码',
+    troubleType     int            null comment '问题类型',
+    troubleLevel    int            null comment '问题等级',
+    actualOccurTime varchar(255)   null comment '当前发生时间',
+    dataJson        varchar(13000) null comment '数据JSON'
+);
 ```
 
 
@@ -136,28 +137,6 @@ UPDATE wt_data SET user= CONCAT(user,',phpchina')  WHERE id= '2';
 
 
 ## 随机生成大量数据
-
-### datafaker不推荐
-
-https://github.com/gangly/datafaker/blob/master/doc/zh_CN/README.md	使用datafaker
-
-https://github.com/gangly/datafaker/blob/master/doc/zh_CN/%E4%BD%BF%E7%94%A8%E4%B8%BE%E4%BE%8B.md
-
-编辑好元数据文件后,在命令行中执行命令:
-
-```
-datafaker rdb mysql+mysqldb://root:root@localhost:3306/data wt_data 10  --meta test.txt  --worker 8 --batch 2000
-```
-
-test.txt
-
-```
-RT101||decimal(4,2)||[:decimal(4,2,1)]
-```
-
-
-
-
 
 ### 用sql语句
 
