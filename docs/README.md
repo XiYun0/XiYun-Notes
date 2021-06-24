@@ -71,7 +71,7 @@
 
 - [虚拟机Linux安装和宝塔](https://www.yuque.com/docs/share/dde3805e-0e52-4de6-b5b1-f7a88b4035e6?# )
 - [Linux 基础知识](计算机系统/操作系统/linux/Linux基础知识.md) 
-- [我的常用命令](计算机系统\操作系统\linux\常用命令.md)
+- [常用命令](计算机系统\操作系统\linux\常用命令.md)
 - [Shell 编程入门](计算机系统/操作系统/Shell.md) 
 
 ## 计算机网络
@@ -684,7 +684,12 @@ Sentinel-取代hystrix
 
 ### Hbase
 
+### PostgreSQL
 
+
+
+1. [PostgreSQL安装](后端/数据库/postgresql/PostgreSQL安装.md)
+2. [PostgreSQL使用](后端/数据库/postgresql/PostgreSQL使用.md)
 
 # 大数据
 
@@ -869,7 +874,7 @@ SpringBoot集成Kafka
 
 ### Dolphinscheduler
 
-1. [Dolphinscheduler安装](大数据/任务调度/Dolphinscheduler安装.md)
+1. [Dolphinscheduler安装和使用](大数据/任务调度/Dolphinscheduler安装.md)
 
 ## 元数据
 
@@ -928,9 +933,8 @@ SpringBoot集成Kafka
 
 ## Python
 
-- [解放双手的自动化](人工智能/python/自动化.md)
-- [自动抢货](人工智能/python/自动抢货.md)
-- [游戏脚本](人工智能/python/游戏脚本.md)
+Anaconda
+
 - [数据可视化](人工智能/python/数据可视化.md)
 
 ## 机器学习
@@ -964,15 +968,3 @@ SpringBoot集成Kafka
 
 1. [Prometheus和Grafana](运维\Prometheus和Grafana.md)
 2. [Grafana汉化](运维\Grafana汉化.md)
-
-# 其他
-
-## 纵横天下
-
-- [原则读书笔记](其他/纵横天下/原则读书笔记.md)
-- [债务危机读书笔记](其他/纵横天下/债务危机读书笔记.md)
-
-## 视频制作
-
-manim：https://github.com/manim-kindergarten/manim_sandbox/wiki
-

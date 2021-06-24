@@ -52,3 +52,27 @@ docker-compose up -d
 访问：http://192.168.28.118:12345/dolphinscheduler/
 
 在数据源中心创建数据源。
+
+
+
+
+
+登陆
+
+```
+psql -U root dolphinscheduler
+root
+```
+
+
+
+资源文件上传
+
+```sql
+select * from t_ds_resources;
+```
+
+```
+/dolphinscheduler/root/resources
+```
+
