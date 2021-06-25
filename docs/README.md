@@ -101,6 +101,8 @@
 1. [时间复杂度](计算机系统/数据结构与算法/时间复杂度.md)
 2. [空间复杂度](计算机系统/数据结构与算法/空间复杂度.md)
 
+[力扣和剑指](计算机系统/数据结构与算法/力扣和剑指.md)
+
 ### 数据结构
 
 > 工具
@@ -111,7 +113,7 @@
 
 辅助视频：https://www.bilibili.com/video/BV1ZK4y1b7Xn
 
-1. [数组Array](计算机系统/数据结构与算法/数据结构/数组.md)
+1. [数组Array/矩阵Matrix](计算机系统/数据结构与算法/数据结构/数组和矩阵.md)
 2. [字符串String](计算机系统/数据结构与算法/数据结构/字符串.md)
 3. [链表LinkedList](计算机系统/数据结构与算法/数据结构/链表.md)
 4. [队列Queue](计算机系统/数据结构与算法/数据结构/队列.md)
@@ -142,7 +144,6 @@
 
 
 1. [算法学习资源推荐](计算机系统/数据结构与算法/算法学习资源推荐.md)
-2. [力扣和剑指](计算机系统/数据结构与算法/力扣和剑指.md)
 
 ## 分布式系统
 
@@ -398,11 +399,12 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 进阶
 
-1. [Web](后端/spring/springboot/Web.md)
-2. [集成Mybatis](后端/spring/springboot/Mybatis.md)
-3. API文档构建工具，[集成Swagger](后端/spring/springboot/Swagger.md)
-4. 热部署
-5. 单元测试
+1. [Thymeleaf](后端/spring/springboot/Thymeleaf.md)
+2. [Web](后端/spring/springboot/Web.md)
+3. [集成Mybatis](后端/spring/springboot/Mybatis.md)
+4. API文档构建工具，[集成Swagger](后端/spring/springboot/Swagger.md)
+5. 热部署
+6. 单元测试
 
 其他
 
@@ -834,8 +836,6 @@ SpringBoot集成Kafka
 
 ### Flink
 
-
-
 1. [Flink安装](大数据/数据处理/flink/Flink安装.md)
 2. Flink SQL
 
@@ -874,7 +874,7 @@ SpringBoot集成Kafka
 
 ### Dolphinscheduler
 
-1. [Dolphinscheduler安装和使用](大数据/任务调度/Dolphinscheduler安装.md)
+1. [Dolphinscheduler安装和使用](大数据/任务调度/Dolphinscheduler安装和使用.md)
 
 ## 元数据
 
@@ -968,3 +968,4 @@ Anaconda
 
 1. [Prometheus和Grafana](运维\Prometheus和Grafana.md)
 2. [Grafana汉化](运维\Grafana汉化.md)
+

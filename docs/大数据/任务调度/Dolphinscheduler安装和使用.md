@@ -76,3 +76,12 @@ select * from t_ds_resources;
 /dolphinscheduler/root/resources
 ```
 
+
+
+
+
+
+
+# 问题
+
+dolphinscheduler的python需要调用本地资源，如果同时有很多python在运行，可能出现随机杀死，此时我们无法再找到
