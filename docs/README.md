@@ -414,8 +414,6 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 1. [开发流程](后端/系统设计/framework/spring/开发流程.md)
 
-#### 若依脚手架
-
 
 
 ### 项目
@@ -790,6 +788,7 @@ SpringBoot集成Kafka
 2. [NameNode](大数据/数据存储/hadoop/hdfs/NameNode.md)
 3. [DataNode](大数据/数据存储/hadoop/hdfs/DataNode.md)
 4. [HDFS客户端](大数据/数据存储/hadoop/hdfs/HDFS客户端.md)
+5. [HDFS的API操作](大数据/数据存储/hadoop/hdfs/API操作.md)
 
 #### MapReduce
 
@@ -833,6 +832,10 @@ SpringBoot集成Kafka
 2. [Clickhouse安装](大数据/数据存储/clickhouse/Clickhouse安装.md)
 
 ## 数据处理
+
+### zeppelin
+
+1. [Zeppelin安装](大数据/数据处理/zeppelin/Zeppelin安装.md)
 
 ### Flink
 

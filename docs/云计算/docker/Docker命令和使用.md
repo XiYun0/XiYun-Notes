@@ -6,7 +6,23 @@
 
 ```
 docker exec -it 容器名 /bin/bash
+docker exec -it --user root 075c04304a80 bash	# root命令进入
 ```
+
+
+
+## 安装
+
+这里用Unbutu举例，如果是Centos就不一样
+
+```
+apt-get update
+
+apt-get install vim -y	# vim
+apt install iputils-ping	# ping
+```
+
+
 
 ## 复制
 
@@ -61,4 +77,6 @@ apache/dolphinscheduler:mysql-driver
 ```
 locate docker-compose.yml
 ```
+
+
 
