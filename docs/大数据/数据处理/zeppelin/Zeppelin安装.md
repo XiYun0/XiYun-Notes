@@ -23,3 +23,20 @@ npm run start
 mvn clean package -DskipTests
 ```
 
+
+
+
+
+
+
+# 启动
+
+```
+bin/zeppelin-daemon.sh start
+bin/zeppelin-daemon.sh stop	# 关闭
+```
+
+
+
+
+

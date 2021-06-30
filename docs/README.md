@@ -228,10 +228,6 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 1. [vue3](前端/vue/vue3.md)
 2. [vue部署](前端/vue/vue部署.md)
 
-### 表单设计工具
-
-- [form-generator (gitee.io)](https://mrhj.gitee.io/form-generator/#/)
-
 # 后端
 
 ## Java
@@ -341,9 +337,6 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
    r.DELETE("book", ...)
    ```
 
-   
-
-
 
 ### GUI
 
@@ -364,8 +357,6 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 ### Sevlet
 
 浏览器和服务器的交互模式
-
-<img src="/images/image-20210502110710963.png" alt="image-20210502110710963" style="zoom:50%;" />
 
 1. [HTTP协议](后端/java/servlet/HTTP协议.md)
 2. [Tomcat服务器](后端/java/servlet/Tomcat服务器.md)
@@ -414,12 +405,6 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 1. [开发流程](后端/系统设计/framework/spring/开发流程.md)
 
-
-
-### 项目
-
-[基于SpringbBoot的多智能体系统开发](后端/spring/基于SpringbBoot的多智能体系统开发.md)
-
 ## Golang
 
 Golang标准库文档：https://studygolang.com/pkgdoc
@@ -459,6 +444,18 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 ### FastAPI
 
 1. [连接大数据](后端\python\fastapi\连接大数据.md)
+
+
+
+## Zookeeper
+
+1. [Zookeeper入门](后端/zookeeper/Zookeeper安装.md)
+2. [Zookeeper安装](后端/zookeeper/Zookeeper安装.md)
+3. Paxos算法
+4. CAP
+5. [Zookeeper源码](后端/zookeeper/Zookeeper源码.md)
+
+
 
 ## 系统设计
 
@@ -537,31 +534,13 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 1. [手写RPC框架](后端/系统设计/micro-service/手写RPC.md)
 2. [Dubbo](后端/系统设计/micro-service/Dubbo.md)
 
-#### ZooKeeper
 
-- [ZooKeeper 相关概念总结](后端/系统设计/framework/ZooKeeper.md)
-
-- [ZooKeeper 数据模型和常见命令](后端/系统设计/framework/ZooKeeper数据模型和常见命令.md)
 
 #### 集群、分布式
 
 集群是一种物理形态，分布式是一种工作方式，分布式系统就是将整个集群变得像一个整体一样。集群不一定是分布式，分布式一定是集群。
 
 1. [幂等性](后端/系统设计/micro-service/幂等性.md)
-
-#### CAP
-
-CAP概念
-
-
-
-Raft
-
-```markdown
-可视化：http://thesecretlivesofdata.com/raft/
-```
-
-BASE
 
 
 
@@ -721,14 +700,14 @@ Sentinel-取代hystrix
 
 - [网易大数据专家，为你剖析数据中台的现状及未来](https://www.bilibili.com/video/BV1EQ4y1M7fW?from=search&seid=4799545926254065116)，[笔记](https://www.bilibili.com/read/cv5693165?spm_id_from=333.788.b_636f6d6d656e74.9)
 
-
-
 1. [数据中台的概念](大数据\数据中台\数据中台的概念.md)
 
 ## 数据生成
 
 1. [用户行为数据生成](大数据/数据生成/用户行为数据生成.md)
 2. 业务数据
+
+
 
 ## 数据采集消费
 
@@ -750,11 +729,15 @@ flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name ag
 3. [消费 Kafka 数据 Flume](大数据/数据采集/flume/消费Kafka数据Flume.md)
 4. [Flume内存优化](大数据/数据采集/flume/Flume内存优化.md)
 
+
+
+
+
+
+
 ### Kafka
 
 - [✈️Kafka](https://www.yuque.com/docs/share/c5cbfb81-a598-43ce-93c8-20404aa7e1b4?#)
-
-
 
 1. Kafka压力测试
 
@@ -763,8 +746,6 @@ SpringBoot集成Kafka
 ### Pulsar
 
 [TGIP-CN 直播合集](https://www.bilibili.com/video/BV1T741147B6/?spm_id_from=333.788.b_636f6d6d656e74.8)
-
-
 
 1. [Pulsar安装](大数据/数据采集/pulsar/Pulsar安装.md)
 
@@ -835,7 +816,7 @@ SpringBoot集成Kafka
 
 ### zeppelin
 
-1. [Zeppelin安装](大数据/数据处理/zeppelin/Zeppelin安装.md)
+1. [Zeppelin安装和使用](大数据/数据处理/zeppelin/Zeppelin安装.md)
 
 ### Flink
 
@@ -970,5 +951,5 @@ Anaconda
 # 运维
 
 1. [Prometheus和Grafana](运维\Prometheus和Grafana.md)
-2. [Grafana汉化](运维\Grafana汉化.md)
+2. [Grafana编译](运维\Grafana编译.md)
 
