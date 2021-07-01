@@ -145,13 +145,13 @@ nohup bin/hive --service metastore >/dev/null 2>&1 &
 （1）前台启动 Presto，控制台显示日志
 
 ```
-bin/launcher run
+bin/launcher.py run
 ```
 
 （2）后台启动 Presto
 
 ```
-bin/launcher start 
+bin/launcher.py start 
 ```
 
 > `注意`：如果系统下载了python3，那么很可能报错，因为Presto是用python2写的。解决方法如下：

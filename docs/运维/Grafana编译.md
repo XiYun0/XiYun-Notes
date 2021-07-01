@@ -12,7 +12,7 @@ go run build.go build
 
 
 ```
-bin/grafana-server -homepath /Users/glong/project/grafana
+bin/darwin-arm64/grafana-server -homepath /Users/glong/project/grafana
 ```
 
 ## 前端
@@ -21,11 +21,37 @@ bin/grafana-server -homepath /Users/glong/project/grafana
 # 如果没有安装yarn
 sudo npm install -g yarn
 
+yarn install
 
-yarn start
+yarn start # yarn start hot 热部署，可以修改，汉化
 ```
 
-> 如果有127错误，参考https://zhuanlan.zhihu.com/p/331874983
+```
+[./public/app/plugins/panel/nodeGraph/layout.worker.js] 135 bytes {default~app} [not cacheable] [built]
+[./public/sass/grafana.dark.scss] 39 bytes {dark} [built]
+[./public/sass/grafana.light.scss] 39 bytes {light} [built]
+    + 4915 hidden modules
+No issues found.
+```
+
+说明成功
+
+http://localhost:3000/
+
+
+
+## 上传服务器
+
+```
+go run build.go setup
+go run build.go build 
+```
+
+
+
+```
+bin/linux-amd64/grafana-server -homepath /opt/module/grafana
+```
 
 
 
