@@ -97,3 +97,13 @@ export default defineComponent({
 </script>
 ```
 
+
+
+
+
+## 路由
+
+```
+npm install vue-router@4
+```
+
