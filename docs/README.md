@@ -1,17 +1,10 @@
 <p align="center">
-  <a href="https://github.com/XiYun0/"><img src="https://img.shields.io/badge/阅读-read-brightgreen.svg" alt="阅读"></a>
+  <a href="https://github.com/glong1997/"><img src="https://img.shields.io/badge/阅读-read-brightgreen.svg" alt="阅读"></a>
 </p>
 
 
-溪云笔记
 
->github阅读：https://glong1997.github.io/XiYun-Notes/#/
->
->gitee阅读（国内访问快）：
-
-
-
->代码和绘图都放在了坚果云里面。
+>一些代码和绘图放在了坚果云里面。
 >
 >语雀：https://www.yuque.com/kuangxiqiruogu
 
@@ -19,7 +12,7 @@
 
 1. [开源项目](其他/开源项目.md)
 2. [视频](其他/视频.md)
-3. [论文阅读](其他/论文阅读.m)
+3. [论文阅读](其他/论文阅读.md)
 4. [我的书单](其他/书单.md)，[下载](https://www.yuque.com/kuangxiqiruogu/sglzt1)
 5. [我的常用工具](其他/工具.md)，下载
 6. [UP主、技术大神、大厂、培训机构](其他/UP主、技术大神)
@@ -32,7 +25,7 @@
 
 # 面试、简历关
 
-1. :crossed_swords:[面试—话术](其他/面试—纯话版.md):crossed_swords:
+1. [面试—话术](其他/面试—纯话版.md)
 2. [面经](其他/面经.md)
 3. [我的简历](其他/resume/我的简历.md)
 4. https://github.com/resumejob/awesome-resume
@@ -137,6 +130,7 @@
 9. [宽度优先搜索BFS](计算机系统/数据结构与算法/算法/宽度优先搜索.md)
 10. [贪心算法](计算机系统/数据结构与算法/算法/贪心算法.md)
 11. [动态规划](计算机系统/数据结构与算法/算法/动态规划.md)
+12. [位运算](计算机系统/数据结构与算法/算法/位运算.md)
 
 
 
@@ -278,7 +272,7 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 2. 类加载器子系统
    1. [类加载过程](后端/java/jvm/类加载过程.md)（广义的加载）
    2. [类加载器](后端/java/jvm/类加载器.md)（狭义的加载）
-3. [Java内存区域:earth_africa:](后端/java/jvm/Java内存区域.md)
+3. [Java内存区域](后端/java/jvm/Java内存区域.md)
 4. 执行引擎
    1. 解释器
    2. 即时编译器
@@ -677,8 +671,6 @@ Sentinel-取代hystrix
 
 [老男孩教育-李导-手把手带你玩转物理服务器](https://www.bilibili.com/video/BV1rb411n7a8)
 
-
-
 - [我在公司安装物理服务器集群的记录](大数据/服务器/我在公司安装物理服务器集群的记录.md)
 
 ## 服务完整搭建
@@ -728,10 +720,6 @@ flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name ag
 
 
 
-
-
-
-
 ### Kafka
 
 - [✈️Kafka](https://www.yuque.com/docs/share/c5cbfb81-a598-43ce-93c8-20404aa7e1b4?#)
@@ -770,7 +758,9 @@ SpringBoot集成Kafka
 
 #### MapReduce
 
-
+1. [MapReduce概述](大数据/数据存储/hadoop/mapreduce/MapReduce概述.md)
+2. [序列化](大数据/数据存储/hadoop/mapreduce/序列化.md)
+3. [MapReduce框架原理](大数据/数据存储/hadoop/mapreduce/MapReduce框架原理.md)
 
 #### Yarn
 
@@ -814,6 +804,7 @@ SpringBoot集成Kafka
 ### zeppelin
 
 1. [Zeppelin安装和使用](大数据/数据处理/zeppelin/Zeppelin安装.md)
+2. [Zeppelin集成SQLFlow](大数据/数据处理/zeppelin/Zeppelin集成SQLFlow.md)
 
 ### Flink
 
