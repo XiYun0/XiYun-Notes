@@ -27,7 +27,7 @@ interpreter-setting.json
     "properties": {
       "sqlflow.serverAddr": {
         "propertyName": "sqlflow.serverAddr",
-        "defaultValue": "192.168.28.116:50051",
+        "defaultValue": "http://192.168.28.116:50051",
         "description": "SQLFlow 服务地址",
         "type": "string"
       },
@@ -45,7 +45,7 @@ interpreter-setting.json
       },
       "mysql.serverAddr": {
         "propertyName": "mysql.serverAddr",
-        "defaultValue": "192.168.28.116:3306",
+        "defaultValue": "http://192.168.28.116:3306",
         "description": "MySQL服务地址",
         "type": "string"
       },
