@@ -18,7 +18,7 @@
 
 1）下载并上传到/opt/software
 
-2）解压 apache-kylin-3.1.2-bin-hadoop3.tar.gz 到 /opt/module
+2）解压
 
 ```
 tar -zxvf apache-kylin-3.0.2-bin.tar.gz -C /opt/module/
