@@ -27,7 +27,6 @@
 
 1. [面试—话术](其他/面试—纯话版.md)
 2. [面经](其他/面经.md)
-3. [我的简历](其他/resume/我的简历.md)
 4. https://github.com/resumejob/awesome-resume
 
 # 计算机系统
@@ -122,7 +121,7 @@
 1. [双指针](计算机系统/数据结构与算法/算法/双指针.md)
 2. [滑动窗口](计算机系统/数据结构与算法/算法/滑动窗口.md)
 3. [排序](计算机系统/数据结构与算法/算法/排序.md)
-4. [二分查找](计算机系统/数据结构与算法/算法/二分查找.md)
+4. [查找](计算机系统/数据结构与算法/算法/二分查找.md)
 5. [递归](计算机系统/数据结构与算法/算法/递归.md)
 6. [分而治之](计算机系统/数据结构与算法/算法/分而治之.md)
 7. [回溯](计算机系统/数据结构与算法/算法/回溯.md)
@@ -720,20 +719,6 @@ flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name ag
 
 
 
-### Kafka
-
-- [✈️Kafka](https://www.yuque.com/docs/share/c5cbfb81-a598-43ce-93c8-20404aa7e1b4?#)
-
-1. Kafka压力测试
-
-SpringBoot集成Kafka
-
-### Pulsar
-
-[TGIP-CN 直播合集](https://www.bilibili.com/video/BV1T741147B6/?spm_id_from=333.788.b_636f6d6d656e74.8)
-
-1. [Pulsar安装](大数据/数据采集/pulsar/Pulsar安装.md)
-
 ### DBus
 
 1. [DBus部署](https://bridata.github.io/DBus/deploy.html)
@@ -776,6 +761,21 @@ SpringBoot集成Kafka
 1. [Hive部署](大数据/数据存储/hive/Hive部署.md)
 2. [使用Python连接Hive](大数据\数据存储\hive\使用Python连接Hive.md)
 3. [WebUI](大数据/数据存储/hive/WebUI.md)
+
+### Kafka
+
+视频推荐：开课吧 https://www.bilibili.com/video/BV1M64y1D7NN
+
+- [✈️Kafka](https://www.yuque.com/docs/share/c5cbfb81-a598-43ce-93c8-20404aa7e1b4?#)
+
+1. Kafka压力测试
+2. [Kafka源码](大数据/数据存储/kafka/Kafka源码.md)
+
+### Pulsar
+
+[TGIP-CN 直播合集](https://www.bilibili.com/video/BV1T741147B6/?spm_id_from=333.788.b_636f6d6d656e74.8)
+
+1. [Pulsar安装](大数据/数据存储/pulsar/Pulsar安装.md)
 
 ### HBase
 

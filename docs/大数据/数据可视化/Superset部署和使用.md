@@ -416,6 +416,10 @@ Charts
 
 参考：https://www.jianshu.com/p/c751278996f8
 
+```
+cd /opt/module/miniconda3/lib/python3.7/site-packages/superset
+```
+
 修改`config.py`
 
 ```python
