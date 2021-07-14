@@ -808,8 +808,11 @@ flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name ag
 
 ### Flink
 
+推荐视频：尚硅谷Flink
+
 1. [Flink安装](大数据/数据处理/flink/Flink安装.md)
-2. Flink SQL
+2. [Flink理论与实践](大数据/数据处理/flink/Flink理论与实践.md)
+3. Flink SQL
 
 ### Spark
 
