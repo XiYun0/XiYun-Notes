@@ -112,7 +112,7 @@
 8. [树Tree](计算机系统/数据结构与算法/数据结构/树.md)
 9. [堆Heap](计算机系统/数据结构与算法/数据结构/堆.md)
 10. [图Graph](计算机系统/数据结构与算法/数据结构/图.md)
-11. 字典树|前缀树
+11. 字典树 | 前缀树
 
 ### 算法
 
@@ -265,12 +265,10 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 <img src="images/170ec7cd31581d15" alt="img" style="zoom: 67%;" />
 
-
+参考笔记：https://www.yuque.com/u21195183/jvm
 
 1. [Class文件结构](后端/java/jvm/类文件结构.md)
-2. 类加载器子系统
-   1. [类加载过程](后端/java/jvm/类加载过程.md)（广义的加载）
-   2. [类加载器](后端/java/jvm/类加载器.md)（狭义的加载）
+2. [类加载器子系统](后端/java/jvm/类加载器子系统.md)
 3. [Java内存区域](后端/java/jvm/Java内存区域.md)
 4. 执行引擎
    1. 解释器

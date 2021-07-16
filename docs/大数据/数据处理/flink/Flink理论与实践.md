@@ -263,7 +263,7 @@ writeAsCsv()
 
 官方提供的依赖
 
-Kafka
+#### Kafka
 
 ```xml
 <dependency> 
@@ -277,7 +277,7 @@ Kafka
 
 此时对topic1的生产者输入数据，那么topic2的消费者会得到数据。
 
-Redis
+#### Redis
 
 ```xml
 <dependency> 
@@ -286,4 +286,49 @@ Redis
     <version>1.0</version>
 </dependency>
 ```
+
+
+
+```java
+public class Sink_Redis {
+    public static void main(String[] args) throws Exception {
+
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+
+        DataStream<String> dataStream = env.readTextFile("/Users/glong/project/bigdata/flink/src/main/resources/hello.txt");
+
+        FlinkJedisPoolConfig config = new FlinkJedisPoolConfig.Builder()
+                .setHost("localhost")
+                .setPort(6379)
+                .build(); // 构造方法是稀有的，这个类使用的创造者模式
+
+        dataStream.addSink(new RedisSink<>(config, new MyRedisMapper()))
+
+        env.execute();
+    }
+
+    // 自定义RedisMapper
+    private static class MyRedisMapper implements RedisMapper<SensorReading> {
+        // 定义保存数据到Redis的命令
+        @Override
+        public RedisCommandDescription getCommandDescription() {
+            return new RedisCommandDescription(RedisCommand.HSET, "sensot_temp");
+        }
+
+        @Override
+        public String getKeyFromData(Object data) {
+            return data.getId();
+        }
+
+        @Override
+        public String getValueFromData(Object data) {
+            return data.getTemperature.toString();
+        }
+    }
+}
+```
+
+
+
+#### ElasticSearch
 
