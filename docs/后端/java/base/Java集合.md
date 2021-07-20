@@ -6,21 +6,35 @@
 
 ## Collection
 
+
+
+<img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/source-code/dubbo/java-collection-hierarchy.png" alt="img" style="zoom:67%;" />
+
+### List
+
 > List，Set
 
 #### ArrayList
 
-
-
-ArrayList类图如上。
-
 #### LinkList
 
+#### Vector
 
+#### Stack
+
+
+
+### Set
+
+#### HashSet
+
+继承自HashMap
+
+### Queue
 
 ## Map
 
-#### HashMap
+### HashMap
 
 
 
@@ -34,7 +48,13 @@ ps:下图有一个小问题，来自 [issue#608](https://github.com/Snailclimb/J
 
 ![put方法](图片/put方法.png)
 
-##### 扩容
+#### 扩容
 
 默认数组大小是16，loadfactor为0.75（这是一种权衡，如果更大，则意味着查询速度变慢，如果更小，则意味着空间浪费），当桶大小达到12，触发2倍扩容resize。
+
+### Hashtable
+
+废弃
+
+没有遵循驼峰命名。
 
