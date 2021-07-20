@@ -1,3 +1,5 @@
+# Vue3
+
 main.js
 
 ```typescript
@@ -99,11 +101,189 @@ export default defineComponent({
 
 
 
+## 安装
+
+```bash
+npm init @vitejs/app <project-name>
+cd <project-name>
+npm install
+npm run dev
+```
+
 
 
 ## 路由
 
-```
+安装
+
+```bash
 npm install vue-router@4
+```
+
+创建一个router.js插件
+
+```js
+import {createRouter, createWebHashHistory, createWebHistory} from "vue-router"
+
+// 1. 定义路由组件， 注意，这里一定要使用 文件的全名（包含文件后缀名）
+import home from './views/home.vue'
+import train from './views/train/train.vue'
+import result from './views/train/result.vue'
+
+// 2. 定义路由配置
+const routes = [
+    {
+        path: "/home", component: home
+    },
+    { path: "/train", component: train },
+    { path: "/result", component: result },
+];
+
+// 3. 创建路由实例
+const router = createRouter({
+    // 4. 采用hash 模式
+    history: createWebHashHistory(),
+    // 采用 history 模式
+    // history: createWebHistory(),
+    routes, // short for `routes: routes`
+});
+
+export default router
+```
+
+在main.js中引入
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+
+import router from './router.js'
+
+const app = createApp(App)
+
+app.use(ElementPlus)
+app.use(router) // 使用router实例
+app.mount('#app')
+```
+
+应用
+
+```vue
+<template>
+  <div>
+    <button @click="show('home')">主页</button>
+    <button @click="show('train')">训练</button>
+    <button @click="show('result')">结果</button>
+  </div>
+</template>
+
+<script lang="ts">
+
+export default ({
+  name: 'Home',
+  props: {
+    msg: {
+      type: String,
+      required: true
+    }
+  },
+
+  methods: {
+    show(index) {
+      if(index == 'home') {
+        this.$router.push('/')
+      }
+      if(index == 'train') {
+        this.$router.push('train')
+      }
+      if(index == 'result') {
+        this.$router.push('/result')
+      }
+    }
+  },
+
+})
+</script>
+
+<style scoped>
+a {
+  color: #42b983;
+}
+label {
+  margin: 0 0.5em;
+  font-weight: bold;
+}
+
+code {
+  background-color: #eee;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: #304455;
+}
+</style>
+```
+
+## axios
+
+安装
+
+```bash
+npm install axios --save
+```
+
+
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+import axios from 'axios'
+
+const app = createApp(App)
+// 全局挂载axios
+app.config.globalProperties.$axios = axios;
+
+app.mount('#app')
+```
+
+
+
+具体使用
+
+```vue
+  methods: {
+    getEposides() {
+      var _this = this;
+      axios.get("http://localhost:8000/").then(function (response) {
+        console.log(response.data)
+        _this.percentage = response.data
+      })
+    },
+  },
+```
+
+
+
+
+
+
+
+# 遇到的问题
+
+.map() is not a function
+
+后端传的是对象，前端需要接收的是数组
+
+此时需要将对象转换为数组
+
+```js
+    getResult() {
+      var _this = this;
+      axios.get("http://localhost:8099/result").then(function (response) {
+        console.log(response.data)
+        let result = Array.of(response.data)
+        console.log(result)
+        _this.tableData = result
+      })
+    },
 ```
 
