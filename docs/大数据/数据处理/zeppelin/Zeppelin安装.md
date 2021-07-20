@@ -17,13 +17,9 @@ npm run start
 
 
 
-
-
 ```bash
 mvn clean package -DskipTests
 ```
-
-
 
 # 启动
 

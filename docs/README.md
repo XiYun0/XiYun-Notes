@@ -112,7 +112,7 @@
 6. [分而治之](计算机系统/数据结构与算法/算法/分而治之.md)
 7. [回溯](计算机系统/数据结构与算法/算法/回溯.md)
 8. [深度优先搜索DFS](计算机系统/数据结构与算法/算法/深度优先搜索.md)
-9. [宽度优先搜索BFS](计算机系统/数据结构与算法/算法/宽度优先搜索.md)
+9. [广度优先搜索BFS](计算机系统/数据结构与算法/算法/宽度优先搜索.md)
 10. [贪心算法](计算机系统/数据结构与算法/算法/贪心算法.md)
 11. [动态规划](计算机系统/数据结构与算法/算法/动态规划.md)
 12. [位运算](计算机系统/数据结构与算法/算法/位运算.md)
@@ -120,7 +120,7 @@
 
 
 
-1. [算法学习资源推荐](计算机系统/数据结构与算法/算法学习资源推荐.md)
+- [算法学习资源推荐](计算机系统/数据结构与算法/算法学习资源推荐.md)
 
 ## 分布式系统
 
@@ -257,13 +257,13 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 1. [Class文件结构](后端/java/jvm/类文件结构.md)
 2. [类加载器子系统](后端/java/jvm/类加载器子系统.md)
 3. [Java内存区域](后端/java/jvm/Java内存区域.md)
-4. 执行引擎
+4. [执行引擎]()
    1. 解释器
    2. 即时编译器
 5. [JVM垃圾回收机制](后端/java/jvm/JVM垃圾回收机制.md)
 6. [JDK 监控和故障处理工具](后端/java/jvm/JDK监控和故障处理工具总结.md)
 
-### JUC
+### 多线程
 
 书籍推荐：《Java并发编程的艺术》、《Java并发编程之美》
 
@@ -282,7 +282,9 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 11. [阻塞队列](后端/java/juc/BlockingQueue.md)
 12. [线程池](后端/java/juc/线程池.md)
 
+流程图
 
+1. [AQS](https://www.jianguoyun.com/p/DdqwVFAQ657yCBjl3tED)
 
 ### 编程规范
 
@@ -292,25 +294,9 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 3. [在IDEA中编写优雅简洁的Java代码](后端/java/编写优雅简洁的Java代码.md)
 
-4. [RestFul API 简明教程](https://snailclimb.gitee.io/javaguide/#/docs/后端/系统设计/coding-way/RESTfulAPI%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B)
+4. [RestFul API ](后端/java/RESTful.md)
 
-   #### RESTful
-
-   ```go
-   // 不适用RESTful风格
-   r.GET("/create_book", ...)
-   r.GET("/update_book", ...)
    
-   r.GET("/remove_book", ...)	// 有的人删除
-   r.GET("/delete_book", ...)	// 有的人删除
-   r.GET("/shanchu_book", ...)	// 有的人删除
-   
-   // 使用RESTful风格
-   r.GET("book", ...)
-   r.POST("book", ...)
-   r.PUT("book", ...)
-   r.DELETE("book", ...)
-   ```
 
 
 ### GUI

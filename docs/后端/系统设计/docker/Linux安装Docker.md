@@ -1,7 +1,5 @@
 > 网站：https://docs.docker.com/engine/install/centos/
 
-
-
 # Docker安装
 
 卸载之前的docker
