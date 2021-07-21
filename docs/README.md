@@ -408,6 +408,13 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 
 
 
+## Rust
+
+1. [Rust入门](后端/rust/Rust入门.md)
+2. Rust
+
+
+
 ## Zookeeper
 
 1. [Zookeeper入门](后端/zookeeper/Zookeeper安装.md)
@@ -722,8 +729,6 @@ flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name ag
 
 #### Hue
 
-官网：https://gethue.com/
-
 1. [Hue介绍](大数据/数据存储/hadoop/hue/Hue介绍.md)
 2. [Hue安装与使用](大数据/数据存储/hadoop/hue/Hue安装与使用.md)
 
@@ -743,8 +748,6 @@ flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name ag
 2. [Kafka源码](大数据/数据存储/kafka/Kafka源码.md)
 
 ### Pulsar
-
-[TGIP-CN 直播合集](https://www.bilibili.com/video/BV1T741147B6/?spm_id_from=333.788.b_636f6d6d656e74.8)
 
 1. [Pulsar安装](大数据/数据存储/pulsar/Pulsar安装.md)
 
@@ -840,7 +843,7 @@ flume-ng agent --conf-file /opt/module/flume/conf/file-flume-hdfs.conf --name ag
 
 ### Davinci
 
-- [Davinci部署与使用](大数据\数据可视化\Davinci部署与使用.md)
+- [Davinci部署与使用](大数据/数据可视化/Davinci部署与使用.md)
 
 ## 集群监控
 
@@ -907,6 +910,6 @@ Anaconda
 
 # 运维
 
-1. [Prometheus和Grafana](运维\Prometheus和Grafana.md)
-2. [Grafana编译](运维\Grafana编译.md)
+1. [Prometheus和Grafana](运维/Prometheus和Grafana.md)
+2. [Grafana编译](运维/Grafana编译.md)
 
