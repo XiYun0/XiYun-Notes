@@ -1,6 +1,6 @@
 # Rust入门
 
-文档：[Rust 程序设计语言 ](https://rust.bootcss.com/#rust-程序设计语言)/ 对应视频：https://www.bilibili.com/video/BV1hp4y1k7SV
+文档：[Rust 官方文档中文教程 ](https://rustwiki.org/)/ 对应视频：https://www.bilibili.com/video/BV1hp4y1k7SV
 
 官网：https://www.rust-lang.org/zh-CN/
 
@@ -212,4 +212,3 @@ fn main() {
 ```
 
 # Rust常见编程概念
-

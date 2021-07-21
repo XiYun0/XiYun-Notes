@@ -411,7 +411,7 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 ## Rust
 
 1. [Rust入门](后端/rust/Rust入门.md)
-2. Rust
+2. [Rust所有权](后端/rust/Rust所有权.md)
 
 
 
