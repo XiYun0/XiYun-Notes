@@ -326,7 +326,7 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 ### Spring
 
 - [Spring简介](后端/系统设计/framework/spring/Spring.md)
-- [Spring——孙帅老师的视频，强烈推荐，事务讲得也棒](后端/系统设计/framework/spring/Spring（孙老师笔记）.md)
+- [Spring_孙s](后端/系统设计/framework/spring/Spring（孙老师笔记）.md)
 
 
 
@@ -398,13 +398,11 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 
 - [基于gin框架和gorm的web开发实战](后端/golang/gin/基于gin框架和gorm的web开发实战.md)
 
-
-
 ## Python
 
 ### FastAPI
 
-1. [连接大数据](后端\python\fastapi\连接大数据.md)
+1. [连接大数据](后端/python/fastapi/连接大数据.md)
 
 
 
