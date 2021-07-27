@@ -84,6 +84,8 @@
 
 [数据结构知识学习与面试](计算机系统/数据结构与算法/数据结构/数据结构.md)
 
+[LeetCode:hotsprings:](计算机系统/数据结构与算法/LeetCode.md)
+
 图解算法数据结构：用来刷剑指offer
 
 辅助视频：https://www.bilibili.com/video/BV1ZK4y1b7Xn
@@ -410,6 +412,7 @@ Golang标准库文档：https://studygolang.com/pkgdoc
 
 1. [Rust入门](后端/rust/Rust入门.md)
 2. [Rust所有权](后端/rust/Rust所有权.md)
+3. [Rust集合](后端/rust/Rust集合.md)
 
 
 
