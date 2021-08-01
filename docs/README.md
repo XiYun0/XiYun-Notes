@@ -276,13 +276,14 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 3. [线程运行原理代码图解](后端/java/juc/线程运行原理代码图解.md)
 4. [线程的状态及状态转换](后端/java/juc/线程的6大状态及状态转换.md)
 5. [Monitor和Synchronized](后端/java/juc/Monitor.md)
-6. [锁](后端/java/juc/Java锁.md)
-7. [JMM](后端/java/juc/JMM.md)
-8. [ThreadLocal](后端/java/juc/ThreadLocal.md)
-9. [线程安全集合类](后端/java/juc/线程安全集合类.md)
-10. [JUC工具类](后端/java/juc/JUC工具类.md)
-11. [阻塞队列](后端/java/juc/BlockingQueue.md)
-12. [线程池](后端/java/juc/线程池.md)
+6. [AQS:fire:](后端/java/juc/AQS.md)
+7. [锁](后端/java/juc/Java锁.md)
+8. [JMM](后端/java/juc/JMM.md)
+9. [ThreadLocal](后端/java/juc/ThreadLocal.md)
+10. [线程安全集合类](后端/java/juc/线程安全集合类.md)
+11. [JUC工具类](后端/java/juc/JUC工具类.md)
+12. [阻塞队列](后端/java/juc/BlockingQueue.md)
+13. [线程池](后端/java/juc/线程池.md)
 
 流程图
 
