@@ -1,4 +1,4 @@
-
+# SQL
 
 建表
 
@@ -146,12 +146,76 @@ UPDATE wt_data set RT101=round(rand() * (95 - (-2))) /10 * 10  where RT101 is no
 
 
 
-## 遇到各种语句卡死：
+## 遇到各种语句卡死
 
 https://blog.csdn.net/yangfengjueqi/article/details/81062123?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242
 
 ```sql
 show full processlist;
 kill xxxxxx;
+```
+
+
+
+## 牛客SQL
+
+https://www.nowcoder.com/ta/sql
+
+
+
+### SQL4查找所有已经分配部门的员工的last_name和first_name以及dept_no
+
+```sql
+select e.last_name,e.first_name,d.dept_no
+from employees as e
+join dept_emp as d
+on e.emp_no = d.emp_no
+```
+
+### SQL5 查找所有员工的last_name和first_name以及对应部门编号dept_no
+
+> 这道题和上一道区别在于，需要查所有
+>
+> left join是左连接，以左表为主。
+
+```sql
+select e.last_name, e.first_name, d.dept_no
+from employees as e
+left join dept_emp as d
+on e.emp_no = d.emp_no;
+```
+
+### SQL7 查找薪水记录超过15次的员工号emp_no以及其对应的记录次数t
+
+>WHERE语句在GROUP BY语句之前；SQL会在分组之前计算WHERE语句。HAVING语句在GROUP BY语句之后；SQL会在分组之后计算HAVING语句。
+
+```sql
+SELECT emp_no, COUNT(emp_no) AS t FROM salaries 
+GROUP BY emp_no HAVING t > 15;
+```
+
+
+
+### SQL8 找出所有员工当前薪水salary情况
+
+>关键词 DISTINCT 用于返回唯一不同的值。
+
+```sql
+select distinct salary
+from salaries
+where to_date='9999-01-01'
+order by salary desc;
+```
+
+### SQL10 获取所有非manager的员工emp_no
+
+> 先左连接，聚合两张表为一张表。然后在这张表里找到dept_no为空的那行数据。
+
+```sql
+select emp_no from (select * from employees
+                             left join dept_manager 
+                              on employees.emp_no = dept_manager.emp_no
+                             )
+where dept_no is null;
 ```
 
