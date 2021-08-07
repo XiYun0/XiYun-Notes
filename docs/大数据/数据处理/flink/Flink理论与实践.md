@@ -221,11 +221,11 @@ hello world glong
 引入官方依赖
 
 ```xml
-<dependency> 
-    <groupId>org.apache.flink</groupId> 
-    <artifactId>flink-connector-kafka-0.11_2.12</artifactId> 
-    <version>1.1</version>
-</dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-kafka_2.11</artifactId>
+            <version>1.10.3</version>
+        </dependency>
 ```
 
 
@@ -266,11 +266,11 @@ writeAsCsv()
 ### Kafka
 
 ```xml
-<dependency> 
-    <groupId>org.apache.flink</groupId> 
-    <artifactId>flink-connector-kafka-0.11_2.12</artifactId> 
-    <version>1.1</version>
-</dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-kafka_2.11</artifactId>
+            <version>1.10.3</version>
+        </dependency>
 ```
 
 将Kafka的一个topic（记为1）作为Flink的Source，Flink实时读取数据，然后Sink到Kafka的另一个topic（记为2）。
