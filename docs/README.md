@@ -16,14 +16,7 @@
 4. [我的书单](其他/书单.md)，[下载](https://www.yuque.com/kuangxiqiruogu/sglzt1)
 5. [我的常用工具](其他/工具.md)，下载
 6. [UP主、技术大神、大厂、培训机构](其他/UP主、技术大神)
-7. [博客、文章](其他/blog.md)
 8. [好用的网站](其他/好用的网站.md)
-
-# 面试、简历关
-
-1. [面试—话术](其他/面试—纯话版.md)
-2. [面经](其他/面经.md)
-4. [简历制作](https://github.com/resumejob/awesome-resume)
 
 # 计算机系统
 
@@ -181,32 +174,6 @@ put(1, 21)	# 客户端CLient向一台服务器发送put命令
 
 强一致性的代价高昂
 
-# 前端
-
-## HTML
-
-
-
-## CSS
-
-
-
-## JavaScript
-
-### JavaScript
-
-1. [基础](前端/JavaScript/基础.md)
-2. [事件](前端/JavaScript/事件.md)
-
-### TypeScript
-
-https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
-
-## Vue
-
-1. [vue3](前端/vue/vue3.md)
-2. [vue部署](前端/vue/vue部署.md)
-
 # 后端
 
 ## Java
@@ -245,8 +212,6 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 2. [HashMap](后端/java/base/HashMap.md)
 
 ### JVM
-
->Java与C++之间有一堵由内存动态分配和垃圾收集技术所围成的“高墙”，墙外面的人想进去，墙里面的人却想出来。
 
 书籍推荐：《深入理解Java虚拟机》、《自己动手写Java虚拟机》、《Java性能权威指南》
 
@@ -302,8 +267,6 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 
 ### 源码阅读
 
-
-
 1. [String源码](后端/java/base/String源码.md)
 
 ### IDEA
@@ -322,7 +285,6 @@ https://24kcs.github.io/vue3_study/00_%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D.html
 ### Spring
 
 - [Spring简介](后端/系统设计/framework/spring/Spring.md)
-- [Spring_孙s](后端/系统设计/framework/spring/Spring（孙老师笔记）.md)
 
 
 
@@ -592,7 +554,6 @@ Sentinel-取代hystrix
 
 ### MySQL
 
-1. [概述](后端/数据库/mysql/MySQL.md)
 2. [安装](后端/数据库/mysql/安装.md)
 3. [操作](后端/数据库/mysql/操作.md)
 4. [存储引擎](后端/数据库/mysql/存储引擎.md)
@@ -902,6 +863,18 @@ Anaconda
 > 我的研究方向，这部分笔记在下面这个仓库
 >
 > - [多智能体系统学习指南](https://glong1997.github.io/MultiAgentLearning/#/)
+
+# 前端
+
+## JavaScript
+
+1. [基础](前端/JavaScript/基础.md)
+2. [事件](前端/JavaScript/事件.md)
+
+## Vue
+
+1. [vue3](前端/vue/vue3.md)
+2. [vue部署](前端/vue/vue部署.md)
 
 # 运维
 

@@ -165,3 +165,13 @@ class DemoCallBack implements Callback {
 ![Kafka_Producer核心流程](imgaes/Kafka_Producer核心流程.png)
 
 #### Producer端元数据管理
+
+
+
+## [生产者源码之生产者发送消息整体流程总结](https://www.bilibili.com/video/BV1M64y1D7NN?p=32&spm_id_from=pageDriver)
+
+![image-20210810205418556](imgaes/image-20210810205418556.png)
+
+## 生产者源码之生产者源码精华总结
+
+![image-20210810211310698](imgaes/image-20210810211310698.png)
