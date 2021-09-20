@@ -250,6 +250,83 @@ DataStream<String> dataStream = env.addSource( new FlinkKafkaConsumer011<String>
 
 Flink最重要的部分
 
+### 基本算子
+
+> map：一个输入对应一个输出。将数据转换为POJO就用这种方式
+>
+> flapmap
+>
+> Filter
+
+```java
+public class Transfroming {
+    public static void main(String[] args) throws Exception {
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+
+        DataStream<String> dataStream = env.socketTextStream("localhost", 7777);
+
+
+//        // 1. 统计字符串长度，map算子 一个输入对应一个输出
+//        DataStream<Integer> result = dataStream.map(new MapFunction<String, Integer>() {
+//            @Override
+//            public Integer map(String s) throws Exception {
+//                return s.length();
+//            }
+//        });
+
+//        // 2. wordcount， 使用flapmap算子，一个输入多个输出。
+//        DataStream<Tuple2<String, Integer>> result = dataStream.flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {
+//            @Override
+//            public void flatMap(String s, Collector<Tuple2<String, Integer>> collector) throws Exception {
+//                String[] words = s.split(" ");
+//                for (String word : words) {
+//                    collector.collect(new Tuple2<>(word, 1));
+//                }
+//            }
+//        });
+
+        // 3. 过滤，要或者不要
+        DataStream<String> result = dataStream.filter(new FilterFunction<String>() {
+            @Override
+            public boolean filter(String s) throws Exception {
+                return s.startsWith("glong");
+            }
+        });
+
+
+        result.print();
+
+        env.execute();
+    }
+}
+```
+
+
+
+### 分组算子
+
+#### KeyBy
+
+将数据流的数据分到不同的分区，基于HashCode。
+
+### 聚合算子
+
+>聚合前必须分组！
+
+#### 滚动聚合算子
+
+
+
+```
+1. sum
+2. min
+3. max
+4. minBy
+5. maxBy
+```
+
+#### Reduce聚合算子
+
 
 
 ## Sink
